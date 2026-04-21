@@ -186,6 +186,34 @@ export interface RecommendedPagesCopy {
   pages: RecommendedPageCopy[];
 }
 
+export interface TrustControl {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface TrustFaqItem {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+export interface TrustPageCopy {
+  route: '/trust';
+  heroTitle: string;
+  heroLead: string;
+  controlsTitle: string;
+  controlsLead: string;
+  controls: TrustControl[];
+  complianceTitle: string;
+  complianceItems: string[];
+  faqTitle: string;
+  faqLead: string;
+  faq: TrustFaqItem[];
+  primaryCta: MarketingCta;
+  secondaryCta: MarketingCta;
+}
+
 export interface HomePageCopy {
   hero: HeroCopy;
   integrity: IntegritySectionCopy;

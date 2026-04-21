@@ -3,6 +3,7 @@ import type {
   EarlyAccessModalContract,
   HomePageCopy,
   SeoPageMeta,
+  TrustPageCopy,
   TryDemoModalContract,
 } from '../types/marketing';
 
@@ -21,6 +22,19 @@ export const seoByPage: SeoPageMeta[] = [
       'plumbing call intake',
       'electrical service booking',
       'payment-first dispatch',
+    ],
+  },
+  {
+    route: '/trust',
+    title: 'Signmons Trust, Safety & Compliance',
+    description:
+      'Review the Trust, Safety, and Compliance controls behind Signmons call intake and booking workflows.',
+    keywords: [
+      'ai csr trust',
+      'home services compliance',
+      'dispatch safety controls',
+      'audit trail intake',
+      'tenant data isolation',
     ],
   },
 ];
@@ -351,4 +365,77 @@ export const earlyAccessModalContract: EarlyAccessModalContract = {
     submitLabel: 'Join Early Access',
   },
   submitIntent: 'early-access-submit',
+};
+
+export const trustPageCopy: TrustPageCopy = {
+  route: '/trust',
+  heroTitle: 'Trust, Safety, and Compliance Built Into Every Intake Flow',
+  heroLead:
+    'Signmons is designed to reduce bad handoffs, unpaid dispatches, and ambiguous customer records with explicit control points.',
+  controlsTitle: 'Core Control System',
+  controlsLead:
+    'These controls are applied to protect call quality and preserve operator confidence.',
+  controls: [
+    {
+      id: 'explicit-confirmations',
+      title: 'Explicit Confirmations',
+      description:
+        'Required customer fields are confirmed before a job can move to final scheduling.',
+    },
+    {
+      id: 'fail-closed-rules',
+      title: 'Fail-Closed Rules',
+      description:
+        'If required information is missing or uncertain, the flow does not silently proceed.',
+    },
+    {
+      id: 'audit-trails',
+      title: 'Audit Trails',
+      description:
+        'Call events, confirmations, and handoff milestones are logged for review and accountability.',
+    },
+    {
+      id: 'consent-enforcement',
+      title: 'Consent Enforcement',
+      description:
+        'Demo and messaging actions require explicit user consent and are processed through validated paths.',
+    },
+    {
+      id: 'human-override',
+      title: 'Human Override',
+      description:
+        'Operators can intervene on edge cases instead of relying on blind automation.',
+    },
+  ],
+  complianceTitle: 'Operational Compliance Notes',
+  complianceItems: [
+    'Inbound webhook authenticity is verified at integration boundaries.',
+    'Tenant separation is enforced to prevent cross-account data exposure.',
+    'Payment and intake events are processed with fail-closed validation defaults.',
+    'Security-relevant operational actions are designed to be auditable.',
+  ],
+  faqTitle: 'Common Trust Questions',
+  faqLead: 'Direct answers for owners and operations teams evaluating production readiness.',
+  faq: [
+    {
+      id: 'faq-authority',
+      question: 'What is the authority for final customer details?',
+      answer:
+        'The SMS confirmation flow is the canonical authority for required customer/job fields.',
+    },
+    {
+      id: 'faq-escalation',
+      question: 'What happens when the flow is uncertain?',
+      answer:
+        'The system uses fail-closed behavior and routes the conversation for human follow-up.',
+    },
+    {
+      id: 'faq-unpaid-dispatch',
+      question: 'How is unpaid dispatch risk reduced?',
+      answer:
+        'Service-charge collection is requested before dispatch-ready job handoff.',
+    },
+  ],
+  primaryCta: marketingCtas.headerTryDemo,
+  secondaryCta: marketingCtas.earlyAccess,
 };
