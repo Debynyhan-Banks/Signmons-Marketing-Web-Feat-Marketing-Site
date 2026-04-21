@@ -27,8 +27,8 @@ export const seoByPage: SeoPageMeta[] = [
 
 export const homePageCopy: HomePageCopy = {
   hero: {
-    title: 'Get Paid Before You Ever Send a Truck.',
-    lead: 'Call, text, or chat—Signmons AI handles the intake and collects the deposit on the spot.',
+    title: 'Book More Qualified Service Calls Without Missing Leads.',
+    lead: 'Signmons answers inbound demand, captures clean customer details, and moves callers toward payment-ready scheduling.',
     capabilities: [
       {
         id: 'call-answering',
@@ -68,8 +68,31 @@ export const homePageCopy: HomePageCopy = {
       },
     ],
     primaryCta: marketingCtas.heroPrimary,
+    secondaryCta: marketingCtas.heroSecondary,
     trustText: 'Trusted by HVAC, Plumbing',
     trustTextBreak: 'Electrical & Construction',
+  },
+  valuePillars: {
+    sectionId: 'value-pillars',
+    title: 'Why Home-Service Teams Choose Signmons',
+    lead: 'Built to protect revenue while keeping intake quality consistent.',
+    pillars: [
+      {
+        id: 'answer-every-call',
+        title: 'Answer Every Call',
+        description: '24/7 inbound coverage captures demand when your office is unavailable.',
+      },
+      {
+        id: 'confirm-every-detail',
+        title: 'Confirm Every Detail',
+        description: 'Critical intake fields are confirmed before dispatch so your team gets cleaner jobs.',
+      },
+      {
+        id: 'payment-before-dispatch',
+        title: 'Payment Before Dispatch',
+        description: 'Service-charge collection is handled before truck roll to reduce wasted dispatches.',
+      },
+    ],
   },
   integrity: {
     videos: [
@@ -105,47 +128,47 @@ export const homePageCopy: HomePageCopy = {
   },
   howItWorks: {
     sectionId: 'how-it-works',
-    title: 'How Signmons Protects Your Revenue',
-    lead: 'Every inquiry is captured, qualified, and converted into paid, dispatch-ready work.',
+    title: 'How It Works',
+    lead: 'A five-step flow from first contact to dispatch-ready handoff.',
     steps: [
       {
         id: 'automatic-capture',
-        title: 'Instant Capture',
+        title: 'Inbound Call or Text',
         description:
-          'Every call, text, or chat is answered 24/7. Signmons captures customer info, service need, and urgency on first contact.',
-        guardrail: 'No missed leads.',
+          'Every inbound inquiry is answered immediately so demand is captured on first contact.',
+        guardrail: 'Capture starts on first ring.',
         illustrationKey: 'capture',
       },
       {
         id: 'smart-sales-strategy',
-        title: 'Smart Qualification',
+        title: 'Intake and Triage',
         description:
-          'Signmons confirms details, handles objections, and qualifies the job using your rules so only high-intent bookings move forward.',
-        guardrail: 'Better leads, less noise.',
+          'Issue details and urgency are collected with policy guardrails to keep the conversation focused.',
+        guardrail: 'Collect only what dispatch needs.',
         illustrationKey: 'nurture',
       },
       {
         id: 'secure-and-nurture',
-        title: 'Secure Booking',
+        title: 'Confirmation via SMS',
         description:
-          'A payment link is sent before dispatch. Once paid, the appointment is confirmed and logged with a full audit trail.',
-        guardrail: 'Get paid before truck roll.',
+          'Callers receive a confirmation link by text to verify key details and correct anything quickly.',
+        guardrail: 'SMS is the authority for final confirmation.',
         illustrationKey: 'secure',
       },
       {
         id: 'follow-up-automation',
-        title: 'Follow-Up Automation',
+        title: 'Payment Link',
         description:
-          'If they do not book now, Signmons automatically runs SMS and email follow-up sequences to recover revenue.',
-        guardrail: 'No lead goes cold.',
+          'Required service-charge payment is requested before dispatch to reduce unpaid truck rolls.',
+        guardrail: 'Payment gate before scheduling.',
         illustrationKey: 'follow-up',
       },
       {
         id: 'dispatch-intelligence',
-        title: 'Dispatch Intelligence',
+        title: 'Dispatch-Ready Job',
         description:
-          'Your team receives verified job notes, contact details, and timing context so every truck roll starts prepared.',
-        guardrail: 'Cleaner handoff, faster close.',
+          'Your team receives structured notes with confirmed contact details and service context.',
+        guardrail: 'Clear handoff to field operations.',
         illustrationKey: 'dispatch',
       },
     ],
@@ -153,30 +176,30 @@ export const homePageCopy: HomePageCopy = {
   trust: {
     sectionId: 'why-owners-trust',
     title: 'Trust, Safety & Compliance',
-    assurancesTitle: 'Integrity Guarantees',
+    assurancesTitle: 'Operational Safeguards',
     assurances: [
-      'Audit trail for every turn and confirmation.',
-      'Tenant isolation enforced on every read/write/inference.',
-      'Fail-closed on missing or ambiguous data.',
-      'SMS is canonical for name, address, and payment.',
+      'Fail-closed behavior when required data is missing or ambiguous.',
+      'Human override paths for edge cases and manual intervention.',
+      'Audit trail coverage for intake and handoff events.',
+      'No unsupported guarantees or fabricated outcome claims.',
     ],
-    metricsTitle: 'SLO Targets (MVP)',
+    metricsTitle: 'Implementation Notes',
     metrics: [
       {
-        label: 'Avg. voice turns per call',
-        value: '≤ 8',
+        label: 'Data authority',
+        value: 'SMS confirmation remains canonical.',
       },
       {
-        label: 'Voice → SMS handoff rate',
-        value: '≥ 80%',
+        label: 'Access boundary',
+        value: 'Tenant isolation is enforced at API boundaries.',
       },
       {
-        label: 'Jobs with unconfirmed name/address',
-        value: '0',
+        label: 'Exception handling',
+        value: 'Fallback paths avoid silent failures.',
       },
       {
-        label: 'p95 voice response latency',
-        value: '< 1.2s',
+        label: 'Operator support',
+        value: 'Escalation to staff remains available.',
       },
     ],
   },
@@ -312,6 +335,13 @@ export const homePageCopy: HomePageCopy = {
         ],
       },
     ],
+  },
+  ctaClose: {
+    sectionId: 'home-cta-close',
+    title: 'Ready to See Signmons in Action?',
+    lead: 'Run a live demo call now, or join early access for launch updates.',
+    primaryCta: marketingCtas.footerPrimary,
+    secondaryCta: marketingCtas.earlyAccess,
   },
 };
 

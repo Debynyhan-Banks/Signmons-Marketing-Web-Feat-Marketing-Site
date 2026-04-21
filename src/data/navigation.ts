@@ -12,7 +12,7 @@ export type MarketingCtaKey =
 export const marketingCtas: Record<MarketingCtaKey, MarketingCta> = {
   heroPrimary: {
     id: 'hero-try-demo',
-    label: 'Experience the Demo',
+    label: 'Try Demo',
     kind: 'primary',
     intent: 'try-demo',
     action: {
@@ -22,17 +22,17 @@ export const marketingCtas: Record<MarketingCtaKey, MarketingCta> = {
   },
   heroSecondary: {
     id: 'hero-see-how',
-    label: 'See How It Works',
+    label: 'Join Early Access',
     kind: 'secondary',
-    intent: 'learn-more',
+    intent: 'early-access',
     action: {
-      type: 'hash',
-      href: '#how-it-works',
+      type: 'modal',
+      modal: 'early-access',
     },
   },
   footerPrimary: {
     id: 'footer-try-demo',
-    label: 'Experience the Demo',
+    label: 'Try Demo',
     kind: 'primary',
     intent: 'try-demo',
     action: {

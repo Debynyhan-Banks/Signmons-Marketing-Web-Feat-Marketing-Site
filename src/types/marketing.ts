@@ -72,8 +72,22 @@ export interface HeroCopy {
   lead: string;
   capabilities: HeroCapability[];
   primaryCta: MarketingCta;
+  secondaryCta: MarketingCta;
   trustText: string;
   trustTextBreak?: string;
+}
+
+export interface ValuePillar {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface ValuePillarsCopy {
+  sectionId: string;
+  title: string;
+  lead: string;
+  pillars: ValuePillar[];
 }
 
 export interface MarketingVideoAsset {
@@ -186,8 +200,17 @@ export interface RecommendedPagesCopy {
   pages: RecommendedPageCopy[];
 }
 
+export interface CtaCloseCopy {
+  sectionId: string;
+  title: string;
+  lead: string;
+  primaryCta: MarketingCta;
+  secondaryCta: MarketingCta;
+}
+
 export interface HomePageCopy {
   hero: HeroCopy;
+  valuePillars: ValuePillarsCopy;
   integrity: IntegritySectionCopy;
   howItWorks: HowItWorksCopy;
   trust: TrustSectionCopy;
@@ -196,6 +219,7 @@ export interface HomePageCopy {
   pricing: PricingSectionCopy;
   founder: FounderSectionCopy;
   recommendedPages: RecommendedPagesCopy;
+  ctaClose: CtaCloseCopy;
 }
 
 export interface SeoPageMeta {

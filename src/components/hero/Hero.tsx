@@ -85,6 +85,7 @@ type HeroProps = {
 const Hero = ({ onTryDemo, onEarlyAccess }: HeroProps) => {
   const { hero } = homePageCopy;
   const primaryCtaHref = getCtaHref(hero.primaryCta.action);
+  const secondaryCtaHref = getCtaHref(hero.secondaryCta.action);
   const [soundEnabled, setSoundEnabled] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -108,6 +109,11 @@ const Hero = ({ onTryDemo, onEarlyAccess }: HeroProps) => {
   const handlePrimaryCtaClick = () => {
     console.info('[intent]', `${hero.primaryCta.intent}-click`);
     triggerCtaAction(hero.primaryCta, { onTryDemo, onEarlyAccess });
+  };
+
+  const handleSecondaryCtaClick = () => {
+    console.info('[intent]', `${hero.secondaryCta.intent}-click`);
+    triggerCtaAction(hero.secondaryCta, { onTryDemo, onEarlyAccess });
   };
 
   return (
@@ -183,6 +189,16 @@ const Hero = ({ onTryDemo, onEarlyAccess }: HeroProps) => {
             data-intent={hero.primaryCta.intent}
           >
             {hero.primaryCta.label}
+          </Button>
+          <Button
+            className="hero__secondary-cta"
+            disableRipple
+            type={secondaryCtaHref ? undefined : 'button'}
+            href={secondaryCtaHref}
+            onClick={handleSecondaryCtaClick}
+            data-intent={hero.secondaryCta.intent}
+          >
+            {hero.secondaryCta.label}
           </Button>
           <div className="hero__trust hero__trust--footer">
             <span className="hero__trust-text">
