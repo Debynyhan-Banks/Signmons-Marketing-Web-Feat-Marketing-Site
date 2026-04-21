@@ -1,5 +1,7 @@
 # Signmons — Marketing Website & Pre-Auth Experience
 
+Governance note: this file is a frontend reference. If it conflicts with `Signmons-governance`, governance docs are the source of truth.
+
 ## Core Rule
 The marketing site does not sell features. It sells certainty, control, and outcomes.
 
@@ -26,7 +28,7 @@ Shared only:
 - Investors/partners
 - Early adopters skeptical of AI
 
-## Marketing Site Screens (Authoritative)
+## Marketing Site Screens (Reference)
 ### 1) Home / Landing Page (Critical)
 Goal: Immediate clarity — "This replaces chaos, not people."
 
@@ -34,8 +36,8 @@ Sections
 - Hero
   - Headline: "The AI CSR that runs intake like your best dispatcher."
   - Subhead: "Bookings. Payments. Clean data. No guessing."
-  - Primary CTA: See How It Works
-  - Secondary CTA: Request Early Access
+  - Primary CTA: Try Demo
+  - Secondary CTA: Join Early Access
   - (Dancing robot + galaxy live here — subtle, not gimmicky.)
 - What Signmons Is (3 pillars)
   - Answer Every Call
@@ -56,8 +58,8 @@ Sections
   - Works with or without ServiceTitan
 - CTA block
   - "See a real intake"
-  - "Book a demo"
-  - "Join the waitlist"
+  - "Try Demo"
+  - "Join Early Access"
 
 ## URL & IA Lock (MVP)
 For v1, this repo ships as a single-page marketing site at `/`.

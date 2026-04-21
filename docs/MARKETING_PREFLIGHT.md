@@ -1,4 +1,6 @@
-# Marketing Website Pre-Flight Checklist (Authoritative)
+# Marketing Website Pre-Flight Checklist (Reference)
+
+Governance note: this file is a frontend implementation reference. If it conflicts with `Signmons-governance`, governance docs are the source of truth.
 
 ## 1) Isolation Rules (Non-Negotiable)
 Do not colocate with the SaaS frontend.
@@ -86,13 +88,13 @@ Decide now what CTAs do technically.
 
 For MVP marketing:
 - “Request Early Access” → form submit (no auth)
-- “Book a Demo” → calendar or form
+- “Try Demo” → opens demo-call modal and posts to `/api/marketing/try-demo`
 - “See How It Works” → internal page, not SaaS
 
 Explicitly not allowed:
 - Auto-creating accounts
 - Silent redirects to SaaS
-- “Try it now” unless it is a demo sandbox
+- Any self-serve trial flow outside the approved “Try Demo” contract
 
 Marketing must never surprise users.
 

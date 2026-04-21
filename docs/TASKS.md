@@ -1,6 +1,10 @@
 # Signmons Marketing — Task Board
 
-Single source of truth for the marketing site workstream.
+Legacy execution record for the marketing site workstream.
+
+Current source of truth is the governance repo execution flow:
+- `Signmons-governance/EXECUTION_BOARD.md`
+- `Signmons-governance/MVP_BACKLOG.md`
 
 ## Non‑negotiables
 - Mobile‑first responsive design (320px → desktop)
@@ -59,7 +63,7 @@ SECTION 5 LOCK ✅
 SECTION 6 LOCK ✅
 
 ### Try‑Demo API Contract (MVP)
-- Endpoint: `POST https://f2c1c2d7f64e.ngrok-free.app/api/marketing/try-demo`
+- Endpoint: `POST https://<host>/api/marketing/try-demo`
 - Required fields: phone (E.164), consentToAutoCall=true, consentTextVersion=try-demo-v1, demoScenario=hvac, callMode=immediate, timezone
 - Optional: name, company, email, utm, referrerUrl
 - Success UI: “Calling you now — please answer your phone.” + “Most demos connect in under 30 seconds.”
