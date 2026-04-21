@@ -1,4 +1,5 @@
 import Home from './pages/Home';
+import Legal from './pages/Legal';
 import Trust from './pages/Trust';
 
 const Router = () => {
@@ -9,6 +10,10 @@ const Router = () => {
 
   if (normalizedPath === '/trust') {
     return <Trust />;
+  }
+
+  if (normalizedPath === '/legal') {
+    return <Legal />;
   }
 
   return <Home />;

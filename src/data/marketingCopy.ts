@@ -2,6 +2,7 @@ import { marketingCtas } from './navigation';
 import type {
   EarlyAccessModalContract,
   HomePageCopy,
+  LegalPageCopy,
   SeoPageMeta,
   TrustPageCopy,
   TryDemoModalContract,
@@ -35,6 +36,19 @@ export const seoByPage: SeoPageMeta[] = [
       'dispatch safety controls',
       'audit trail intake',
       'tenant data isolation',
+    ],
+  },
+  {
+    route: '/legal',
+    title: 'Signmons Privacy, Terms, and SMS Program Terms',
+    description:
+      'Review Signmons legal and communication terms, including SMS program behavior and support options.',
+    keywords: [
+      'signmons privacy policy',
+      'signmons terms',
+      'sms program terms',
+      'twilio compliance',
+      'help stop keywords',
     ],
   },
 ];
@@ -434,6 +448,44 @@ export const trustPageCopy: TrustPageCopy = {
       question: 'How is unpaid dispatch risk reduced?',
       answer:
         'Service-charge collection is requested before dispatch-ready job handoff.',
+    },
+  ],
+  primaryCta: marketingCtas.headerTryDemo,
+  secondaryCta: marketingCtas.earlyAccess,
+};
+
+export const legalPageCopy: LegalPageCopy = {
+  route: '/legal',
+  heroTitle: 'Privacy, Terms, and SMS Program Terms',
+  heroLead:
+    'This page defines how Signmons handles data, service terms, and messaging behavior for demo and customer communication flows.',
+  sections: [
+    {
+      id: 'privacy-policy',
+      title: 'Privacy Policy',
+      body: [
+        'Signmons collects contact and intake details needed to coordinate service requests and dispatch workflows.',
+        'Information is used to process customer communication, booking, and payment-related operations.',
+        'Signmons does not sell personal information and does not share mobile data for third-party marketing use.',
+      ],
+    },
+    {
+      id: 'terms-conditions',
+      title: 'Terms and Conditions',
+      body: [
+        'Signmons provides AI-assisted intake and booking workflow support for participating service organizations.',
+        'Message and data rates may apply depending on carrier plan. Message frequency varies by customer interaction.',
+        'For support, users can contact the business directly through published support channels.',
+      ],
+    },
+    {
+      id: 'sms-program-terms',
+      title: 'SMS Program Terms',
+      body: [
+        'Users may receive service-related SMS updates after providing consent during intake or demo requests.',
+        'Reply HELP for support information and reply STOP to opt out of SMS messages at any time.',
+        'Consent records and messaging actions are maintained for compliance and operational auditability.',
+      ],
     },
   ],
   primaryCta: marketingCtas.headerTryDemo,

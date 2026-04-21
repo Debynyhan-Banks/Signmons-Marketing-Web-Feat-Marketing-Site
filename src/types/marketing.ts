@@ -4,7 +4,8 @@ export type MarketingRoute =
   | '/contact'
   | '/about'
   | '/how-it-works'
-  | '/trust';
+  | '/trust'
+  | '/legal';
 
 export type MarketingHashTarget = '#how-it-works' | '#why-owners-trust';
 
@@ -210,6 +211,21 @@ export interface TrustPageCopy {
   faqTitle: string;
   faqLead: string;
   faq: TrustFaqItem[];
+  primaryCta: MarketingCta;
+  secondaryCta: MarketingCta;
+}
+
+export interface LegalSection {
+  id: string;
+  title: string;
+  body: string[];
+}
+
+export interface LegalPageCopy {
+  route: '/legal';
+  heroTitle: string;
+  heroLead: string;
+  sections: LegalSection[];
   primaryCta: MarketingCta;
   secondaryCta: MarketingCta;
 }
