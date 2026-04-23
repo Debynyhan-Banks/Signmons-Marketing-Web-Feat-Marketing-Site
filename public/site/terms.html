@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Signmons helps trade businesses answer calls, qualify leads, collect deposits, and book jobs 24/7 with AI."/>
+<title>Terms of Service — Signmons</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+:root{--space:#07081a;--deep:#0c0e2b;--purple:#8b2cf5;--violet:#b44fff;--pink:#ff3dff;--cyan:#3df5ff;--green:#00e5a0;--text:#e8e8ff;--muted:#8888b0;--card-bg:rgba(255,255,255,0.04);--card-border:rgba(180,80,255,0.18)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--space);color:var(--text);overflow-x:hidden;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(1px 1px at 10% 15%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 25% 60%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 45% 25%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(2px 2px at 90% 70%,rgba(180,80,255,.4) 0%,transparent 100%),radial-gradient(1px 1px at 5% 90%,rgba(255,255,255,.3) 0%,transparent 100%);pointer-events:none;z-index:0}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:rgba(7,8,26,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--card-border)}
+.nav-inner{display:flex;align-items:center;gap:1.5rem}
+.nav-links{display:none;gap:1.25rem;list-style:none}
+.nav-links a{font-size:.82rem;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+@media(min-width:640px){.nav-links{display:flex}}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;letter-spacing:.08em;color:#fff;text-decoration:none}
+.nav-cta{background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff;font-weight:500;font-size:.8rem;padding:.45rem 1rem;border-radius:50px;text-decoration:none;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 0 20px rgba(180,80,255,.5)}
+.page-hero{position:relative;z-index:1;padding:7rem 1.5rem 3.5rem;text-align:center}
+.page-hero-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:500px;height:300px;background:radial-gradient(ellipse,rgba(139,44,245,.2) 0%,transparent 70%);pointer-events:none}
+.section-tag{display:inline-block;font-size:.7rem;font-weight:500;letter-spacing:.12em;color:var(--violet);text-transform:uppercase;margin-bottom:.75rem}
+.page-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,6vw,2.5rem);font-weight:800;line-height:1.1;margin-bottom:1rem}
+.page-sub{color:var(--muted);font-size:.95rem;line-height:1.65;max-width:380px;margin:0 auto;font-weight:300}
+footer{position:relative;z-index:1;border-top:1px solid var(--card-border);padding:2rem 1.5rem;text-align:center}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:.4rem}
+.footer-sub{font-size:.75rem;color:var(--muted);margin-bottom:1.25rem}
+.footer-links{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.footer-links a{font-size:.78rem;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--violet)}
+.footer-copy{font-size:.7rem;color:rgba(136,136,176,.5)}
+.fade-in{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+.legal-body{max-width:540px;margin:0 auto;padding:0 1.5rem 5rem;position:relative;z-index:1}
+.legal-meta{display:flex;align-items:center;gap:.6rem;background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:.75rem 1rem;font-size:.78rem;color:var(--muted);margin-bottom:2rem;flex-wrap:wrap}
+.legal-meta span{color:var(--violet);font-weight:500}
+.highlight-box{background:rgba(139,44,245,.08);border:1px solid rgba(180,80,255,.25);border-radius:14px;padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:.82rem;color:var(--text);line-height:1.65}
+.highlight-box strong{color:var(--violet)}
+.toc{background:var(--card-bg);border:1px solid var(--card-border);border-radius:18px;padding:1.25rem 1.5rem;margin-bottom:2.5rem}
+.toc h3{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;margin-bottom:.85rem;color:var(--text)}
+.toc ol{padding-left:1.2rem;display:flex;flex-direction:column;gap:.4rem}
+.toc li{font-size:.8rem;color:var(--muted)}
+.toc a{color:var(--violet);text-decoration:none}
+.legal-section{margin-bottom:2.5rem}
+.legal-section h2{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:.85rem;color:var(--text);padding-bottom:.5rem;border-bottom:1px solid var(--card-border)}
+.legal-section h3{font-size:.9rem;font-weight:600;margin:1rem 0 .4rem;color:var(--text)}
+.legal-section p{font-size:.84rem;color:var(--muted);line-height:1.75;margin-bottom:.75rem}
+.legal-section a{color:var(--violet);text-decoration:none}
+.legal-section ul{padding-left:1.2rem;margin-bottom:.75rem}
+.legal-section ul li{font-size:.84rem;color:var(--muted);line-height:1.7;margin-bottom:.3rem}
+.contact-legal{background:var(--card-bg);border:1px solid var(--card-border);border-radius:18px;padding:1.5rem;text-align:center;margin-top:2rem}
+.contact-legal h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.contact-legal p{font-size:.8rem;color:var(--muted);line-height:1.6}
+.contact-legal a{color:var(--violet);text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a href="signmons.html" class="logo">SIGNMONS</a>
+  <div class="nav-inner">
+    <ul class="nav-links">
+      <li><a href="demo.html">Demo</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Get Early Access →</a>
+  </div>
+</nav>
+
+<div class="page-hero fade-in">
+  <div class="page-hero-glow"></div>
+  <p class="section-tag">Legal</p>
+  <h1 class="page-title">Terms of Service</h1>
+  <p class="page-sub">Please read these terms carefully before using Signmons.</p>
+</div>
+
+<div class="legal-body fade-in">
+  <div class="legal-meta">📅 Last updated: <span>April 1, 2026</span> &nbsp;·&nbsp; Effective: <span>April 1, 2026</span></div>
+  <div class="highlight-box"><strong>Plain English Summary:</strong> You use Signmons to automate your business phone, booking, and payment collection. You own your data. We don't sell it. You pay monthly, cancel anytime. Don't misuse the platform.</div>
+
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <ol>
+      <li><a href="#s1">Acceptance of Terms</a></li>
+      <li><a href="#s2">Description of Services</a></li>
+      <li><a href="#s3">Accounts & Registration</a></li>
+      <li><a href="#s4">Payments & Billing</a></li>
+      <li><a href="#s5">Acceptable Use</a></li>
+      <li><a href="#s6">Data & Privacy</a></li>
+      <li><a href="#s7">Intellectual Property</a></li>
+      <li><a href="#s8">Limitation of Liability</a></li>
+      <li><a href="#s9">Termination</a></li>
+      <li><a href="#s10">Dispute Resolution</a></li>
+    </ol>
+  </div>
+
+  <div class="legal-section" id="s1"><h2>1. Acceptance of Terms</h2><p>By accessing or using Signmons ("Service"), you agree to be bound by these Terms of Service. If you do not agree, you may not use the Service. These Terms apply to all users, including contractors, business owners, and any authorized users of a Signmons account.</p></div>
+  <div class="legal-section" id="s2"><h2>2. Description of Services</h2><p>Signmons provides an AI-powered front office platform for trade contractors, including 24/7 AI call answering, automated appointment scheduling, deposit collection, SMS and web chat management, and revenue analytics. We reserve the right to modify, suspend, or discontinue any part of the Service with reasonable notice.</p></div>
+  <div class="legal-section" id="s3"><h2>3. Accounts & Registration</h2><p>You must provide accurate, complete information when creating an account. You are responsible for maintaining the security of your credentials and all activity under your account. Notify us immediately at <a href="mailto:security@signmons.com">security@signmons.com</a> if you suspect unauthorized access.</p></div>
+  <div class="legal-section" id="s4"><h2>4. Payments & Billing</h2><h3>Subscription Fees</h3><p>Signmons charges a recurring monthly or annual fee based on your selected plan. Fees are charged in advance and are non-refundable except as described below.</p><h3>Free Trial</h3><p>New accounts receive a 14-day free trial. No credit card is required to start. At the end of the trial you must enter a payment method to continue.</p><h3>Cancellation</h3><p>You may cancel at any time from your dashboard. Annual subscriptions cancelled within 30 days of purchase are eligible for a full refund.</p><h3>Payment Processing</h3><p>Deposits collected from your customers are processed through Stripe, Square, or PayPal and transferred directly to your account. Signmons does not hold customer funds.</p></div>
+  <div class="legal-section" id="s5"><h2>5. Acceptable Use</h2><p>You agree not to use the Service to violate applicable laws, mislead or defraud customers, send unsolicited spam, collect payments for services you do not intend to perform, or reverse engineer the AI models underlying the Service. Violations may result in immediate account termination without refund.</p></div>
+  <div class="legal-section" id="s6"><h2>6. Data & Privacy</h2><p>Your use of the Service is governed by our <a href="privacy.html">Privacy Policy</a>, incorporated by reference. You retain ownership of all data you input. We process it solely to provide the Service. We do not sell your data or your customers' data.</p></div>
+  <div class="legal-section" id="s7"><h2>7. Intellectual Property</h2><p>The Signmons platform, AI models, software, design, and branding are owned by Signmons Inc. and protected by applicable intellectual property laws. You retain all rights to your own business content and customer data.</p></div>
+  <div class="legal-section" id="s8"><h2>8. Limitation of Liability</h2><p>To the maximum extent permitted by law, Signmons shall not be liable for indirect, incidental, or consequential damages. Our total liability for any claim shall not exceed the amount you paid us in the 3 months preceding the claim. The Service is provided "as is" without warranties of any kind.</p></div>
+  <div class="legal-section" id="s9"><h2>9. Termination</h2><p>Either party may terminate this agreement at any time. Upon termination your right to use the Service ceases. We retain your data for 30 days after termination to allow for export, then permanently delete it.</p></div>
+  <div class="legal-section" id="s10"><h2>10. Dispute Resolution</h2><p>These Terms are governed by the laws of the State of Ohio. Disputes shall be resolved through binding arbitration in Cuyahoga County, Ohio, except for claims brought in small claims court. You waive the right to participate in class action lawsuits against Signmons.</p></div>
+
+  <div class="contact-legal">
+    <h3>Questions About These Terms?</h3>
+    <p>Contact us at <a href="mailto:legal@signmons.com">legal@signmons.com</a><br/>Signmons Inc. · Cleveland, Ohio 44101</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">SIGNMONS</div>
+  <div class="footer-sub">AI-powered front office for trades</div>
+  <div class="footer-links">
+    <a href="signmons.html">Home</a><a href="demo.html">Demo</a><a href="pricing.html">Pricing</a>
+    <a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a href="login.html">Login</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
+  </div>
+  <div class="footer-copy">© 2026 Signmons Inc. All rights reserved.</div>
+</footer>
+<script src="shared.js"></script>
+<script>
+SignmonsSite.initCommon();
+</script>
+</body>
+</html>

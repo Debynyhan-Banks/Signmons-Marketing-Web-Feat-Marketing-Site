@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Signmons helps trade businesses answer calls, qualify leads, collect deposits, and book jobs 24/7 with AI."/>
+<title>About — Signmons</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+:root{--space:#07081a;--deep:#0c0e2b;--purple:#8b2cf5;--violet:#b44fff;--pink:#ff3dff;--cyan:#3df5ff;--green:#00e5a0;--text:#e8e8ff;--muted:#8888b0;--card-bg:rgba(255,255,255,0.04);--card-border:rgba(180,80,255,0.18)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--space);color:var(--text);overflow-x:hidden;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(1px 1px at 10% 15%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 25% 60%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 45% 25%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1px 1px at 60% 80%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 88% 10%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 32% 88%,rgba(255,255,255,.3) 0%,transparent 100%),radial-gradient(2px 2px at 90% 70%,rgba(180,80,255,.4) 0%,transparent 100%),radial-gradient(1px 1px at 5% 90%,rgba(255,255,255,.3) 0%,transparent 100%);pointer-events:none;z-index:0}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:rgba(7,8,26,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--card-border)}
+.nav-inner{display:flex;align-items:center;gap:1.5rem}
+.nav-links{display:none;gap:1.25rem;list-style:none}
+.nav-links a{font-size:.82rem;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+@media(min-width:640px){.nav-links{display:flex}}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;letter-spacing:.08em;color:#fff;text-decoration:none}
+.nav-cta{background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff;font-weight:500;font-size:.8rem;padding:.45rem 1rem;border-radius:50px;text-decoration:none;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 0 20px rgba(180,80,255,.5)}
+.page-hero{position:relative;z-index:1;padding:7rem 1.5rem 3.5rem;text-align:center}
+.page-hero-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:500px;height:300px;background:radial-gradient(ellipse,rgba(139,44,245,.2) 0%,transparent 70%);pointer-events:none}
+.section-tag{display:inline-block;font-size:.7rem;font-weight:500;letter-spacing:.12em;color:var(--violet);text-transform:uppercase;margin-bottom:.75rem}
+.page-title{font-family:'Syne',sans-serif;font-size:clamp(2rem,7vw,3rem);font-weight:800;line-height:1.1;margin-bottom:1rem}
+.grad-text{background:linear-gradient(135deg,var(--pink) 0%,var(--violet) 50%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.page-sub{color:var(--muted);font-size:.95rem;line-height:1.65;max-width:380px;margin:0 auto;font-weight:300}
+.section-title{font-family:'Syne',sans-serif;font-size:1.7rem;font-weight:800;line-height:1.2;margin-bottom:.6rem}
+footer{position:relative;z-index:1;border-top:1px solid var(--card-border);padding:2rem 1.5rem;text-align:center}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:.4rem}
+.footer-sub{font-size:.75rem;color:var(--muted);margin-bottom:1.25rem}
+.footer-links{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.footer-links a{font-size:.78rem;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--violet)}
+.footer-copy{font-size:.7rem;color:rgba(136,136,176,.5)}
+.fade-in{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+.about-body{max-width:540px;margin:0 auto;padding:0 1.5rem 5rem}
+.story-section{margin-bottom:3rem}
+.story-section p{font-size:.92rem;color:var(--muted);line-height:1.75;margin-bottom:1rem}
+.story-section p strong{color:var(--text);font-weight:500}
+.hl{background:linear-gradient(135deg,var(--pink),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600}
+.mission-card{background:linear-gradient(135deg,rgba(139,44,245,.14),rgba(255,61,255,.06));border:1px solid rgba(180,80,255,.38);border-radius:22px;padding:2rem 1.5rem;margin-bottom:2.5rem;position:relative;overflow:hidden}
+.mission-card::before{content:'"';position:absolute;top:-10px;left:1rem;font-size:6rem;font-family:'Syne',sans-serif;color:var(--violet);opacity:.15;line-height:1}
+.mission-card p{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;line-height:1.5;color:var(--text);position:relative}
+.mission-card span{color:var(--violet)}
+.stats-bar{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--card-border);border:1px solid var(--card-border);border-radius:20px;overflow:hidden;margin:2.5rem 0}
+.stat-cell{background:var(--deep);padding:1.25rem;text-align:center}
+.stat-n{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;background:linear-gradient(135deg,var(--pink),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-l{font-size:.72rem;color:var(--muted);margin-top:.2rem;line-height:1.4}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+.team-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:20px;padding:1.4rem 1rem;text-align:center;transition:border-color .25s,transform .25s}
+.team-card:hover{border-color:rgba(180,80,255,.4);transform:translateY(-3px)}
+.team-avatar{width:60px;height:60px;border-radius:50%;margin:0 auto .85rem;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700;font-family:'Syne',sans-serif;box-shadow:0 0 20px rgba(180,80,255,.35)}
+.av1{background:linear-gradient(135deg,#8b2cf5,#ff3dff)}
+.av2{background:linear-gradient(135deg,#0a8ff5,#3df5ff)}
+.av3{background:linear-gradient(135deg,#00c47a,#00e5a0)}
+.av4{background:linear-gradient(135deg,#f5a50a,#ff6a3d)}
+.team-name{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.2rem}
+.team-role{font-size:.75rem;color:var(--violet);font-weight:500;margin-bottom:.5rem}
+.team-bio{font-size:.75rem;color:var(--muted);line-height:1.55}
+.values-list{display:flex;flex-direction:column;gap:.85rem;margin-top:1.5rem}
+.value-item{display:flex;gap:1rem;align-items:flex-start;background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:1.1rem;transition:border-color .2s}
+.value-item:hover{border-color:rgba(180,80,255,.4)}
+.value-icon{width:38px;height:38px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,rgba(139,44,245,.3),rgba(180,80,255,.15));border:1px solid rgba(180,80,255,.25);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.value-text h4{font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;margin-bottom:.25rem}
+.value-text p{font-size:.78rem;color:var(--muted);line-height:1.55}
+.backed{text-align:center;padding:2rem 0 1rem;border-top:1px solid var(--card-border)}
+.backed p{font-size:.75rem;color:var(--muted);margin-bottom:1rem;letter-spacing:.06em;text-transform:uppercase}
+.backed-logos{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap}
+.backed-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:.85rem;color:rgba(136,136,176,.4);letter-spacing:.06em}
+</style>
+</head>
+<body>
+<nav>
+  <a href="signmons.html" class="logo">SIGNMONS</a>
+  <div class="nav-inner">
+    <ul class="nav-links">
+      <li><a href="demo.html">Demo</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Get Early Access →</a>
+  </div>
+</nav>
+
+<div class="page-hero fade-in">
+  <div class="page-hero-glow"></div>
+  <p class="section-tag">Our Story</p>
+  <h1 class="page-title">Built for the<br><span class="grad-text">Trades. By the Trades.</span></h1>
+  <p class="page-sub">We watched great contractors lose jobs to voicemail. Signmons exists to fix that.</p>
+</div>
+
+<div class="about-body">
+  <div class="story-section fade-in">
+    <div class="mission-card">
+      <p>Every trade contractor deserves a <span>front office that never sleeps</span> — without the overhead of hiring one.</p>
+    </div>
+    <p>Signmons was born out of frustration. Our founder watched his uncle — a master electrician with 20 years of experience — lose thousands of dollars every month simply because calls went unanswered after 5 PM.</p>
+    <p>The problem wasn't skill. It wasn't pricing. It wasn't the quality of work. <strong>It was the phone.</strong></p>
+    <p>We built Signmons to be the AI-powered front office that every independent contractor deserves — one that answers every call, qualifies every customer, books every job, and collects the deposit before anyone rolls a truck.</p>
+    <p>Today, Signmons serves <span class="hl">HVAC, plumbing, electrical, and construction</span> businesses across the country — from solo operators to 20-person crews.</p>
+  </div>
+
+  <div class="stats-bar fade-in">
+    <div class="stat-cell"><div class="stat-n">500+</div><div class="stat-l">Contractors on platform</div></div>
+    <div class="stat-cell"><div class="stat-n">98%</div><div class="stat-l">Call answer rate</div></div>
+    <div class="stat-cell"><div class="stat-n">$2M+</div><div class="stat-l">Deposits collected</div></div>
+    <div class="stat-cell"><div class="stat-n">4.9★</div><div class="stat-l">Average user rating</div></div>
+  </div>
+
+  <div class="fade-in">
+    <p class="section-tag">The Team</p>
+    <h2 class="section-title">Who's Behind Signmons</h2>
+    <div class="team-grid">
+      <div class="team-card"><div class="team-avatar av1">JW</div><div class="team-name">Jordan Williams</div><div class="team-role">Founder & CEO</div><div class="team-bio">CS + MBA. Former trade contractor turned tech founder. Built Signmons to solve the problem he watched his family face.</div></div>
+      <div class="team-card"><div class="team-avatar av2">RP</div><div class="team-name">Raquel Pena</div><div class="team-role">Head of AI</div><div class="team-bio">Former ML engineer at a voice AI startup. Obsessed with making AI sound human — not robotic.</div></div>
+      <div class="team-card"><div class="team-avatar av3">MT</div><div class="team-name">Marcus Thompson</div><div class="team-role">Head of Partnerships</div><div class="team-bio">10 years in trade industry sales. Knows every pain point HVAC and plumbing owners face.</div></div>
+      <div class="team-card"><div class="team-avatar av4">SL</div><div class="team-name">Sara Liu</div><div class="team-role">Lead Engineer</div><div class="team-bio">Full-stack engineer who built and shipped Signmons' core platform from the ground up.</div></div>
+    </div>
+  </div>
+
+  <div class="fade-in" style="margin-top:2.5rem">
+    <p class="section-tag">What We Believe</p>
+    <h2 class="section-title">Our Values</h2>
+    <div class="values-list">
+      <div class="value-item"><div class="value-icon">🔧</div><div class="value-text"><h4>Trades First</h4><p>Every decision filters through one question: does this help a contractor make more money with less stress?</p></div></div>
+      <div class="value-item"><div class="value-icon">⚡</div><div class="value-text"><h4>Speed Over Perfection</h4><p>Our customers lose money every hour their phone goes unanswered. We ship fast and iterate constantly.</p></div></div>
+      <div class="value-item"><div class="value-icon">🤝</div><div class="value-text"><h4>Radical Transparency</h4><p>Flat pricing. No hidden fees. We make money when our customers make money.</p></div></div>
+      <div class="value-item"><div class="value-icon">🌍</div><div class="value-text"><h4>Small Business Is the Economy</h4><p>Independent contractors are the backbone of every community. We're on their side.</p></div></div>
+    </div>
+  </div>
+
+  <div class="backed fade-in">
+    <p>Backed & Supported By</p>
+    <div class="backed-logos">
+      <span class="backed-logo">Y COMBINATOR</span>
+      <span class="backed-logo">TECHSTARS</span>
+      <span class="backed-logo">CUYAHOGA FUND</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">SIGNMONS</div>
+  <div class="footer-sub">AI-powered front office for trades</div>
+  <div class="footer-links">
+    <a href="signmons.html">Home</a><a href="demo.html">Demo</a><a href="pricing.html">Pricing</a>
+    <a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a href="login.html">Login</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
+  </div>
+  <div class="footer-copy">© 2026 Signmons Inc. All rights reserved.</div>
+</footer>
+<script src="shared.js"></script>
+<script>
+SignmonsSite.initCommon();
+</script>
+</body>
+</html>
