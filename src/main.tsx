@@ -7,6 +7,7 @@ import './styles/site/shared.css';
 import './styles/site/signmons.css';
 import './styles/site/demo.css';
 import './styles/site/contact.css';
+import './styles/site/pricing.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

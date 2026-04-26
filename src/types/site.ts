@@ -43,6 +43,83 @@ export interface SitePlanItem {
   badge?: string;
 }
 
+export interface SitePricingPlan {
+  id: string;
+  name: string;
+  description: string;
+  bestFor: string;
+  includedUsage: string;
+  setupFee: string;
+  features: string[];
+  ctaLabel: string;
+  ctaHref: string;
+  ctaClassName: 'btn-primary' | 'btn-secondary';
+  monthlyPrice?: number;
+  annualMonthlyPrice?: number;
+  customPriceLabel?: string;
+  featured?: boolean;
+  badge?: string;
+}
+
+export interface SitePricingAddOn {
+  id: string;
+  title: string;
+  price: string;
+  description: string;
+}
+
+export type SitePricingCompareValue = 'yes' | 'no' | string;
+
+export interface SitePricingCompareRow {
+  id: string;
+  feature: string;
+  starter: SitePricingCompareValue;
+  growth: SitePricingCompareValue;
+  pro: SitePricingCompareValue;
+  enterprise: SitePricingCompareValue;
+}
+
+export interface SitePricingFaqItem {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+export interface SitePricingContent {
+  navCtaLabel: string;
+  navCtaHref: string;
+  hero: {
+    tag: string;
+    title: string;
+    accent: string;
+    subtitle: string;
+  };
+  billingToggle: {
+    monthlyLabel: string;
+    annualLabel: string;
+    saveBadge: string;
+  };
+  pricingNote: string;
+  plans: SitePricingPlan[];
+  addOns: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    items: SitePricingAddOn[];
+  };
+  compare: {
+    tag: string;
+    title: string;
+    rows: SitePricingCompareRow[];
+  };
+  faq: {
+    tag: string;
+    title: string;
+    items: SitePricingFaqItem[];
+  };
+  footerCopyright: string;
+}
+
 export interface SiteIndustryTag {
   id: string;
   label: string;

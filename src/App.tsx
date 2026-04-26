@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import SiteContact from './pages/site/SiteContact';
 import SiteDemo from './pages/site/SiteDemo';
 import SiteHome from './pages/site/SiteHome';
+import SitePricing from './pages/site/SitePricing';
 
 const staticTemplateByRoute: Record<string, string> = {
   '/about': 'about.html',
@@ -10,8 +11,6 @@ const staticTemplateByRoute: Record<string, string> = {
   '/blog.html': 'blog.html',
   '/login': 'login.html',
   '/login.html': 'login.html',
-  '/pricing': 'pricing.html',
-  '/pricing.html': 'pricing.html',
   '/privacy': 'privacy.html',
   '/privacy.html': 'privacy.html',
   '/terms': 'terms.html',
@@ -51,6 +50,10 @@ const App = () => {
 
   if (normalizedPath === '/contact' || normalizedPath === '/contact.html' || normalizedPath === '/site/contact.html') {
     return <SiteContact />;
+  }
+
+  if (normalizedPath === '/pricing' || normalizedPath === '/pricing.html' || normalizedPath === '/site/pricing.html') {
+    return <SitePricing />;
   }
 
   const staticTemplate = staticTemplateByRoute[normalizedPath];

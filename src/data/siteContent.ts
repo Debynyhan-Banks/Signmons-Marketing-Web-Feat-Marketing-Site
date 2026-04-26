@@ -4,7 +4,10 @@ import type {
   SiteFooterLink,
   SiteHomeContent,
   SiteLink,
+  SitePlanItem,
+  SitePricingPlan,
 } from '../types/site';
+import { sitePricingPlans } from './pricingContent';
 
 export const sitePrimaryLinks: SiteLink[] = [
   { id: 'demo', label: 'Demo', href: '/demo' },
@@ -25,6 +28,30 @@ export const siteFooterLinks: SiteFooterLink[] = [
   { id: 'terms', label: 'Terms', href: '/terms' },
   { id: 'privacy', label: 'Privacy', href: '/privacy' },
 ];
+
+const toHomePricingPlan = (plan: SitePricingPlan): SitePlanItem => {
+  const price =
+    typeof plan.monthlyPrice === 'number'
+      ? `$${plan.monthlyPrice}/mo`
+      : plan.customPriceLabel ?? 'Custom';
+
+  return {
+    id: `plan-${plan.id}`,
+    name: plan.name,
+    price,
+    description: plan.description,
+    features: [`${plan.includedUsage} included`, ...plan.features.slice(0, 4)],
+    ctaLabel: plan.ctaLabel,
+    ctaHref: '/pricing',
+    ctaClassName: plan.ctaClassName,
+    featured: plan.featured,
+    badge: plan.badge,
+  };
+};
+
+const homePricingPlans: SitePlanItem[] = sitePricingPlans
+  .filter((plan) => plan.id !== 'enterprise')
+  .map(toHomePricingPlan);
 
 export const siteHomeContent: SiteHomeContent = {
   navCtaLabel: 'Join Early Access →',
@@ -158,45 +185,9 @@ export const siteHomeContent: SiteHomeContent = {
   pricing: {
     id: 'pricing',
     tag: 'Pricing',
-    title: 'Simple. Flat. No Surprises.',
-    subtitle: 'Pay one rate, keep all your revenue. No per-call fees, no hidden charges.',
-    plans: [
-      {
-        id: 'plan-starter',
-        name: 'Starter',
-        price: '$149/mo',
-        description: 'Perfect for solo contractors getting started',
-        features: [
-          '24/7 AI call answering',
-          'Appointment scheduling',
-          'Deposit collection',
-          'Up to 100 calls/month',
-          'SMS + chat channels',
-        ],
-        ctaLabel: 'Get Started →',
-        ctaHref: '#early-access',
-        ctaClassName: 'btn-secondary',
-      },
-      {
-        id: 'plan-growth',
-        name: 'Growth',
-        price: '$299/mo',
-        description: 'For growing crews ready to scale revenue',
-        features: [
-          'Everything in Starter',
-          'Unlimited calls',
-          'Revenue insights dashboard',
-          'Multi-technician routing',
-          'Priority support',
-          'Custom AI personality',
-        ],
-        ctaLabel: 'Start Free Trial →',
-        ctaHref: '#early-access',
-        ctaClassName: 'btn-primary',
-        featured: true,
-        badge: 'Most Popular',
-      },
-    ],
+    title: 'Capture More Calls. Book More Jobs.',
+    subtitle: 'Choose the plan that matches your call volume, dispatch complexity, and revenue goals.',
+    plans: homePricingPlans,
   },
   earlyAccess: {
     id: 'early-access',
