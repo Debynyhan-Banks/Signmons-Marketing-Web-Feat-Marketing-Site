@@ -43,14 +43,39 @@ export interface SitePlanItem {
   badge?: string;
 }
 
-export interface SitePricingPlan {
+export type SitePricingPlanId = 'starter' | 'growth' | 'pro' | 'enterprise';
+
+export type SitePricingFeatureCategory =
+  | 'intake'
+  | 'recovery'
+  | 'routing'
+  | 'payment'
+  | 'policy'
+  | 'analytics'
+  | 'integration'
+  | 'handoff'
+  | 'support'
+  | 'operations';
+
+export interface SitePricingFeature {
   id: string;
+  label: string;
+  category: SitePricingFeatureCategory;
+  includedInTier: SitePricingPlanId;
+}
+
+export interface SitePricingPlan {
+  id: SitePricingPlanId;
   name: string;
   description: string;
   bestFor: string;
-  includedUsage: string;
-  setupFee: string;
-  features: string[];
+  includedCallVolume?: number;
+  includedUsageLabel?: string;
+  setupFeeAmount: number;
+  setupFeeLabel?: string;
+  vehicleRange: string;
+  overagePolicy: string;
+  features: SitePricingFeature[];
   ctaLabel: string;
   ctaHref: string;
   ctaClassName: 'btn-primary' | 'btn-secondary';
@@ -105,6 +130,7 @@ export interface SitePricingContent {
     tag: string;
     title: string;
     subtitle: string;
+    note?: string;
     items: SitePricingAddOn[];
   };
   compare: {
