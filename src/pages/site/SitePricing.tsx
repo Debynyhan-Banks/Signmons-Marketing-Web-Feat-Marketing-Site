@@ -25,6 +25,22 @@ const SitePricing = () => {
 
   useSiteEffects();
 
+  const formatIncludedUsage = (plan: SitePricingPlan) => {
+    if (typeof plan.includedCallVolume === 'number') {
+      return `Up to ${plan.includedCallVolume.toLocaleString()} AI-handled calls/month`;
+    }
+
+    return plan.includedUsageLabel ?? 'Custom volume';
+  };
+
+  const formatSetupFee = (plan: SitePricingPlan) => {
+    if (plan.setupFeeLabel) {
+      return plan.setupFeeLabel;
+    }
+
+    return `$${plan.setupFeeAmount.toLocaleString()} one-time setup`;
+  };
+
   const getDisplayedPrice = (plan: SitePricingPlan) => {
     if (plan.customPriceLabel) {
       return {
@@ -117,13 +133,15 @@ const SitePricing = () => {
                 )}
 
                 <div className="plan-original">{displayedPrice.originalLabel}</div>
-                <div className="plan-usage">{plan.includedUsage}</div>
-                <div className="plan-setup">{plan.setupFee}</div>
+                <div className="plan-usage">{formatIncludedUsage(plan)}</div>
+                <div className="plan-vehicle">{plan.vehicleRange}</div>
+                <div className="plan-overage">Overage: {plan.overagePolicy}</div>
+                <div className="plan-setup">{formatSetupFee(plan)}</div>
 
                 <ul className="plan-features">
                   {plan.features.map((feature) => (
-                    <li key={`${plan.id}-${feature}`}>
-                      <span className="ck">✓</span> {feature}
+                    <li key={`${plan.id}-${feature.id}`}>
+                      <span className="ck">✓</span> {feature.label}
                     </li>
                   ))}
                 </ul>
@@ -176,6 +194,7 @@ const SitePricing = () => {
               </article>
             ))}
           </div>
+          {sitePricingContent.addOns.note ? <p className="addons-note">{sitePricingContent.addOns.note}</p> : null}
         </section>
 
         <section className="faq-section fade-in">

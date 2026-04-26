@@ -34,13 +34,16 @@ const toHomePricingPlan = (plan: SitePricingPlan): SitePlanItem => {
     typeof plan.monthlyPrice === 'number'
       ? `$${plan.monthlyPrice}/mo`
       : plan.customPriceLabel ?? 'Custom';
+  const usage = typeof plan.includedCallVolume === 'number'
+    ? `Up to ${plan.includedCallVolume.toLocaleString()} AI-handled calls/month`
+    : plan.includedUsageLabel ?? 'Custom usage';
 
   return {
     id: `plan-${plan.id}`,
     name: plan.name,
     price,
     description: plan.description,
-    features: [`${plan.includedUsage} included`, ...plan.features.slice(0, 4)],
+    features: [`${usage} included`, ...plan.features.slice(0, 4).map((feature) => feature.label)],
     ctaLabel: plan.ctaLabel,
     ctaHref: '/pricing',
     ctaClassName: plan.ctaClassName,
