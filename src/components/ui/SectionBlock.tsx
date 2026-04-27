@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Typography from '@mui/material/Typography';
 import type { SxProps, Theme } from '@mui/material/styles';
 import { sectionContainerVariants, sectionItemVariants } from '../motion/presets';
+import { colors, effects } from '../../design/tokens';
 
 const joinClassNames = (...classNames: Array<string | undefined>) =>
   classNames.filter(Boolean).join(' ');
@@ -39,11 +40,11 @@ const SectionBlock = ({
     fontSize: { xs: '32px', sm: '40px', md: '46px' },
     lineHeight: 1.15,
     letterSpacing: '0.01em',
-    ...(variant === 'methods'
+      ...(variant === 'methods'
       ? {
           textAlign: 'center',
-          color: '#f28bff',
-          textShadow: '0 4px 14px rgba(224, 114, 255, 0.4)',
+          color: colors.brand.highlight,
+          textShadow: `0 4px 14px ${effects.glowPink}`,
           fontSize: { xs: '30px', sm: '38px', md: '44px' },
           lineHeight: 1.2,
           textWrap: 'balance',
@@ -58,11 +59,11 @@ const SectionBlock = ({
     fontFamily: 'inherit',
     fontSize: { xs: '16px', sm: '18px', md: '20px' },
     lineHeight: 1.4,
-    color: 'rgba(255, 255, 255, 0.9)',
+    color: colors.text.primary,
     ...(variant === 'methods'
       ? {
           textAlign: 'center',
-          color: 'rgba(255, 255, 255, 0.94)',
+          color: colors.text.primary,
           maxWidth: '780px',
           mx: 'auto',
           mt: 2,

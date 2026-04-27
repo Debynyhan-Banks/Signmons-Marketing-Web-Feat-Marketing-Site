@@ -13,3 +13,7 @@ Start here in governance repo:
 5. `AI_WORKFLOW_RULES.md`
 
 Frontend implementation belongs to this repo, but scope, ticket discipline, and DoD authority are defined in governance.
+
+Frontend UI contract in this repo:
+
+6. `docs/UI_STANDARDS.md`

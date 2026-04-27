@@ -33,5 +33,8 @@ jobs:
       - name: Pricing consistency check
         run: npm run -s pricing:check
 
+      - name: UI standards consistency check
+        run: npm run -s ui:check
+
       - name: Test
         run: npm test -- --runInBand

@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "node scripts/test.mjs",
-    "pricing:check": "node scripts/pricing-check.mjs"
+    "pricing:check": "node scripts/pricing-check.mjs",
+    "ui:check": "node scripts/ui-check.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
