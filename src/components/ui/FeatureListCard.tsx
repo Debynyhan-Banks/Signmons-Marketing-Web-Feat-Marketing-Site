@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import GlassCard from './GlassCard';
+import { colors, shadows } from '../../design/tokens';
 
 const joinClassNames = (...classNames: Array<string | undefined>) =>
   classNames.filter(Boolean).join(' ');
@@ -30,8 +31,8 @@ const FeatureListCard = ({
             variant="subtitle1"
             sx={{
               m: 0,
-              color: '#ffffff',
-              textShadow: '0 2px 10px rgba(6, 8, 24, 0.34)',
+              color: colors.neutral.white,
+              textShadow: shadows.title,
               letterSpacing: '0.01em',
               fontWeight: 700,
               fontSize: { xs: '20px', sm: '22px', md: '24px' },
@@ -46,8 +47,8 @@ const FeatureListCard = ({
           variant="body1"
           sx={{
             m: 0,
-            color: 'rgba(255, 255, 255, 0.92)',
-            textShadow: '0 2px 8px rgba(6, 8, 24, 0.25)',
+            color: colors.text.primary,
+            textShadow: shadows.title,
             fontSize: { xs: '15px', sm: '16px', md: '17px' },
             lineHeight: 1.5,
             textAlign: 'center',
@@ -71,7 +72,7 @@ const FeatureListCard = ({
           variant="caption"
           sx={{
             mt: '2px',
-            color: 'rgba(255, 255, 255, 0.82)',
+            color: colors.text.secondary,
             letterSpacing: '0.01em',
             fontWeight: 500,
             fontSize: { xs: '13px', sm: '14px', md: '15px' },
