@@ -331,6 +331,11 @@ export const siteContactContent: SiteContactContent = {
     },
   ],
   form: {
+    api: {
+      endpoint: '/api/marketing/lead-capture',
+      consentTextVersion: 'lead-capture-v1',
+      fallbackTimeZone: 'America/New_York',
+    },
     tag: 'Early Access Application',
     title: 'Claim Your Spot',
     subtitle:
@@ -346,7 +351,14 @@ export const siteContactContent: SiteContactContent = {
       industries: ['🔥 HVAC', '🚿 Plumbing', '⚡ Electrical', '🏗️ Construction', '🌿 Landscaping', '🏠 Roofing'],
     },
     submitLabel: 'Submit Application 🚀',
+    submittingLabel: 'Submitting…',
     footnote: "No spam. No credit card. We'll reach out within 24 hours.",
+    consentLabel: 'I agree Signmons may contact me about demo and onboarding via email, call, or SMS.',
+    requiredFieldNote: '* Email and consent are required.',
+    emailRequiredError: 'Email is required to submit this form.',
+    emailInvalidError: 'Enter a valid email address.',
+    consentRequiredError: 'Consent is required to submit.',
+    requestFailedError: 'We could not submit right now. Please try again in a moment.',
     successTitle: "You're on the list!",
     successBody: 'We received your application and will be in touch within 24 hours. In the meantime, check out the',
     successLinkLabel: 'live demo →',

@@ -78,3 +78,23 @@ footer{position:relative;z-index:1;border-top:1px solid var(--card-border);paddi
   color: var(--muted);
   margin-top: 0.85rem;
 }
+
+.contact-form-required {
+  text-align: center;
+  font-size: 0.72rem;
+  color: rgba(232, 232, 255, 0.85);
+  margin-top: 0.75rem;
+}
+
+.contact-form-error {
+  color: #ff9bb8;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.contact-form-meta {
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  color: rgba(232, 232, 255, 0.8);
+}
