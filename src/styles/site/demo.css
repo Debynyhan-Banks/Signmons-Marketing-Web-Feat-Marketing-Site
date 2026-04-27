@@ -48,6 +48,20 @@ footer{position:relative;z-index:1;border-top:1px solid var(--card-border);paddi
 .chips{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin:1.75rem 1.5rem 0}
 .chip{display:flex;align-items:center;gap:.4rem;background:var(--card-bg);border:1px solid var(--card-border);border-radius:50px;padding:.4rem .9rem;font-size:.75rem;color:var(--text)}
 .chip .dot{color:var(--green)}
+.live-demo-section{padding:2rem 1.5rem 0;max-width:760px;margin:0 auto}
+.live-demo-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:18px;padding:1.25rem}
+.live-demo-grid{display:grid;grid-template-columns:1fr;gap:.75rem}
+@media(min-width:760px){.live-demo-grid{grid-template-columns:1fr 1fr}}
+.form-group{display:flex;flex-direction:column;gap:.35rem}
+.form-group label{font-size:.75rem;color:var(--muted)}
+.check-opt{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.04);border:1px solid var(--card-border);border-radius:10px;padding:.55rem .75rem;cursor:pointer;transition:border-color .2s,background .2s;font-size:.8rem;margin-top:.65rem}
+.check-opt input[type=checkbox]{accent-color:var(--purple);width:14px;height:14px;cursor:pointer;flex-shrink:0}
+.live-demo-submit{margin-top:.75rem;width:100%}
+.live-demo-meta{font-size:.75rem;color:var(--muted);margin-top:.55rem}
+.live-demo-status{font-size:.82rem;line-height:1.45;margin-top:.45rem;color:var(--text)}
+.live-demo-status[data-status*="fail"]{color:var(--danger)}
+.live-demo-status[data-status*="success"],.live-demo-status[data-status*="complete"]{color:var(--success)}
+.contact-form-error{color:var(--danger);font-size:.8rem;line-height:1.5;margin-top:.55rem}
 .chat-section{padding:3rem 1.5rem;max-width:540px;margin:0 auto}
 .chat-header{display:flex;align-items:center;gap:.75rem;background:var(--card-bg);border:1px solid var(--card-border);border-radius:18px 18px 0 0;padding:1rem 1.25rem}
 .ai-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink));display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 0 12px rgba(180,80,255,.4)}
