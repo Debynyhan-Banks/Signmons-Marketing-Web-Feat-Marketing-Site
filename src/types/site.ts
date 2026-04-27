@@ -280,6 +280,11 @@ export interface SiteContactContent {
   };
   cards: SiteContactCard[];
   form: {
+    api: {
+      endpoint: string;
+      consentTextVersion: string;
+      fallbackTimeZone: string;
+    };
     tag: string;
     title: string;
     subtitle: string;
@@ -294,7 +299,14 @@ export interface SiteContactContent {
       industries: string[];
     };
     submitLabel: string;
+    submittingLabel: string;
     footnote: string;
+    consentLabel: string;
+    requiredFieldNote: string;
+    emailRequiredError: string;
+    emailInvalidError: string;
+    consentRequiredError: string;
+    requestFailedError: string;
     successTitle: string;
     successBody: string;
     successLinkLabel: string;
