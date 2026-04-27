@@ -1,30 +1,30 @@
 export const colors = {
   brand: {
-    primary: '#7A5CE6',
-    secondary: '#17EAD9',
-    accent: '#49C6FF',
-    highlight: '#FF37C7',
+    primary: '#1A6CF5',
+    secondary: '#00D4FF',
+    accent: '#6B8EFF',
+    highlight: '#4288FF',
   },
   neutral: {
     white: '#FFFFFF',
   },
   state: {
-    confirmed: '#2ED573',
-    candidate: '#FFD166',
-    disabled: '#5B6577',
+    confirmed: '#34D399',
+    candidate: '#FBBF24',
+    disabled: '#4A7FA8',
   },
   text: {
-    primary: '#F5F7FF',
-    secondary: '#C7D0E1',
-    muted: '#98A3B8',
+    primary: '#F0F4FF',
+    secondary: '#B8C5E0',
+    muted: '#6C8AB5',
   },
   bg: {
-    page: '#080C12',
-    card: '#101827',
-    surface: '#0E1420',
+    page: '#04060F',
+    card: '#0A1124',
+    surface: '#0F1A36',
   },
   border: {
-    subtle: '#1E2A3D',
+    subtle: 'rgba(74, 127, 168, 0.24)',
   },
 };
 
@@ -75,23 +75,23 @@ export const radii = {
 };
 
 export const effects = {
-  glowPrimary: 'rgba(122, 92, 230, 0.45)',
-  glowSecondary: 'rgba(73, 198, 255, 0.35)',
-  glowPink: 'rgba(255, 55, 199, 0.3)',
+  glowPrimary: 'rgba(26, 108, 245, 0.32)',
+  glowSecondary: 'rgba(0, 212, 255, 0.18)',
+  glowPink: 'rgba(66, 136, 255, 0.28)',
   glassSoft: 'rgba(255, 255, 255, 0.12)',
   glass: 'rgba(255, 255, 255, 0.08)',
   glassStrong: 'rgba(255, 255, 255, 0.16)',
-  glassTint: 'rgba(122, 92, 230, 0.15)',
+  glassTint: 'rgba(26, 108, 245, 0.15)',
   star: 'rgba(255, 255, 255, 0.7)',
   starSoft: 'rgba(255, 255, 255, 0.35)',
 };
 
 export const shadows = {
   title: '0 10px 30px rgba(7, 6, 30, 0.6)',
-  primaryCta: '0 16px 30px rgba(122, 92, 230, 0.35)',
-  stepIcon: '0 12px 30px rgba(122, 92, 230, 0.35)',
-  orbPrimary: '0 30px 80px rgba(122, 92, 230, 0.55)',
-  orbSecondary: '0 0 60px rgba(73, 198, 255, 0.4)',
+  primaryCta: '0 16px 30px rgba(26, 108, 245, 0.35)',
+  stepIcon: '0 12px 30px rgba(26, 108, 245, 0.35)',
+  orbPrimary: '0 30px 80px rgba(26, 108, 245, 0.45)',
+  orbSecondary: '0 0 60px rgba(0, 212, 255, 0.3)',
   panel: '0 24px 60px rgba(10, 8, 40, 0.45)',
   inset: 'inset 0 1px 0 rgba(255, 255, 255, 0.08)',
 };
@@ -102,19 +102,19 @@ export const borders = {
 
 export const badges = {
   confirmed: {
-    background: 'rgba(46, 213, 115, 0.16)',
+    background: 'rgba(52, 211, 153, 0.10)',
     text: colors.state.confirmed,
-    border: 'rgba(46, 213, 115, 0.4)',
+    border: 'rgba(52, 211, 153, 0.32)',
   },
   candidate: {
-    background: 'rgba(255, 209, 102, 0.16)',
+    background: 'rgba(251, 191, 36, 0.10)',
     text: colors.state.candidate,
-    border: 'rgba(255, 209, 102, 0.4)',
+    border: 'rgba(251, 191, 36, 0.32)',
   },
   disabled: {
-    background: 'rgba(91, 101, 119, 0.16)',
+    background: 'rgba(74, 127, 168, 0.16)',
     text: colors.state.disabled,
-    border: 'rgba(91, 101, 119, 0.4)',
+    border: 'rgba(74, 127, 168, 0.32)',
   },
 };
 

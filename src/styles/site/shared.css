@@ -1,17 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap');
 
 :root {
-  --space: #07081a;
-  --deep: #0c0e2b;
-  --purple: #8b2cf5;
-  --violet: #b44fff;
-  --pink: #ff3dff;
-  --cyan: #3df5ff;
-  --green: #00e5a0;
-  --text: #e8e8ff;
-  --muted: #8888b0;
-  --card-bg: rgba(255,255,255,0.04);
-  --card-border: rgba(180,80,255,0.18);
+  /* New canonical palette */
+  --bg-deep: #04060f;
+  --bg-surface-1: #0a1124;
+  --bg-surface-2: #0f1a36;
+  --bg-surface-3: #15234a;
+  --bg-elevated: #182a55;
+
+  --border-subtle: rgba(74, 127, 168, 0.16);
+  --border-default: rgba(74, 127, 168, 0.24);
+  --border-strong: rgba(74, 127, 168, 0.42);
+  --border-accent: rgba(26, 108, 245, 0.55);
+
+  --text-primary: #f0f4ff;
+  --text-secondary: #b8c5e0;
+  --text-muted: #6c8ab5;
+  --text-dim: #4a7fa8;
+
+  --accent-blue: #1a6cf5;
+  --accent-blue-hover: #4288ff;
+  --accent-cyan: #00d4ff;
+  --accent-violet: #6b8eff;
+
+  --success: #34d399;
+  --success-bg: rgba(52, 211, 153, 0.1);
+  --warning: #fbbf24;
+  --warning-bg: rgba(251, 191, 36, 0.1);
+  --danger: #f87171;
+  --danger-bg: rgba(248, 113, 113, 0.1);
+
+  --glow-blue: rgba(26, 108, 245, 0.32);
+  --glow-cyan: rgba(0, 212, 255, 0.18);
+
+  /* Backward-compatible aliases used by existing CSS */
+  --space: var(--bg-deep);
+  --deep: var(--bg-surface-1);
+  --purple: var(--accent-blue);
+  --violet: var(--accent-violet);
+  --pink: var(--accent-cyan);
+  --cyan: var(--accent-cyan);
+  --green: var(--success);
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --card-bg: rgba(24, 42, 85, 0.24);
+  --card-border: var(--border-default);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
