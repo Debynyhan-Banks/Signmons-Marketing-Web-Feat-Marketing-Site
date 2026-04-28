@@ -27,6 +27,7 @@ export const siteFooterLinks: SiteFooterLink[] = [
   { id: 'login', label: 'Login', href: '/login' },
   { id: 'terms', label: 'Terms', href: '/terms' },
   { id: 'privacy', label: 'Privacy', href: '/privacy' },
+  { id: 'sms-terms', label: 'SMS Terms', href: '/sms-terms' },
 ];
 
 const toHomePricingPlan = (plan: SitePricingPlan): SitePlanItem => {
