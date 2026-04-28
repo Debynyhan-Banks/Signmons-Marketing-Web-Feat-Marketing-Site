@@ -15,12 +15,12 @@ Global pointer: `/Users/debynyhanbanks/Web Projects/signmons-governance/GLOBAL_E
 
 ## Now
 
-- [ ] FE-011 Brand voice and AI personality page (`SCR-PUB-013`)
+- [ ] FE-012 Dispatch and scheduling page (`SCR-PUB-014`)
 
 ## Next
 
-- [ ] FE-012 Dispatch and scheduling page (`SCR-PUB-014`)
 - [ ] FE-013 Revenue dashboard and ROI calculator (`SCR-PUB-015`, `SCR-PUB-016`)
+- [ ] FE-014 Competitive comparison pages (`SCR-PUB-017`, `SCR-PUB-018`)
 - [ ] APP-006 Intake review and booking readiness (`SCR-APP-012`) - unlocks after marketing DoD exit criteria
 
 ## Done
@@ -31,3 +31,4 @@ Global pointer: `/Users/debynyhanbanks/Web Projects/signmons-governance/GLOBAL_E
 - [x] FE-008 Live demo flow + CTA route parity hardening (`SCR-PUB-001`, `SCR-PUB-006`, `SCR-PUB-007`, `SCR-PUB-009`)
 - [x] FE-009 Done-for-you setup page (`SCR-PUB-011`)
 - [x] FE-010 Business rules and custom logic page (`SCR-PUB-012`)
+- [x] FE-011 Brand voice and AI personality page (`SCR-PUB-013`)
