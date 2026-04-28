@@ -15,6 +15,8 @@ const staticTemplateByRoute: Record<string, string> = {
   '/privacy.html': 'privacy.html',
   '/terms': 'terms.html',
   '/terms.html': 'terms.html',
+  '/sms-terms': 'sms-terms.html',
+  '/sms-terms.html': 'sms-terms.html',
 };
 
 const normalizePath = (path: string) => {
