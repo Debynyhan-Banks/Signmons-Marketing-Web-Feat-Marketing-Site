@@ -452,3 +452,53 @@ export interface SiteBusinessRulesContent {
   };
   footerCopyright: string;
 }
+
+export interface SiteBrandVoiceControl {
+  id: string;
+  title: string;
+  description: string;
+  example: string;
+}
+
+export interface SiteBrandVoiceFallbackTrigger {
+  id: string;
+  label: string;
+}
+
+export interface SiteBrandVoiceContent {
+  navCtaLabel: string;
+  navCtaHref: string;
+  hero: {
+    tag: string;
+    title: string;
+    accent: string;
+    subtitle: string;
+  };
+  controls: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    items: SiteBrandVoiceControl[];
+  };
+  humanFallback: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    triggers: SiteBrandVoiceFallbackTrigger[];
+    note: string;
+  };
+  governance: {
+    tag: string;
+    title: string;
+    points: string[];
+  };
+  cta: {
+    title: string;
+    subtitle: string;
+    primaryLabel: string;
+    primaryHref: string;
+    secondaryLabel: string;
+    secondaryHref: string;
+  };
+  footerCopyright: string;
+}

@@ -1,4 +1,5 @@
 import type {
+  SiteBrandVoiceContent,
   SiteBusinessRulesContent,
   SiteContactContent,
   SiteDoneForYouContent,
@@ -557,6 +558,108 @@ export const siteBusinessRulesContent: SiteBusinessRulesContent = {
   cta: {
     title: 'Ready to Model Your Rule Flow?',
     subtitle: 'Book a revenue demo and we will map your business rules into a launch-ready policy design.',
+    primaryLabel: 'Book Revenue Demo',
+    primaryHref: '/contact',
+    secondaryLabel: 'See Live Demo',
+    secondaryHref: '/demo',
+  },
+  footerCopyright: '© 2026 Signmons Inc. All rights reserved.',
+};
+
+export const siteBrandVoiceContent: SiteBrandVoiceContent = {
+  navCtaLabel: 'Book Revenue Demo →',
+  navCtaHref: '/contact',
+  hero: {
+    tag: 'Brand Voice and AI Personality',
+    title: 'Your Brand,',
+    accent: 'On Every Call.',
+    subtitle:
+      'Signmons gives every tenant policy-driven control over how the AI greets, escalates, prices, and closes — so callers hear your business, not a generic bot.',
+  },
+  controls: {
+    tag: 'Voice Controls',
+    title: 'Six Tenant-Scoped Controls That Shape Every Conversation',
+    subtitle:
+      'Each control is stored on the tenant brand profile, versioned, and applied server-side so voice, SMS, and chat stay aligned without hand-tuning.',
+    items: [
+      {
+        id: 'control-greeting',
+        title: 'Greeting',
+        description:
+          'Set the opening line your AI uses on every inbound call, text, and chat so customers hear your business name, market, and intent from the first second.',
+        example:
+          'Example: "Thanks for calling Northwind HVAC — we keep Denver homes comfortable. How can I help today?"',
+      },
+      {
+        id: 'control-tone',
+        title: 'Tone',
+        description:
+          'Choose the persona register — warm, direct, technical, or premium concierge — that matches your brand. The AI adapts pacing and word choice to fit.',
+        example:
+          'Example: "Direct and reassuring" pairs short sentences with confident next-step language for emergency trades.',
+      },
+      {
+        id: 'control-prohibited',
+        title: 'Prohibited Phrases',
+        description:
+          'Block words and phrases your team will never say to customers. The AI rewrites in real time and the policy engine refuses to ship a response that violates the list.',
+        example:
+          'Example: Block "no problem", "guarantee", or specific competitor names so they never reach a caller.',
+      },
+      {
+        id: 'control-fee',
+        title: 'Fee Language',
+        description:
+          'Define the exact wording for diagnostic, after-hours, dispatch, and trip fees. Pricing copy stays consistent across voice, SMS, and chat without per-rep variation.',
+        example:
+          'Example: "There is a $89 diagnostic fee that is waived if you approve the repair today."',
+      },
+      {
+        id: 'control-escalation',
+        title: 'Escalation Language',
+        description:
+          'Set the precise script the AI uses when handing off to a human, including reason, expected wait, and callback option. Escalation never feels like a dead end.',
+        example:
+          'Example: "Let me get our dispatcher on the line — should be under two minutes, or I can have them call you back."',
+      },
+      {
+        id: 'control-closeout',
+        title: 'Closeout Messaging',
+        description:
+          'Lock the closing line and confirmation summary the AI uses after a booking, deposit, or callback is set, so the last touch reinforces your brand promise.',
+        example:
+          'Example: "You are confirmed for Thursday 9 to 11 AM. Your deposit is on file — we will text you a tech bio 30 minutes before arrival."',
+      },
+    ],
+  },
+  humanFallback: {
+    tag: 'Human Fallback',
+    title: 'Always a Human Path for Urgent or Unclear Cases',
+    subtitle:
+      'Voice is persuasive intake, not the final authority. Whenever the AI hits a policy-sensitive, unclear, or urgent moment, it routes to a person under your escalation script.',
+    triggers: [
+      { id: 'fallback-urgent', label: 'Stated emergency or safety risk (gas, water, no heat in winter, electrical hazard).' },
+      { id: 'fallback-unclear', label: 'Caller intent is unclear after two clarification attempts.' },
+      { id: 'fallback-policy', label: 'Request falls outside the tenant policy gate or pricing rules.' },
+      { id: 'fallback-failed', label: 'Payment, scheduling, or verification step fails and cannot self-recover.' },
+      { id: 'fallback-vip', label: 'Caller matches a VIP, dispute, or do-not-engage record on the tenant profile.' },
+    ],
+    note:
+      'Every fallback uses your configured escalation language and is logged with the trigger reason for audit and coaching.',
+  },
+  governance: {
+    tag: 'Policy Integrity',
+    title: 'Tenant-Scoped, Versioned, Auditable',
+    points: [
+      'Brand voice profiles are tenant-isolated — no cross-tenant prompts, phrases, or escalation scripts.',
+      'Every change to greeting, tone, prohibited phrases, fee, escalation, or closeout copy is versioned.',
+      'Server-side policy enforcement rejects responses that violate prohibited phrases or fee language rules.',
+      'SMS confirmation remains the canonical channel for required customer fields, regardless of voice tone.',
+    ],
+  },
+  cta: {
+    title: 'Ready to Hear Your Brand on Every Call?',
+    subtitle: 'Book a revenue demo and we will draft your greeting, escalation, fee, and closeout language with you.',
     primaryLabel: 'Book Revenue Demo',
     primaryHref: '/contact',
     secondaryLabel: 'See Live Demo',

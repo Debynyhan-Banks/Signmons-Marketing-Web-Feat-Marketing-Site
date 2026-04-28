@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import SiteBrandVoice from './pages/site/SiteBrandVoice';
 import SiteContact from './pages/site/SiteContact';
 import SiteBusinessRules from './pages/site/SiteBusinessRules';
 import SiteDemo from './pages/site/SiteDemo';
@@ -70,6 +71,14 @@ const App = () => {
     normalizedPath === '/site/done-for-you-setup.html'
   ) {
     return <SiteDoneForYouSetup />;
+  }
+
+  if (
+    normalizedPath === '/brand-voice' ||
+    normalizedPath === '/brand-voice.html' ||
+    normalizedPath === '/site/brand-voice.html'
+  ) {
+    return <SiteBrandVoice />;
   }
 
   const staticTemplate = staticTemplateByRoute[normalizedPath];
