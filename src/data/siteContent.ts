@@ -1,4 +1,5 @@
 import type {
+  SiteBusinessRulesContent,
   SiteContactContent,
   SiteDoneForYouContent,
   SiteDemoContent,
@@ -479,6 +480,83 @@ export const siteDoneForYouContent: SiteDoneForYouContent = {
   cta: {
     title: 'Need Signmons Configured for Your Team?',
     subtitle: 'Book a revenue demo and we will map your setup scope before launch.',
+    primaryLabel: 'Book Revenue Demo',
+    primaryHref: '/contact',
+    secondaryLabel: 'See Live Demo',
+    secondaryHref: '/demo',
+  },
+  footerCopyright: '© 2026 Signmons Inc. All rights reserved.',
+};
+
+export const siteBusinessRulesContent: SiteBusinessRulesContent = {
+  navCtaLabel: 'Book Revenue Demo →',
+  navCtaHref: '/contact',
+  hero: {
+    tag: 'Business Rules and Custom Logic',
+    title: 'Your Rules',
+    accent: 'Enforced Automatically',
+    subtitle:
+      'Signmons applies tenant-specific policies for intake, urgency, payment, scheduling, and escalation so every request follows the same operating standard.',
+  },
+  ruleTypes: {
+    tag: 'Rule Categories',
+    title: 'Configure Logic Across the Entire Booking Flow',
+    subtitle:
+      'Rules are trade-aware and tenant-scoped, so HVAC, plumbing, electrical, drains, and construction workflows stay consistent from first touch to dispatch.',
+    items: [
+      {
+        id: 'rule-service',
+        title: 'Service and Urgency Rules',
+        description:
+          'Classify requests into category and urgency tiers, then enforce emergency handling paths and response windows.',
+      },
+      {
+        id: 'rule-payment',
+        title: 'Payment and Booking Gate Rules',
+        description:
+          'Control when deposits or service fees are required and block scheduling until payment-policy conditions are met.',
+      },
+      {
+        id: 'rule-dispatch',
+        title: 'Routing and Escalation Rules',
+        description:
+          'Assign by service area, skill, shift, and after-hours policy with human fallback for unclear or high-risk requests.',
+      },
+    ],
+  },
+  examples: {
+    tag: 'Examples',
+    title: 'How Rules Execute in Practice',
+    items: [
+      {
+        id: 'example-emergency',
+        condition: 'No heat + winter hours',
+        outcome: 'Classify emergency, notify owner and on-call tech, and prioritize immediate scheduling.',
+      },
+      {
+        id: 'example-payment',
+        condition: 'Deposit required and unpaid',
+        outcome: 'Hold booking in review state and send payment link follow-up until policy gate clears.',
+      },
+      {
+        id: 'example-area',
+        condition: 'Electrical panel issue in West service zone',
+        outcome: 'Route to qualified West-zone technician and send customer confirmation once accepted.',
+      },
+    ],
+  },
+  governance: {
+    tag: 'Policy Integrity',
+    title: 'Built for Auditable Operations',
+    points: [
+      'All rule changes are tenant-scoped and versioned.',
+      'Dispatch and payment decisions are policy-driven, not arbitrary AI behavior.',
+      'Escalation and fallback events are logged for operational review.',
+    ],
+  },
+  cta: {
+    title: 'Ready to Model Your Rule Flow?',
+    subtitle: 'Book a revenue demo and we will map your business rules into a launch-ready policy design.',
     primaryLabel: 'Book Revenue Demo',
     primaryHref: '/contact',
     secondaryLabel: 'See Live Demo',

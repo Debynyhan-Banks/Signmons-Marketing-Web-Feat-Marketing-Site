@@ -1,0 +1,94 @@
+.site-business-rules-page .rules-shell {
+  width: min(1100px, 92%);
+  margin: 0 auto 5.5rem;
+  display: grid;
+  gap: 3rem;
+}
+
+.site-business-rules-page .rules-types,
+.site-business-rules-page .rules-examples,
+.site-business-rules-page .rules-governance,
+.site-business-rules-page .rules-cta {
+  background: rgba(12, 18, 40, 0.58);
+  border: 1px solid rgba(114, 152, 255, 0.22);
+  border-radius: 1.2rem;
+  padding: 1.6rem;
+  box-shadow: 0 16px 36px rgba(2, 6, 23, 0.38);
+}
+
+.site-business-rules-page .rules-type-grid,
+.site-business-rules-page .rules-example-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.site-business-rules-page .rules-card,
+.site-business-rules-page .rules-example-item {
+  background: rgba(22, 35, 72, 0.66);
+  border: 1px solid rgba(114, 152, 255, 0.22);
+  border-radius: 1rem;
+  padding: 1.05rem;
+}
+
+.site-business-rules-page .rules-card h3,
+.site-business-rules-page .rules-example-item h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.25;
+  margin-bottom: 0.55rem;
+}
+
+.site-business-rules-page .rules-card p,
+.site-business-rules-page .rules-example-item p {
+  color: rgba(224, 231, 255, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.site-business-rules-page .rules-governance ul {
+  list-style: none;
+  margin-top: 1.1rem;
+  display: grid;
+  gap: 0.7rem;
+  padding: 0;
+}
+
+.site-business-rules-page .rules-governance li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  color: rgba(224, 231, 255, 0.93);
+}
+
+.site-business-rules-page .rules-governance .ck {
+  color: #34d399;
+  font-weight: 700;
+  margin-top: 0.05rem;
+}
+
+.site-business-rules-page .rules-cta h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.site-business-rules-page .rules-cta p {
+  color: rgba(224, 231, 255, 0.86);
+  margin-top: 0.45rem;
+}
+
+.site-business-rules-page .rules-cta-actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (max-width: 980px) {
+  .site-business-rules-page .rules-type-grid,
+  .site-business-rules-page .rules-example-list {
+    grid-template-columns: 1fr;
+  }
+}

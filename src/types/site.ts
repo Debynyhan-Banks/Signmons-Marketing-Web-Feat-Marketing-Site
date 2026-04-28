@@ -404,3 +404,51 @@ export interface SiteDoneForYouContent {
   };
   footerCopyright: string;
 }
+
+export interface SiteBusinessRuleType {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface SiteBusinessRuleExample {
+  id: string;
+  condition: string;
+  outcome: string;
+}
+
+export interface SiteBusinessRulesContent {
+  navCtaLabel: string;
+  navCtaHref: string;
+  hero: {
+    tag: string;
+    title: string;
+    accent: string;
+    subtitle: string;
+  };
+  ruleTypes: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    items: SiteBusinessRuleType[];
+  };
+  examples: {
+    tag: string;
+    title: string;
+    items: SiteBusinessRuleExample[];
+  };
+  governance: {
+    tag: string;
+    title: string;
+    points: string[];
+  };
+  cta: {
+    title: string;
+    subtitle: string;
+    primaryLabel: string;
+    primaryHref: string;
+    secondaryLabel: string;
+    secondaryHref: string;
+  };
+  footerCopyright: string;
+}
