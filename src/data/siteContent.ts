@@ -2,6 +2,7 @@ import type {
   SiteBrandVoiceContent,
   SiteBusinessRulesContent,
   SiteContactContent,
+  SiteDispatchSchedulingContent,
   SiteDoneForYouContent,
   SiteDemoContent,
   SiteFooterLink,
@@ -661,6 +662,113 @@ export const siteBrandVoiceContent: SiteBrandVoiceContent = {
   cta: {
     title: 'Ready to Hear Your Brand on Every Call?',
     subtitle: 'Book a revenue demo and we will draft your greeting, escalation, fee, and closeout language with you.',
+    primaryLabel: 'Book Revenue Demo',
+    primaryHref: '/contact',
+    secondaryLabel: 'See Live Demo',
+    secondaryHref: '/demo',
+  },
+  footerCopyright: '© 2026 Signmons Inc. All rights reserved.',
+};
+
+export const siteDispatchSchedulingContent: SiteDispatchSchedulingContent = {
+  navCtaLabel: 'Book Revenue Demo →',
+  navCtaHref: '/contact',
+  hero: {
+    tag: 'Dispatch and Scheduling',
+    title: 'Route Work',
+    accent: 'Without Dispatch Chaos',
+    subtitle:
+      'Signmons moves qualified jobs from intake to assignment with policy-driven scheduling, technician routing, and customer-safe status updates.',
+  },
+  board: {
+    tag: 'Dispatch Board',
+    title: 'One Queue Across New, Ready, Assigned, and Escalated Work',
+    subtitle:
+      'Every job card carries category, urgency, payment-gate state, preferred window, and recommended assignee so dispatch decisions are consistent.',
+    lanes: [
+      {
+        id: 'lane-new',
+        title: 'New Requests',
+        description: 'Fresh intake records with booking-ready summaries and required-field completeness indicators.',
+      },
+      {
+        id: 'lane-ready',
+        title: 'Ready to Assign',
+        description: 'Jobs that cleared policy + payment gates and are waiting for dispatcher approval or routing execution.',
+      },
+      {
+        id: 'lane-assigned',
+        title: 'Assigned / Accepted',
+        description: 'Technician ownership and acceptance state tracked in real time with fallback on no-response.',
+      },
+      {
+        id: 'lane-escalated',
+        title: 'Escalated',
+        description: 'Urgent, unclear, or policy-sensitive cases with human handoff and escalation timeline.',
+      },
+    ],
+  },
+  routing: {
+    tag: 'Routing Logic',
+    title: 'Rule-Based Assignment, Not Freeform AI Guessing',
+    subtitle:
+      'Routing follows tenant policy using trade, service area, urgency, business hours, availability, and payment state before assignment.',
+    rules: [
+      {
+        id: 'route-emergency',
+        condition: 'Emergency HVAC no-heat call after hours',
+        action: 'Notify owner + on-call tech, elevate priority, and hold customer on human escalation path.',
+      },
+      {
+        id: 'route-skill',
+        condition: 'Electrical panel issue in West service zone',
+        action: 'Recommend West-zone certified electrical tech with reason attached on assignment detail.',
+      },
+      {
+        id: 'route-payment',
+        condition: 'Deposit policy required but unpaid',
+        action: 'Block scheduling transition and send payment follow-up until booking gate clears.',
+      },
+    ],
+  },
+  statusFlow: {
+    tag: 'Scheduling Lifecycle',
+    title: 'Structured Status Updates for Owners, Techs, and Customers',
+    steps: [
+      {
+        id: 'status-ready',
+        title: 'Ready',
+        description: 'Intake complete, urgency classified, payment policy checked, and dispatcher review available.',
+      },
+      {
+        id: 'status-assigned',
+        title: 'Assigned',
+        description: 'Recommended or selected technician notified with secure job link and acceptance timer.',
+      },
+      {
+        id: 'status-on-way',
+        title: 'On My Way',
+        description: 'Technician status triggers outbound customer update and owner dashboard timeline event.',
+      },
+      {
+        id: 'status-complete',
+        title: 'Completed',
+        description: 'Job completion closes workflow and publishes conversion + revenue telemetry for reporting.',
+      },
+    ],
+  },
+  governance: {
+    tag: 'Policy Integrity',
+    title: 'Scheduling Decisions Stay Policy-Locked',
+    points: [
+      'Scheduling windows respect technician availability, service-area coverage, and urgency class.',
+      'Dispatch routing follows tenant-defined rules and logs assignment reasons for auditability.',
+      'Human fallback remains active for urgent, unclear, failed, or policy-sensitive dispatch states.',
+    ],
+  },
+  cta: {
+    title: 'Want to See Your Dispatch Workflow in Action?',
+    subtitle: 'Book a revenue demo to map your scheduling and routing policy before launch.',
     primaryLabel: 'Book Revenue Demo',
     primaryHref: '/contact',
     secondaryLabel: 'See Live Demo',

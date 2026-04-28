@@ -1,0 +1,47 @@
+
+> vite-tmp@0.0.0 test
+> node scripts/test.mjs --runInBand --reporter=default
+
+
+ RUN  v4.1.5 /sessions/practical-happy-lamport/mnt/signmons-marketing-web-feat-marketing-site
+
+stderr | src/pages/site/SiteDemo.test.tsx > SiteDemo > plays demo video when frame is clicked
+An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
+
+stderr | src/pages/site/SiteDemo.test.tsx > SiteDemo > sends a chat message and returns an ai response
+An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
+
+stderr | src/pages/site/SiteCtaParity.test.tsx > FE-008 CTA route parity > keeps high-intent home CTAs on live routes
+An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
+
+stderr | src/pages/site/SiteLegalParity.test.tsx > FE-006 legal route/content parity > keeps legal links reachable in home footer
+An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
+
+stderr | src/pages/site/SiteDemo.test.tsx > SiteDemo > starts live demo flow and resolves status by leadId
+An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
+
+stderr | src/pages/site/SiteLegalParity.test.tsx > FE-006 legal route/content parity > keeps legal links reachable in demo footer
+An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
+
+stderr | src/pages/site/SiteDemo.test.tsx > SiteDemo > shows failure state when backend returns failed status
+An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
+
+ ✓ src/pages/site/SiteDemo.test.tsx (4 tests) 299ms
+ ✓ src/pages/site/SiteCtaParity.test.tsx (3 tests) 287ms
+ ✓ src/pages/site/SiteLegalParity.test.tsx (4 tests) 335ms
+ ✓ src/pages/site/SiteDoneForYouSetup.test.tsx (1 test) 145ms
+ ✓ src/pages/site/SitePricing.test.tsx (3 tests) 272ms
+ ✓ src/pages/site/SiteContact.test.tsx (3 tests) 299ms
+ ✓ src/pages/site/SiteBrandVoice.test.tsx (1 test) 157ms
+ ✓ src/pages/site/SiteDispatchScheduling.test.tsx (1 test) 146ms
+ ✓ src/pages/site/SiteBusinessRules.test.tsx (1 test) 179ms
+stderr | src/pages/site/SiteHome.test.tsx > SiteHome > renders core hero and conversion sections
+An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
+
+ ✓ src/pages/site/SiteHome.test.tsx (1 test) 131ms
+
+ Test Files  10 passed (10)
+      Tests  22 passed (22)
+   Start at  22:22:49
+   Duration  12.33s (transform 389ms, setup 2.56s, import 2.55s, tests 2.25s, environment 23.83s)
+
