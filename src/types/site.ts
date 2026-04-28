@@ -562,3 +562,100 @@ export interface SiteDispatchSchedulingContent {
   };
   footerCopyright: string;
 }
+
+export interface SiteRevenueMetric {
+  id: string;
+  label: string;
+  value: string;
+  detail: string;
+}
+
+export interface SiteRevenueFunnelStep {
+  id: string;
+  stage: string;
+  description: string;
+}
+
+export interface SiteRevenueDashboardContent {
+  navCtaLabel: string;
+  navCtaHref: string;
+  hero: {
+    tag: string;
+    title: string;
+    accent: string;
+    subtitle: string;
+  };
+  metrics: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    items: SiteRevenueMetric[];
+  };
+  funnel: {
+    tag: string;
+    title: string;
+    steps: SiteRevenueFunnelStep[];
+  };
+  quality: {
+    tag: string;
+    title: string;
+    points: string[];
+  };
+  cta: {
+    title: string;
+    subtitle: string;
+    primaryLabel: string;
+    primaryHref: string;
+    secondaryLabel: string;
+    secondaryHref: string;
+  };
+  footerCopyright: string;
+}
+
+export interface SiteRoiInputPreset {
+  missedCallsPerWeek: number;
+  averageTicketValue: number;
+  closeRatePercent: number;
+  emergencySharePercent: number;
+  monthlyCallVolume: number;
+  depositAmount: number;
+}
+
+export interface SiteRoiCalculatorContent {
+  navCtaLabel: string;
+  navCtaHref: string;
+  hero: {
+    tag: string;
+    title: string;
+    accent: string;
+    subtitle: string;
+  };
+  calculator: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    preset: SiteRoiInputPreset;
+    fields: {
+      missedCallsPerWeekLabel: string;
+      averageTicketValueLabel: string;
+      closeRatePercentLabel: string;
+      emergencySharePercentLabel: string;
+      monthlyCallVolumeLabel: string;
+      depositAmountLabel: string;
+    };
+  };
+  assumptions: {
+    tag: string;
+    title: string;
+    points: string[];
+  };
+  cta: {
+    title: string;
+    subtitle: string;
+    primaryLabel: string;
+    primaryHref: string;
+    secondaryLabel: string;
+    secondaryHref: string;
+  };
+  footerCopyright: string;
+}

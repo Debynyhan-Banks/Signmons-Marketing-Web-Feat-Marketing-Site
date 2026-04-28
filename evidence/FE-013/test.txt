@@ -1,0 +1,13 @@
+
+> vite-tmp@0.0.0 test
+> node scripts/test.mjs --runInBand
+
+
+ RUN  v4.1.5 /Users/debynyhanbanks/Web Projects/signmons-marketing-web-feat-marketing-site
+
+
+ Test Files  12 passed (12)
+      Tests  24 passed (24)
+   Start at  18:40:41
+   Duration  2.45s (transform 965ms, setup 961ms, import 3.07s, tests 4.18s, environment 8.90s)
+

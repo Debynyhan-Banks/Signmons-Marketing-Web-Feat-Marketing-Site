@@ -5,6 +5,8 @@ import type {
   SiteDispatchSchedulingContent,
   SiteDoneForYouContent,
   SiteDemoContent,
+  SiteRevenueDashboardContent,
+  SiteRoiCalculatorContent,
   SiteFooterLink,
   SiteHomeContent,
   SiteLink,
@@ -769,6 +771,147 @@ export const siteDispatchSchedulingContent: SiteDispatchSchedulingContent = {
   cta: {
     title: 'Want to See Your Dispatch Workflow in Action?',
     subtitle: 'Book a revenue demo to map your scheduling and routing policy before launch.',
+    primaryLabel: 'Book Revenue Demo',
+    primaryHref: '/contact',
+    secondaryLabel: 'See Live Demo',
+    secondaryHref: '/demo',
+  },
+  footerCopyright: '© 2026 Signmons Inc. All rights reserved.',
+};
+
+export const siteRevenueDashboardContent: SiteRevenueDashboardContent = {
+  navCtaLabel: 'Book Revenue Demo →',
+  navCtaHref: '/contact',
+  hero: {
+    tag: 'Revenue Recovery Dashboard',
+    title: 'See Exactly',
+    accent: 'What Signmons Recovered',
+    subtitle:
+      'Track captured demand, booking conversion, payment completion, and dispatch outcomes in one tenant-scoped revenue view.',
+  },
+  metrics: {
+    tag: 'Core Metrics',
+    title: 'Operational Proof, Not Vanity Charts',
+    subtitle:
+      'Every metric ties to the same intake-to-completion chain so owners can see recovered revenue and conversion health.',
+    items: [
+      {
+        id: 'metric-calls',
+        label: 'Calls Captured',
+        value: '1,248',
+        detail: 'Inbound voice/SMS/chat requests handled with required-field confirmation.',
+      },
+      {
+        id: 'metric-recovery',
+        label: 'Missed Calls Recovered',
+        value: '312',
+        detail: 'Leads recovered through follow-up workflow and converted back into active job flow.',
+      },
+      {
+        id: 'metric-booked',
+        label: 'Jobs Booked',
+        value: '486',
+        detail: 'Requests that cleared policy + payment gates and reached scheduled or completed status.',
+      },
+      {
+        id: 'metric-revenue',
+        label: 'Estimated Revenue Recovered',
+        value: '$182,400',
+        detail: 'Modeled from booked outcomes and ticket assumptions for planning visibility.',
+      },
+    ],
+  },
+  funnel: {
+    tag: 'Conversion Funnel',
+    title: 'From Inbound Demand to Completed Work',
+    steps: [
+      {
+        id: 'funnel-1',
+        stage: 'Call -> Qualified Lead',
+        description: 'Intake captures required fields and urgency classification.',
+      },
+      {
+        id: 'funnel-2',
+        stage: 'Qualified Lead -> Payment Link Sent',
+        description: 'Policy engine triggers deposit/service-fee request where required.',
+      },
+      {
+        id: 'funnel-3',
+        stage: 'Payment -> Booked Job',
+        description: 'Booking gate clears after successful payment or approved policy exception.',
+      },
+      {
+        id: 'funnel-4',
+        stage: 'Booked Job -> Completed',
+        description: 'Dispatch assignment, technician updates, and completion events close the loop.',
+      },
+    ],
+  },
+  quality: {
+    tag: 'AI Quality Signals',
+    title: 'Quality Indicators That Protect Conversion',
+    points: [
+      'Repeat-question rate by trade and urgency class.',
+      'First-response latency and escalation handoff time.',
+      'Failed-intake and policy-block rates for operational coaching.',
+    ],
+  },
+  cta: {
+    title: 'Want a Revenue Recovery Baseline for Your Team?',
+    subtitle: 'Book a revenue demo and we will map your current call-to-booked-job conversion path.',
+    primaryLabel: 'Book Revenue Demo',
+    primaryHref: '/contact',
+    secondaryLabel: 'See Live Demo',
+    secondaryHref: '/demo',
+  },
+  footerCopyright: '© 2026 Signmons Inc. All rights reserved.',
+};
+
+export const siteRoiCalculatorContent: SiteRoiCalculatorContent = {
+  navCtaLabel: 'Book Revenue Demo →',
+  navCtaHref: '/contact',
+  hero: {
+    tag: 'ROI Calculator',
+    title: 'Estimate Your',
+    accent: 'Recovered Revenue',
+    subtitle:
+      'Model missed-call loss, conversion improvement, and deposit capture to compare projected upside against plan cost.',
+  },
+  calculator: {
+    tag: 'ROI Inputs',
+    title: 'Use Your Current Operating Numbers',
+    subtitle:
+      'Inputs stay local to this page for planning. Production ROI reporting is sourced from tenant revenue events.',
+    preset: {
+      missedCallsPerWeek: 25,
+      averageTicketValue: 650,
+      closeRatePercent: 42,
+      emergencySharePercent: 18,
+      monthlyCallVolume: 420,
+      depositAmount: 89,
+    },
+    fields: {
+      missedCallsPerWeekLabel: 'Missed calls per week',
+      averageTicketValueLabel: 'Average ticket value ($)',
+      closeRatePercentLabel: 'Close rate on recovered calls (%)',
+      emergencySharePercentLabel: 'Emergency share of recovered jobs (%)',
+      monthlyCallVolumeLabel: 'Monthly inbound call volume',
+      depositAmountLabel: 'Average deposit/service fee ($)',
+    },
+  },
+  assumptions: {
+    tag: 'Model Assumptions',
+    title: 'How This Estimate Is Calculated',
+    points: [
+      'Recovered jobs per month = missed calls per week x 4.33 x close rate.',
+      'Revenue recovered = recovered jobs x average ticket value.',
+      'Emergency uplift applies a 15% premium on emergency share of recovered jobs.',
+      'Deposit capture estimate = monthly call volume x 35% policy-trigger rate x deposit amount.',
+    ],
+  },
+  cta: {
+    title: 'Ready to Validate This With Real Intake Data?',
+    subtitle: 'Book a revenue demo and we will compare this model against your live call flow.',
     primaryLabel: 'Book Revenue Demo',
     primaryHref: '/contact',
     secondaryLabel: 'See Live Demo',

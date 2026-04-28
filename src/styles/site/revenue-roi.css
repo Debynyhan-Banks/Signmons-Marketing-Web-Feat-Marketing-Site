@@ -1,0 +1,145 @@
+.site-revenue-dashboard-page .revenue-dashboard-shell,
+.site-roi-page .roi-shell {
+  width: min(1100px, 92%);
+  margin: 0 auto 5.5rem;
+  display: grid;
+  gap: 3rem;
+}
+
+.site-revenue-dashboard-page .revenue-metrics,
+.site-revenue-dashboard-page .revenue-funnel,
+.site-revenue-dashboard-page .revenue-quality,
+.site-revenue-dashboard-page .revenue-cta,
+.site-roi-page .roi-calculator,
+.site-roi-page .roi-results,
+.site-roi-page .roi-assumptions,
+.site-roi-page .roi-cta {
+  background: rgba(12, 18, 40, 0.58);
+  border: 1px solid rgba(114, 152, 255, 0.22);
+  border-radius: 1.2rem;
+  padding: 1.6rem;
+  box-shadow: 0 16px 36px rgba(2, 6, 23, 0.38);
+}
+
+.site-revenue-dashboard-page .revenue-metric-grid,
+.site-revenue-dashboard-page .revenue-funnel-grid,
+.site-roi-page .roi-result-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.site-revenue-dashboard-page .revenue-funnel-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.site-revenue-dashboard-page .revenue-metric-card,
+.site-revenue-dashboard-page .revenue-funnel-card,
+.site-roi-page .roi-result-card {
+  background: rgba(22, 35, 72, 0.66);
+  border: 1px solid rgba(114, 152, 255, 0.22);
+  border-radius: 1rem;
+  padding: 1.05rem;
+}
+
+.site-revenue-dashboard-page .revenue-metric-label,
+.site-roi-page .roi-result-label {
+  color: rgba(186, 204, 255, 0.82);
+  font-size: 0.84rem;
+  margin-bottom: 0.35rem;
+}
+
+.site-revenue-dashboard-page .revenue-metric-value,
+.site-roi-page .roi-result-value {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  color: #f0f4ff;
+  margin-bottom: 0.4rem;
+}
+
+.site-revenue-dashboard-page .revenue-metric-detail,
+.site-revenue-dashboard-page .revenue-funnel-card p,
+.site-roi-page .roi-assumptions li {
+  color: rgba(224, 231, 255, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.site-revenue-dashboard-page .revenue-funnel-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  margin-bottom: 0.45rem;
+}
+
+.site-revenue-dashboard-page .revenue-quality ul,
+.site-roi-page .roi-assumptions ul {
+  list-style: none;
+  margin-top: 1.1rem;
+  display: grid;
+  gap: 0.7rem;
+  padding: 0;
+}
+
+.site-revenue-dashboard-page .revenue-quality li,
+.site-roi-page .roi-assumptions li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.site-revenue-dashboard-page .revenue-quality .ck,
+.site-roi-page .roi-assumptions .ck {
+  color: #34d399;
+  font-weight: 700;
+  margin-top: 0.05rem;
+}
+
+.site-revenue-dashboard-page .revenue-cta-actions,
+.site-roi-page .roi-cta-actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.site-roi-page .roi-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.site-roi-page .roi-grid label {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.site-roi-page .roi-grid span {
+  font-size: 0.88rem;
+  color: rgba(186, 204, 255, 0.88);
+}
+
+.site-roi-page .roi-grid input {
+  height: 2.5rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(114, 152, 255, 0.3);
+  background: rgba(17, 27, 57, 0.9);
+  color: #f0f4ff;
+  padding: 0 0.75rem;
+  font-size: 0.96rem;
+}
+
+.site-roi-page .roi-result-card--total {
+  border-color: rgba(26, 108, 245, 0.55);
+  box-shadow: 0 0 22px rgba(26, 108, 245, 0.2);
+}
+
+@media (max-width: 980px) {
+  .site-revenue-dashboard-page .revenue-metric-grid,
+  .site-revenue-dashboard-page .revenue-funnel-grid,
+  .site-roi-page .roi-result-grid,
+  .site-roi-page .roi-grid {
+    grid-template-columns: 1fr;
+  }
+}
