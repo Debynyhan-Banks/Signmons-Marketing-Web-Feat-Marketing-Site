@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import SiteContact from './pages/site/SiteContact';
+import SiteBusinessRules from './pages/site/SiteBusinessRules';
 import SiteDemo from './pages/site/SiteDemo';
 import SiteDoneForYouSetup from './pages/site/SiteDoneForYouSetup';
 import SiteHome from './pages/site/SiteHome';
@@ -57,6 +58,10 @@ const App = () => {
 
   if (normalizedPath === '/pricing' || normalizedPath === '/pricing.html' || normalizedPath === '/site/pricing.html') {
     return <SitePricing />;
+  }
+
+  if (normalizedPath === '/business-rules' || normalizedPath === '/business-rules.html' || normalizedPath === '/site/business-rules.html') {
+    return <SiteBusinessRules />;
   }
 
   if (
