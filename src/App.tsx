@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import SiteContact from './pages/site/SiteContact';
 import SiteDemo from './pages/site/SiteDemo';
+import SiteDoneForYouSetup from './pages/site/SiteDoneForYouSetup';
 import SiteHome from './pages/site/SiteHome';
 import SitePricing from './pages/site/SitePricing';
 
@@ -56,6 +57,14 @@ const App = () => {
 
   if (normalizedPath === '/pricing' || normalizedPath === '/pricing.html' || normalizedPath === '/site/pricing.html') {
     return <SitePricing />;
+  }
+
+  if (
+    normalizedPath === '/done-for-you-setup' ||
+    normalizedPath === '/done-for-you-setup.html' ||
+    normalizedPath === '/site/done-for-you-setup.html'
+  ) {
+    return <SiteDoneForYouSetup />;
   }
 
   const staticTemplate = staticTemplateByRoute[normalizedPath];
