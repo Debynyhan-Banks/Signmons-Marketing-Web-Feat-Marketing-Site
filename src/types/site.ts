@@ -502,3 +502,63 @@ export interface SiteBrandVoiceContent {
   };
   footerCopyright: string;
 }
+
+export interface SiteDispatchLane {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface SiteDispatchRoutingRule {
+  id: string;
+  condition: string;
+  action: string;
+}
+
+export interface SiteDispatchStatusStep {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface SiteDispatchSchedulingContent {
+  navCtaLabel: string;
+  navCtaHref: string;
+  hero: {
+    tag: string;
+    title: string;
+    accent: string;
+    subtitle: string;
+  };
+  board: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    lanes: SiteDispatchLane[];
+  };
+  routing: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    rules: SiteDispatchRoutingRule[];
+  };
+  statusFlow: {
+    tag: string;
+    title: string;
+    steps: SiteDispatchStatusStep[];
+  };
+  governance: {
+    tag: string;
+    title: string;
+    points: string[];
+  };
+  cta: {
+    title: string;
+    subtitle: string;
+    primaryLabel: string;
+    primaryHref: string;
+    secondaryLabel: string;
+    secondaryHref: string;
+  };
+  footerCopyright: string;
+}

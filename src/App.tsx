@@ -3,6 +3,7 @@ import SiteBrandVoice from './pages/site/SiteBrandVoice';
 import SiteContact from './pages/site/SiteContact';
 import SiteBusinessRules from './pages/site/SiteBusinessRules';
 import SiteDemo from './pages/site/SiteDemo';
+import SiteDispatchScheduling from './pages/site/SiteDispatchScheduling';
 import SiteDoneForYouSetup from './pages/site/SiteDoneForYouSetup';
 import SiteHome from './pages/site/SiteHome';
 import SitePricing from './pages/site/SitePricing';
@@ -79,6 +80,14 @@ const App = () => {
     normalizedPath === '/site/brand-voice.html'
   ) {
     return <SiteBrandVoice />;
+  }
+
+  if (
+    normalizedPath === '/dispatch-scheduling' ||
+    normalizedPath === '/dispatch-scheduling.html' ||
+    normalizedPath === '/site/dispatch-scheduling.html'
+  ) {
+    return <SiteDispatchScheduling />;
   }
 
   const staticTemplate = staticTemplateByRoute[normalizedPath];
