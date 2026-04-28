@@ -1,0 +1,7 @@
+Command: npm run -s build
+Result: PASS
+
+vite v7.3.1 built 347 modules.
+dist/index.html: 0.74 kB (0.40 kB gzip)
+dist/assets/index-D6QEgPyA.css: 61.98 kB (10.09 kB gzip)
+dist/assets/index-Cv5nKHuZ.js: 343.21 kB (106.94 kB gzip)

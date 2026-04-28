@@ -1,0 +1,2 @@
+Command: npm run -s lint
+Result: PASS (no lint output)

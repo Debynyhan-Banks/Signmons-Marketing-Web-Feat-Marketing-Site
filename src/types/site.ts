@@ -70,6 +70,8 @@ export interface SitePricingPlan {
   description: string;
   bestFor: string;
   includedCallVolume?: number;
+  overageBlockSizeCalls?: number;
+  overageBlockPrice?: number;
   includedUsageLabel?: string;
   setupFeeAmount: number;
   setupFeeLabel?: string;
@@ -576,6 +578,128 @@ export interface SiteDispatchSchedulingContent {
     primaryHref: string;
     secondaryLabel: string;
     secondaryHref: string;
+  };
+  footerCopyright: string;
+}
+
+export interface SiteRevenueMetric {
+  id: string;
+  label: string;
+  value: string;
+  detail: string;
+}
+
+export interface SiteRevenueFunnelStep {
+  id: string;
+  stage: string;
+  description: string;
+}
+
+export interface SiteRevenueDashboardContent {
+  navCtaLabel: string;
+  navCtaHref: string;
+  hero: {
+    tag: string;
+    title: string;
+    accent: string;
+    subtitle: string;
+  };
+  metrics: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    sampleLabel: string;
+    items: SiteRevenueMetric[];
+  };
+  funnel: {
+    tag: string;
+    title: string;
+    steps: SiteRevenueFunnelStep[];
+  };
+  quality: {
+    tag: string;
+    title: string;
+    points: string[];
+  };
+  assumptions: {
+    tag: string;
+    title: string;
+    points: string[];
+  };
+  billable: {
+    tag: string;
+    title: string;
+    points: string[];
+  };
+  cta: {
+    title: string;
+    subtitle: string;
+    primaryLabel: string;
+    primaryHref: string;
+    secondaryLabel: string;
+    secondaryHref: string;
+  };
+  footerCopyright: string;
+}
+
+export interface SiteRoiInputPreset {
+  planId: Exclude<SitePricingPlanId, 'enterprise'>;
+  missedCallsPerWeek: number;
+  recoveryRatePercent: number;
+  bookingRatePercent: number;
+  completionRatePercent: number;
+  averageCompletedJobValue: number;
+  emergencySharePercent: number;
+  monthlyCallVolume: number;
+  performanceFeesEnabled: boolean;
+  qualifiedBookedJobFee: number;
+  emergencyCapturedJobFee: number;
+}
+
+export interface SiteRoiCalculatorContent {
+  navCtaLabel: string;
+  navCtaHref: string;
+  hero: {
+    tag: string;
+    title: string;
+    accent: string;
+    subtitle: string;
+  };
+  calculator: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    preset: SiteRoiInputPreset;
+    fields: {
+      planLabel: string;
+      missedCallsPerWeekLabel: string;
+      recoveryRatePercentLabel: string;
+      bookingRatePercentLabel: string;
+      completionRatePercentLabel: string;
+      averageCompletedJobValueLabel: string;
+      emergencySharePercentLabel: string;
+      monthlyCallVolumeLabel: string;
+      performanceFeesEnabledLabel: string;
+      qualifiedBookedJobFeeLabel: string;
+      emergencyCapturedJobFeeLabel: string;
+    };
+  };
+  assumptions: {
+    tag: string;
+    title: string;
+    points: string[];
+  };
+  billable: {
+    tag: string;
+    title: string;
+    points: string[];
+  };
+  disclosure: string;
+  cta: {
+    title: string;
+    subtitle: string;
+    primaryLabel: string;
+    primaryHref: string;
   };
   footerCopyright: string;
 }

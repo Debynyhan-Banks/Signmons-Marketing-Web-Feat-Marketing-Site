@@ -5,6 +5,8 @@ import type {
   SiteDispatchSchedulingContent,
   SiteDoneForYouContent,
   SiteDemoContent,
+  SiteRevenueDashboardContent,
+  SiteRoiCalculatorContent,
   SiteFooterLink,
   SiteHomeContent,
   SiteLink,
@@ -26,6 +28,8 @@ export const siteFooterLinks: SiteFooterLink[] = [
   { id: 'home', label: 'Home', href: '/' },
   { id: 'demo', label: 'Demo', href: '/demo' },
   { id: 'pricing', label: 'Pricing', href: '/pricing' },
+  { id: 'revenue', label: 'Revenue', href: '/revenue-dashboard' },
+  { id: 'roi', label: 'ROI Calculator', href: '/roi-calculator' },
   { id: 'blog', label: 'Blog', href: '/blog' },
   { id: 'about', label: 'About', href: '/about' },
   { id: 'contact', label: 'Contact', href: '/contact' },
@@ -773,6 +777,192 @@ export const siteDispatchSchedulingContent: SiteDispatchSchedulingContent = {
     primaryHref: '/contact',
     secondaryLabel: 'See Live Demo',
     secondaryHref: '/demo',
+  },
+  footerCopyright: '© 2026 Signmons Inc. All rights reserved.',
+};
+
+export const siteRevenueDashboardContent: SiteRevenueDashboardContent = {
+  navCtaLabel: 'Book Revenue Demo →',
+  navCtaHref: '/contact',
+  hero: {
+    tag: 'Revenue Recovery Dashboard',
+    title: 'See How Signmons',
+    accent: 'Connects Work to Revenue',
+    subtitle:
+      'Follow captured demand, booking conversion, payment completion, dispatch outcomes, and revenue evidence in one tenant-scoped operating view.',
+  },
+  metrics: {
+    tag: 'Illustrative Dashboard Preview',
+    title: 'Five Signals That Explain Conversion',
+    subtitle:
+      'These sample values demonstrate the dashboard layout only. They are not customer results or performance guarantees.',
+    sampleLabel: 'Sample data — for product preview only',
+    items: [
+      {
+        id: 'metric-recovery',
+        label: 'Missed-call recovery',
+        value: '58%',
+        detail: 'Example share of eligible missed calls returned to an active intake flow.',
+      },
+      {
+        id: 'metric-booked',
+        label: 'Lead-to-booking rate',
+        value: '43%',
+        detail: 'Example share of qualified leads that reached a confirmed booking state.',
+      },
+      {
+        id: 'metric-payment',
+        label: 'Payment-link completion',
+        value: '71%',
+        detail: 'Example share of governed payment requests completed before dispatch.',
+      },
+      {
+        id: 'metric-emergency',
+        label: 'Emergency capture',
+        value: '96%',
+        detail: 'Example share of emergency-classified requests that triggered the required escalation.',
+      },
+      {
+        id: 'metric-response',
+        label: 'p95 first response',
+        value: '4.2 sec',
+        detail: 'Example response-time percentile across AI-handled intake sessions.',
+      },
+    ],
+  },
+  funnel: {
+    tag: 'Conversion Funnel',
+    title: 'From Inbound Demand to Completed Work',
+    steps: [
+      {
+        id: 'funnel-1',
+        stage: 'Call -> Qualified Lead',
+        description: 'Intake captures required fields and urgency classification.',
+      },
+      {
+        id: 'funnel-2',
+        stage: 'Qualified Lead -> Payment Link Sent',
+        description: 'Policy engine triggers deposit/service-fee request where required.',
+      },
+      {
+        id: 'funnel-3',
+        stage: 'Payment -> Booked Job',
+        description: 'Booking gate clears after successful payment or approved policy exception.',
+      },
+      {
+        id: 'funnel-4',
+        stage: 'Booked Job -> Completed',
+        description: 'Dispatch assignment, technician updates, and completion events close the loop.',
+      },
+    ],
+  },
+  quality: {
+    tag: 'AI Quality Signals',
+    title: 'Quality Indicators That Protect Conversion',
+    points: [
+      'Repeat-question rate by trade and urgency class.',
+      'First-response latency and escalation handoff time.',
+      'Failed-intake and policy-block rates for operational coaching.',
+    ],
+  },
+  assumptions: {
+    tag: 'Reporting Boundaries',
+    title: 'What the Production Dashboard Uses',
+    points: [
+      'Realized values come from tenant-scoped RevenueEvent and finalized BillableEvent records, not the sample values above.',
+      'Estimated revenue uses the tenant\'s configured ticket assumptions and is labeled separately from completed, collected revenue.',
+      'Status, policy version, source channel, and event timing remain available so differences can be explained and audited.',
+    ],
+  },
+  billable: {
+    tag: 'Billing Clarity',
+    title: 'What Counts as Billable',
+    points: [
+      'Qualifying-call overage begins only after the selected plan\'s included monthly volume; spam, silent, blocked, duplicate, and approved test calls are excluded.',
+      'Booked-job and emergency-capture fees apply only when a tenant has explicitly enabled a performance-fee policy and the governed event requirements are met.',
+      'Finalized billable events are immutable. Corrections use auditable credits or voids rather than silent edits.',
+    ],
+  },
+  cta: {
+    title: 'Want a Revenue Recovery Baseline for Your Team?',
+    subtitle: 'Book a revenue demo and we will map your current call-to-booked-job conversion path.',
+    primaryLabel: 'Get My Revenue Audit',
+    primaryHref: '/contact',
+    secondaryLabel: 'Book Revenue Demo',
+    secondaryHref: '/contact',
+  },
+  footerCopyright: '© 2026 Signmons Inc. All rights reserved.',
+};
+
+export const siteRoiCalculatorContent: SiteRoiCalculatorContent = {
+  navCtaLabel: 'Book Revenue Demo →',
+  navCtaHref: '/contact',
+  hero: {
+    tag: 'ROI Calculator',
+    title: 'Estimate Your',
+    accent: 'Recovered Revenue',
+    subtitle:
+      'Model missed-call recovery through completed jobs, then compare the estimated revenue opportunity with governed plan costs.',
+  },
+  calculator: {
+    tag: 'ROI Inputs',
+    title: 'Use Your Current Operating Numbers',
+    subtitle:
+      'Inputs stay local to this page for planning. Production ROI reporting is sourced from tenant revenue events.',
+    preset: {
+      planId: 'growth',
+      missedCallsPerWeek: 25,
+      recoveryRatePercent: 60,
+      bookingRatePercent: 42,
+      completionRatePercent: 85,
+      averageCompletedJobValue: 650,
+      emergencySharePercent: 18,
+      monthlyCallVolume: 420,
+      performanceFeesEnabled: false,
+      qualifiedBookedJobFee: 10,
+      emergencyCapturedJobFee: 50,
+    },
+    fields: {
+      planLabel: 'Plan used for cost estimate',
+      missedCallsPerWeekLabel: 'Missed calls per week',
+      recoveryRatePercentLabel: 'Share successfully re-engaged (%)',
+      bookingRatePercentLabel: 'Booking rate on recovered leads (%)',
+      completionRatePercentLabel: 'Completed share of booked jobs (%)',
+      averageCompletedJobValueLabel: 'Average completed job value ($)',
+      emergencySharePercentLabel: 'Emergency share of recovered jobs (%)',
+      monthlyCallVolumeLabel: 'Qualifying AI-handled calls per month',
+      performanceFeesEnabledLabel: 'Include an enabled performance-fee policy',
+      qualifiedBookedJobFeeLabel: 'Qualified booked-job fee ($)',
+      emergencyCapturedJobFeeLabel: 'Emergency captured-job fee ($)',
+    },
+  },
+  assumptions: {
+    tag: 'Model Assumptions',
+    title: 'How This Estimate Is Calculated',
+    points: [
+      'Recovered leads = missed calls per week x 4.33 x re-engagement rate.',
+      'Booked jobs = recovered leads x booking rate; completed jobs = booked jobs x completion rate.',
+      'Gross revenue opportunity = completed jobs x average completed-job value. Deposits are not counted as extra revenue.',
+      'Estimated plan cost uses the selected PricingPlan base price, included call volume, and qualifying-call overage policy.',
+      'Performance fees are disabled by default and appear only when you explicitly enable and price that policy in this estimate.',
+    ],
+  },
+  billable: {
+    tag: 'Billing Clarity',
+    title: 'What Counts as Billable',
+    points: [
+      'Only qualifying AI-handled calls above the plan allowance create overage; spam, silent hang-ups, blocked traffic, duplicates, and approved tests are excluded.',
+      'A booked-job fee requires complete customer and booking fields, a confirmed window, and any required payment gate or approved override.',
+      'An emergency-capture fee requires emergency classification, a reason code, dispatch or escalation, and an enabled tenant policy.',
+    ],
+  },
+  disclosure:
+    'Planning estimate only. This is not a quote, invoice, guarantee, or realized customer result. Actual billing uses accepted contract terms and finalized tenant-scoped events; add-ons and disclosed provider fees are not included here.',
+  cta: {
+    title: 'Ready to Validate This With Real Intake Data?',
+    subtitle: 'Book a revenue demo and we will compare this model against your live call flow.',
+    primaryLabel: 'Book a Revenue Recovery Demo',
+    primaryHref: '/contact',
   },
   footerCopyright: '© 2026 Signmons Inc. All rights reserved.',
 };

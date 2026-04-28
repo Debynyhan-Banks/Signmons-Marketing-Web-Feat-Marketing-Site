@@ -1,0 +1,6 @@
+
+Command: npm test -- --runInBand
+Result: PASS
+
+Test files: 12 passed (12)
+Tests: 24 passed (24)
