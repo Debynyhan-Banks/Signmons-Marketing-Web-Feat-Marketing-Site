@@ -66,7 +66,7 @@ export const siteHomeContent: SiteHomeContent = {
     lead:
       'Call, text, or chat — Signmons AI handles your intake and collects the deposit on the spot. 24/7, zero staff required.',
     primaryCtaLabel: '🚀 Experience the Demo',
-    primaryCtaHref: '#early-access',
+    primaryCtaHref: '/demo',
     secondaryCtaLabel: 'See How It Works',
     secondaryCtaHref: '#how-it-works',
     trustLead: 'Trusted by',
@@ -201,7 +201,7 @@ export const siteHomeContent: SiteHomeContent = {
       'Be first. Join early access and lock in founding member pricing — rates that will never increase.',
     inputPlaceholder: 'Your business phone number',
     ctaLabel: 'Claim My Spot 🚀',
-    ctaHref: 'https://signmons.com',
+    ctaHref: '/contact',
     note: 'No credit card required · Cancel anytime · 14-day free trial',
     industries: [
       { id: 'industry-hvac', label: '🔧 HVAC' },
@@ -282,6 +282,43 @@ export const siteDemoContent: SiteDemoContent = {
         description: 'AI reads inbound emails and responds with booking links',
       },
     ],
+  },
+  liveFlow: {
+    tag: 'Live Demo Flow',
+    title: 'Start a Real Demo Request',
+    subtitle:
+      'Enter your phone and consent. Signmons creates a live demo request and updates status in real time.',
+    api: {
+      submitEndpoint: '/api/marketing/try-demo',
+      statusEndpointBase: '/api/marketing/try-demo',
+      consentTextVersion: 'try-demo-v1',
+      fallbackTimeZone: 'America/New_York',
+      pollIntervalMs: 3000,
+      pollMaxAttempts: 12,
+    },
+    fields: {
+      phoneLabel: 'Phone Number',
+      phonePlaceholder: '(216) 555-0199',
+      nameLabel: 'Full Name (optional)',
+      emailLabel: 'Email (optional)',
+      companyLabel: 'Business Name (optional)',
+      consentLabel: 'I agree to receive an automated call/text for this demo request.',
+    },
+    submitLabel: 'Start Live Demo',
+    submittingLabel: 'Starting…',
+    statusLabels: {
+      queued: 'Demo request queued. We are preparing your call.',
+      inProgress: 'Demo request is in progress.',
+      success: 'Demo flow completed successfully.',
+      failed: 'Demo request failed. Please retry or contact support.',
+    },
+    errors: {
+      invalidPhone: 'Enter a valid US phone number in E.164 format or a valid 10-digit number.',
+      consentRequired: 'Consent is required to start the live demo.',
+      requestFailed: 'We could not start the demo request. Please try again.',
+      missingLeadId: 'Demo request did not return a lead ID.',
+      statusPollFailed: 'Status check timed out. Please refresh or retry.',
+    },
   },
   footerCopyright: '© 2026 Signmons Inc. All rights reserved.',
 };

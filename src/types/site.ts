@@ -257,6 +257,42 @@ export interface SiteDemoContent {
     title: string;
     items: SiteFeatureItem[];
   };
+  liveFlow: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    api: {
+      submitEndpoint: string;
+      statusEndpointBase: string;
+      consentTextVersion: string;
+      fallbackTimeZone: string;
+      pollIntervalMs: number;
+      pollMaxAttempts: number;
+    };
+    fields: {
+      phoneLabel: string;
+      phonePlaceholder: string;
+      nameLabel: string;
+      emailLabel: string;
+      companyLabel: string;
+      consentLabel: string;
+    };
+    submitLabel: string;
+    submittingLabel: string;
+    statusLabels: {
+      queued: string;
+      inProgress: string;
+      success: string;
+      failed: string;
+    };
+    errors: {
+      invalidPhone: string;
+      consentRequired: string;
+      requestFailed: string;
+      missingLeadId: string;
+      statusPollFailed: string;
+    };
+  };
   footerCopyright: string;
 }
 
