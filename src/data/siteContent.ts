@@ -1,5 +1,6 @@
 import type {
   SiteContactContent,
+  SiteDoneForYouContent,
   SiteDemoContent,
   SiteFooterLink,
   SiteHomeContent,
@@ -401,6 +402,87 @@ export const siteContactContent: SiteContactContent = {
     successBody: 'We received your application and will be in touch within 24 hours. In the meantime, check out the',
     successLinkLabel: 'live demo →',
     successLinkHref: '/demo',
+  },
+  footerCopyright: '© 2026 Signmons Inc. All rights reserved.',
+};
+
+export const siteDoneForYouContent: SiteDoneForYouContent = {
+  navCtaLabel: 'Book Revenue Demo →',
+  navCtaHref: '/contact',
+  hero: {
+    tag: 'Done-For-You Setup',
+    title: 'We Configure Signmons',
+    accent: 'For Your Trade Team',
+    subtitle:
+      'You bring your service model. We configure intake policy, dispatch logic, payment gates, and customer updates so your team can launch without workflow drift.',
+  },
+  pillars: {
+    tag: 'What We Configure',
+    title: 'High-Ticket Setup, Not a DIY Wizard',
+    subtitle:
+      'Every setup is tenant-scoped and policy-locked: your voice, your rules, your service areas, and your escalation path.',
+    items: [
+      {
+        id: 'pillar-brand',
+        title: 'Brand Voice and Intake Policy',
+        description:
+          'We tune greetings, tone, service-fee disclosure language, and escalation phrasing so Signmons sounds like your office.',
+      },
+      {
+        id: 'pillar-routing',
+        title: 'Dispatch Rules and Scheduling Logic',
+        description:
+          'We set category routing, urgency thresholds, after-hours behavior, and technician assignment rules for your operating model.',
+      },
+      {
+        id: 'pillar-payment',
+        title: 'Payment Gate and Customer Updates',
+        description:
+          'We configure deposit/service-fee policies, booking gates, and message templates so customers and techs get consistent status updates.',
+      },
+    ],
+  },
+  rollout: {
+    tag: 'Rollout Sequence',
+    title: 'Go Live in Controlled Phases',
+    subtitle: 'Launch starts with guided implementation, then a monitored cutover into live demand.',
+    steps: [
+      {
+        id: 'step-policy',
+        title: 'Policy Intake',
+        description: 'Capture pricing rules, service areas, emergency policy, escalation contacts, and tech coverage windows.',
+      },
+      {
+        id: 'step-config',
+        title: 'Configuration and QA',
+        description: 'Configure contracts and run scripted call/text/chat QA before any live customer traffic is accepted.',
+      },
+      {
+        id: 'step-cutover',
+        title: 'Live Cutover',
+        description: 'Forward lines, enable payment links, and monitor lead-quality + booking conversion with rollback-safe controls.',
+      },
+    ],
+  },
+  deliverables: {
+    tag: 'Implementation Outputs',
+    title: 'What You Receive',
+    items: [
+      { id: 'output-rules', label: 'Tenant business-rules profile (versioned + auditable)' },
+      { id: 'output-voice', label: 'Brand voice policy with approved call scripts' },
+      { id: 'output-routing', label: 'Dispatch and after-hours routing map' },
+      { id: 'output-payment', label: 'Payment-policy gate with webhook validation checks' },
+      { id: 'output-messaging', label: 'Customer and technician message templates with trigger policies' },
+      { id: 'output-dashboard', label: 'Baseline revenue dashboard configuration for launch metrics' },
+    ],
+  },
+  cta: {
+    title: 'Need Signmons Configured for Your Team?',
+    subtitle: 'Book a revenue demo and we will map your setup scope before launch.',
+    primaryLabel: 'Book Revenue Demo',
+    primaryHref: '/contact',
+    secondaryLabel: 'See Live Demo',
+    secondaryHref: '/demo',
   },
   footerCopyright: '© 2026 Signmons Inc. All rights reserved.',
 };

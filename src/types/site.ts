@@ -350,3 +350,57 @@ export interface SiteContactContent {
   };
   footerCopyright: string;
 }
+
+export interface SiteDoneForYouPillar {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface SiteDoneForYouStep {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface SiteDoneForYouDeliverable {
+  id: string;
+  label: string;
+}
+
+export interface SiteDoneForYouContent {
+  navCtaLabel: string;
+  navCtaHref: string;
+  hero: {
+    tag: string;
+    title: string;
+    accent: string;
+    subtitle: string;
+  };
+  pillars: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    items: SiteDoneForYouPillar[];
+  };
+  rollout: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    steps: SiteDoneForYouStep[];
+  };
+  deliverables: {
+    tag: string;
+    title: string;
+    items: SiteDoneForYouDeliverable[];
+  };
+  cta: {
+    title: string;
+    subtitle: string;
+    primaryLabel: string;
+    primaryHref: string;
+    secondaryLabel: string;
+    secondaryHref: string;
+  };
+  footerCopyright: string;
+}
