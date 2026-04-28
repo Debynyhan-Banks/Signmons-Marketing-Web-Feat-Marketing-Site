@@ -88,4 +88,55 @@ describe('SiteDemo', () => {
     expect(await screen.findByText(/lead id: lead_demo_123/i)).toBeInTheDocument();
     expect(await screen.findByText(/demo flow completed successfully/i)).toBeInTheDocument();
   });
+
+  it('shows failure state when backend returns failed status', async () => {
+    const fetchMock = vi
+      .spyOn(globalThis, 'fetch')
+      .mockImplementation(async (input) => {
+        const url = String(input);
+        if (url.endsWith('/api/marketing/try-demo')) {
+          return {
+            ok: true,
+            json: async () => ({
+              leadId: 'lead_demo_fail',
+              status: 'queued',
+            }),
+          } as Response;
+        }
+
+        if (url.endsWith('/api/marketing/try-demo/lead_demo_fail')) {
+          return {
+            ok: true,
+            json: async () => ({
+              leadId: 'lead_demo_fail',
+              status: 'failed',
+            }),
+          } as Response;
+        }
+
+        return {
+          ok: false,
+          json: async () => ({ message: 'unexpected route' }),
+        } as Response;
+      });
+
+    render(<SiteDemo />);
+
+    fireEvent.change(screen.getByLabelText(/phone number/i), {
+      target: { value: '(216) 555-0199' },
+    });
+    fireEvent.click(screen.getByLabelText(/i agree to receive an automated call\/text for this demo request/i));
+    fireEvent.click(screen.getByRole('button', { name: /start live demo/i }));
+
+    await waitFor(() => {
+      expect(fetchMock).toHaveBeenCalledWith(
+        '/api/marketing/try-demo',
+        expect.objectContaining({
+          method: 'POST',
+        }),
+      );
+    });
+
+    expect(await screen.findByText(/demo request failed\. please retry or contact support\./i)).toBeInTheDocument();
+  });
 });

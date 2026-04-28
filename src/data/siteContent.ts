@@ -201,7 +201,7 @@ export const siteHomeContent: SiteHomeContent = {
       'Be first. Join early access and lock in founding member pricing — rates that will never increase.',
     inputPlaceholder: 'Your business phone number',
     ctaLabel: 'Claim My Spot 🚀',
-    ctaHref: 'https://signmons.com',
+    ctaHref: '/contact',
     note: 'No credit card required · Cancel anytime · 14-day free trial',
     industries: [
       { id: 'industry-hvac', label: '🔧 HVAC' },
