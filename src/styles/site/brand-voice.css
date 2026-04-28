@@ -1,0 +1,116 @@
+.site-brand-voice-page .brand-voice-shell {
+  width: min(1100px, 92%);
+  margin: 0 auto 5.5rem;
+  display: grid;
+  gap: 3rem;
+}
+
+.site-brand-voice-page .brand-voice-controls,
+.site-brand-voice-page .brand-voice-fallback,
+.site-brand-voice-page .brand-voice-governance,
+.site-brand-voice-page .brand-voice-cta {
+  background: rgba(12, 18, 40, 0.58);
+  border: 1px solid rgba(114, 152, 255, 0.22);
+  border-radius: 1.2rem;
+  padding: 1.6rem;
+  box-shadow: 0 16px 36px rgba(2, 6, 23, 0.38);
+}
+
+.site-brand-voice-page .brand-voice-control-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.site-brand-voice-page .brand-voice-card {
+  background: rgba(22, 35, 72, 0.66);
+  border: 1px solid rgba(114, 152, 255, 0.22);
+  border-radius: 1rem;
+  padding: 1.05rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.site-brand-voice-page .brand-voice-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+.site-brand-voice-page .brand-voice-card p {
+  color: rgba(224, 231, 255, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.site-brand-voice-page .brand-voice-card-example {
+  color: rgba(186, 204, 255, 0.78);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  border-top: 1px dashed rgba(114, 152, 255, 0.28);
+  padding-top: 0.55rem;
+  font-style: italic;
+}
+
+.site-brand-voice-page .brand-voice-fallback-list {
+  list-style: none;
+  margin-top: 1.1rem;
+  display: grid;
+  gap: 0.7rem;
+  padding: 0;
+}
+
+.site-brand-voice-page .brand-voice-fallback-list li,
+.site-brand-voice-page .brand-voice-governance li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  color: rgba(224, 231, 255, 0.93);
+}
+
+.site-brand-voice-page .brand-voice-fallback-list .ck,
+.site-brand-voice-page .brand-voice-governance .ck {
+  color: #34d399;
+  font-weight: 700;
+  margin-top: 0.05rem;
+}
+
+.site-brand-voice-page .brand-voice-fallback-note {
+  color: rgba(186, 204, 255, 0.82);
+  margin-top: 1rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.site-brand-voice-page .brand-voice-governance ul {
+  list-style: none;
+  margin-top: 1.1rem;
+  display: grid;
+  gap: 0.7rem;
+  padding: 0;
+}
+
+.site-brand-voice-page .brand-voice-cta h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.site-brand-voice-page .brand-voice-cta p {
+  color: rgba(224, 231, 255, 0.86);
+  margin-top: 0.45rem;
+}
+
+.site-brand-voice-page .brand-voice-cta-actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (max-width: 980px) {
+  .site-brand-voice-page .brand-voice-control-grid {
+    grid-template-columns: 1fr;
+  }
+}
