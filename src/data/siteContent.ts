@@ -13,10 +13,11 @@ import type {
 import { sitePricingPlans } from './pricingContent';
 
 export const sitePrimaryLinks: SiteLink[] = [
+  { id: 'setup', label: 'Setup', href: '/done-for-you-setup' },
+  { id: 'rules', label: 'Business Rules', href: '/business-rules' },
+  { id: 'voice', label: 'Brand Voice', href: '/brand-voice' },
   { id: 'demo', label: 'Demo', href: '/demo' },
   { id: 'pricing', label: 'Pricing', href: '/pricing' },
-  { id: 'blog', label: 'Blog', href: '/blog' },
-  { id: 'about', label: 'About', href: '/about' },
   { id: 'contact', label: 'Contact', href: '/contact' },
 ];
 
