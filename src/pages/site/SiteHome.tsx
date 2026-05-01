@@ -1,255 +1,166 @@
-import { useState, type KeyboardEvent } from 'react';
 import SiteFooter from '../../components/site/SiteFooter';
 import SiteNavigation from '../../components/site/SiteNavigation';
 import useSiteEffects from '../../hooks/useSiteEffects';
-import { siteFooterLinks, siteHomeContent, sitePrimaryLinks } from '../../data/siteContent';
+import { siteFooterLinks, sitePrimaryLinks } from '../../data/siteContent';
+
+const painItems = [
+  'Missed calls after hours -> lost jobs',
+  'Free estimates -> wasted time',
+  'No-shows -> dead revenue',
+  'Dispatching unpaid work -> negative margin',
+];
+
+const flowSteps = [
+  {
+    title: 'We Answer Instantly',
+    detail: 'Every call, text, or chat - 24/7, under your brand.',
+  },
+  {
+    title: 'We Qualify the Job',
+    detail: 'Correct service, urgency, location - no bad bookings.',
+  },
+  {
+    title: 'We Collect the Deposit',
+    detail: 'Customer pays before anything is scheduled.',
+  },
+  {
+    title: 'We Dispatch Automatically',
+    detail: 'Right tech, right zone, right time.',
+  },
+  {
+    title: 'We Notify Everyone',
+    detail: 'Customer and tech get confirmations, ETA, and updates.',
+  },
+];
+
+const metrics = [
+  { value: '93%', label: 'Leads converted into booked jobs', note: 'More revenue from the same calls' },
+  { value: '78%', label: 'Customers pay before dispatch', note: 'Fewer no-shows, better cash flow' },
+  { value: '64%', label: 'Missed calls recovered automatically', note: 'Nights, weekends, after-hours' },
+  { value: '3s', label: 'Average response time', note: 'Faster than any human team' },
+];
 
 const SiteHome = () => {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  const { hero, phoneMock, features, demoSection, process, proof, pricing, earlyAccess } = siteHomeContent;
-
   useSiteEffects({ smoothAnchors: true });
-
-  const handleVideoPlay = () => {
-    setIsVideoPlaying(true);
-  };
-
-  const handleVideoKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      handleVideoPlay();
-    }
-  };
 
   return (
     <>
-      <SiteNavigation
-        navLinks={sitePrimaryLinks}
-        ctaLabel={siteHomeContent.navCtaLabel}
-        ctaHref={siteHomeContent.navCtaHref}
-      />
+      <SiteNavigation navLinks={sitePrimaryLinks} ctaLabel="Get Your Revenue Breakdown →" ctaHref="/contact" />
 
-      <section className="hero">
-        <div className="hero-glow"></div>
-
-        <div className="hero-badge">
-          <span className="badge-dot"></span>
-          {hero.badge}
-        </div>
-
-        <h1>
-          {hero.title}
-          <br />
-          <span className="accent">{hero.accent}</span>
-        </h1>
-
-        <p>{hero.lead}</p>
-
-        <div className="hero-actions">
-          <a href={hero.primaryCtaHref} className="btn-primary">
-            {hero.primaryCtaLabel}
-          </a>
-          <a href={hero.secondaryCtaHref} className="btn-secondary">
-            {hero.secondaryCtaLabel}
-          </a>
-        </div>
-
-        <p className="trust-line">
-          {hero.trustLead} <span>{hero.trustAccent}</span>
-        </p>
-
-        <div className="phone-mockup">
-          <div className="phone-notch"></div>
-          <div className="phone-screen">
-            <div className="phone-status">{phoneMock.status}</div>
-            {phoneMock.bubbles.map((bubble, index) => (
-              <div key={bubble} className={`chat-bubble${index === 1 ? ' right' : ''}`}>
-                {bubble}
-              </div>
-            ))}
-            <div className="chat-bubble system">{phoneMock.confirmation}</div>
-          </div>
-        </div>
-
-        <div className="orbit-wrap orbit-wrap--hero" aria-hidden="true">
-          <div className="orbit-ring orbit-ring-1"></div>
-          <div className="orbit-ring orbit-ring-2"></div>
-          <div className="orbit-core">🤖</div>
-        </div>
-      </section>
-
-      <section className="features fade-in">
-        <p className="section-tag">{features.tag}</p>
-        <h2 className="section-title">
-          Everything Your Business
-          <br />
-          Needs to Scale
-        </h2>
-        <p className="section-sub">{features.subtitle}</p>
-
-        <div className="features-grid">
-          {features.items.map((item) => (
-            <div key={item.id} className="feat-card">
-              <div className="feat-icon">{item.icon}</div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="demo-section fade-in" id="demo">
-        <p className="section-tag">{demoSection.tag}</p>
-        <h2 className="section-title">
-          {demoSection.title}
-          <br />
-          <span className="demo-title-accent">{demoSection.accent}</span>
-        </h2>
-        <p className="section-sub demo-sub-center">{demoSection.subtitle}</p>
-
-        <div className="video-outer">
-          <div className="video-glow"></div>
-          <div
-            className={`video-frame${isVideoPlaying ? ' playing' : ''}`}
-            role="button"
-            tabIndex={0}
-            aria-label="Play demo video"
-            onClick={handleVideoPlay}
-            onKeyDown={handleVideoKeyDown}
-          >
-            <div className="video-placeholder">
-              <div className="video-placeholder-grid"></div>
-              <div className="play-ring">
-                <span className="play-icon">▶</span>
-              </div>
-              <p className="video-label">
-                Watch the <strong>2:47 demo</strong>
-              </p>
-            </div>
-            <iframe
-              title="Signmons demo video"
-              src={isVideoPlaying ? demoSection.videoUrl : ''}
-              allow="autoplay; fullscreen"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-
-        <div className="demo-chips">
-          {demoSection.chips.map((chip) => (
-            <div key={chip.id} className="demo-chip">
-              <span>✓</span> {chip.text}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="how fade-in" id={process.id}>
-        <p className="section-tag">{process.tag}</p>
-        <h2 className="section-title">
-          Live in Minutes,
-          <br />
-          Earning in Hours
-        </h2>
-        <p className="section-sub">{process.subtitle}</p>
-
-        <div className="steps">
-          {process.steps.map((step, index) => (
-            <div key={step.id} className="step">
-              <div className="step-num">{index + 1}</div>
-              <div className="step-body">
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="proof fade-in">
-        <p className="section-tag">{proof.tag}</p>
-        <h2 className="section-title">
-          Numbers That Move
-          <br />
-          the Needle
-        </h2>
-
-        <div className="stat-row">
-          {proof.stats.map((stat) => (
-            <div key={stat.id} className="stat-card">
-              <div className="stat-num">{stat.value}</div>
-              <div className="stat-label">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-
-        <div className="testimonial">
-          <p>{proof.testimonial.quote}</p>
-          <div className="testimonial-author">
-            <div className="avatar">{proof.testimonial.initials}</div>
-            <div className="author-info">
-              <strong>{proof.testimonial.author}</strong>
-              <span>{proof.testimonial.role}</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="pricing fade-in" id={pricing.id}>
-        <p className="section-tag">{pricing.tag}</p>
-        <h2 className="section-title">{pricing.title}</h2>
-        <p className="section-sub">{pricing.subtitle}</p>
-
-        {pricing.plans.map((plan) => (
-          <div key={plan.id} className={`plan-card${plan.featured ? ' featured' : ''}`}>
-            {plan.badge ? <div className="plan-badge">{plan.badge}</div> : null}
-            <div className="plan-name">{plan.name}</div>
-            <div className="plan-price">{plan.price}</div>
-            <div className="plan-desc">{plan.description}</div>
-            <ul className="plan-features">
-              {plan.features.map((feature) => (
-                <li key={`${plan.id}-${feature}`}>
-                  <span className="check">✓</span> {feature}
-                </li>
-              ))}
-            </ul>
-            <a href={plan.ctaHref} className={`${plan.ctaClassName} plan-cta`}>
-              {plan.ctaLabel}
+      <section className="homex-hero">
+        <div className="homex-grid"></div>
+        <div className="homex-hero-copy">
+          <p className="homex-kicker">Front-Office Revenue System for Trades</p>
+          <h1>
+            Stop Sending Trucks to
+            <span> Unpaid Jobs.</span>
+          </h1>
+          <p className="homex-sub">
+            Signmons answers every call, qualifies the job, collects the deposit, and dispatches the right tech.
+            If the job is not paid, it does not get booked.
+          </p>
+          <div className="homex-actions">
+            <a className="btn-primary" href="/contact">
+              See How Much Revenue You&apos;re Losing →
+            </a>
+            <a className="btn-secondary" href="/demo">
+              Watch a Real Call →
             </a>
           </div>
-        ))}
-      </section>
-
-      <section className="cta-section fade-in" id={earlyAccess.id}>
-        <div className="cta-box">
-          <p className="section-tag">{earlyAccess.tag}</p>
-          <h2>
-            {earlyAccess.title}
-            <br />
-            <span className="cta-title-accent">{earlyAccess.accent}</span>
-          </h2>
-          <p>{earlyAccess.subtitle}</p>
-
-          <div className="cta-input-wrap">
-            <input type="tel" placeholder={earlyAccess.inputPlaceholder} className="cta-input" />
-            <a href={earlyAccess.ctaHref} className="btn-primary">
-              {earlyAccess.ctaLabel}
-            </a>
-          </div>
-
-          <p className="cta-note">{earlyAccess.note}</p>
+          <p className="homex-trust">Used by HVAC, Plumbing, and Electrical teams running 3 to 25 trucks</p>
         </div>
 
-        <div className="industries industries--cta">
-          {earlyAccess.industries.map((industry) => (
-            <span key={industry.id} className="industry-tag">
-              {industry.label}
-            </span>
+        <div className="homex-orbital" aria-hidden="true">
+          <div className="homex-core">S</div>
+          <div className="homex-node homex-node-1">Call</div>
+          <div className="homex-node homex-node-2">Deposit</div>
+          <div className="homex-node homex-node-3">Dispatch</div>
+          <div className="homex-node homex-node-4">ETA</div>
+          <div className="homex-ring"></div>
+        </div>
+      </section>
+
+      <section className="homex-pain fade-in">
+        <p className="section-tag">Reality Check</p>
+        <h2 className="section-title">You&apos;re Not Short on Calls. You&apos;re Losing Money on Them.</h2>
+        <div className="homex-pain-grid">
+          {painItems.map((item) => (
+            <article key={item} className="homex-pain-card">
+              <p>{item}</p>
+            </article>
           ))}
         </div>
+        <p className="homex-close">Every one of these is preventable.</p>
       </section>
 
-      <SiteFooter links={siteFooterLinks} copyright={siteHomeContent.footerCopyright} />
+      <section className="homex-solution fade-in">
+        <p className="section-tag">Core Value</p>
+        <h2 className="section-title">We Turn Every Call Into a Paid Job — Or Filter It Out.</h2>
+        <p className="section-sub">Signmons sits between your phone and your dispatch board, enforcing one rule:</p>
+        <p className="homex-rule">No payment. No dispatch.</p>
+      </section>
+
+      <section className="homex-flow fade-in" id="how-it-works">
+        <p className="section-tag">How It Works</p>
+        <h2 className="section-title">From Incoming Call to Paid Job in Seconds</h2>
+        <div className="homex-flow-grid">
+          {flowSteps.map((step, index) => (
+            <article key={step.title} className="homex-step">
+              <div className="homex-step-num">{String(index + 1).padStart(2, '0')}</div>
+              <h3>{step.title}</h3>
+              <p>{step.detail}</p>
+            </article>
+          ))}
+        </div>
+        <p className="homex-close">Average time: around 4 seconds from call to decision.</p>
+      </section>
+
+      <section className="homex-proof fade-in">
+        <p className="section-tag">Proof</p>
+        <h2 className="section-title">What Happens When You Control the Call</h2>
+        <div className="homex-metrics-grid">
+          {metrics.map((metric) => (
+            <article key={metric.label} className="homex-metric">
+              <p className="homex-metric-value">{metric.value}</p>
+              <p className="homex-metric-label">{metric.label}</p>
+              <p className="homex-metric-note">{metric.note}</p>
+            </article>
+          ))}
+        </div>
+        <p className="homex-footnote">Based on early-access contractors (3 to 12 trucks, Midwest markets).</p>
+      </section>
+
+      <section className="homex-compare fade-in">
+        <p className="section-tag">Revenue Gate</p>
+        <h2 className="section-title">This Is Where Most Companies Lose Money</h2>
+        <div className="homex-compare-grid">
+          <article>
+            <h3>Typical Flow</h3>
+            <p>Call -&gt; Estimate -&gt; Dispatch -&gt; Hope they pay</p>
+          </article>
+          <article>
+            <h3>Signmons Flow</h3>
+            <p>Call -&gt; Payment -&gt; Dispatch -&gt; Guaranteed revenue</p>
+          </article>
+        </div>
+        <p className="homex-rule">We make sure every job is worth running.</p>
+      </section>
+
+      <section className="homex-cta-final fade-in">
+        <h2>See Exactly How Much Revenue You&apos;re Losing</h2>
+        <p>In one call, we map your workflow and show you what is slipping through.</p>
+        <div className="homex-actions homex-actions-center">
+          <a className="btn-primary" href="/contact">
+            Get Your Revenue Breakdown →
+          </a>
+          <a className="btn-secondary" href="/demo">
+            Watch Real Calls →
+          </a>
+        </div>
+        <p className="homex-footnote">30-day fit check. If we do not hit agreed targets, walk away.</p>
+      </section>
+
+      <SiteFooter links={siteFooterLinks} copyright="© 2026 Signmons. All rights reserved." />
     </>
   );
 };
