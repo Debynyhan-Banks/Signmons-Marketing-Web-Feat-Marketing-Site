@@ -7,9 +7,13 @@ describe('FE-008 CTA route parity', () => {
   it('keeps high-intent home CTAs on live routes', () => {
     render(<SiteHome />);
 
-    expect(screen.getByRole('link', { name: /experience the demo/i })).toHaveAttribute('href', '/demo');
-    expect(screen.getByRole('link', { name: /join early access/i })).toHaveAttribute('href', '/contact');
-    expect(screen.getByRole('link', { name: /claim my spot/i })).toHaveAttribute('href', '/contact');
+    expect(screen.getByRole('link', { name: /watch a real call/i })).toHaveAttribute('href', '/demo');
+    expect(screen.getByRole('link', { name: /see how much revenue you're losing/i })).toHaveAttribute('href', '/contact');
+    expect(
+      screen
+        .getAllByRole('link', { name: /get your revenue breakdown/i })
+        .every((link) => link.getAttribute('href') === '/contact'),
+    ).toBe(true);
   });
 
   it('keeps pricing conversion CTAs on contact route', () => {

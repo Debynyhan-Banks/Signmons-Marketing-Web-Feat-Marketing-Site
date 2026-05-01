@@ -7,6 +7,7 @@ import './styles/site/shared.css';
 import './styles/site/signmons.css';
 import './styles/site/demo.css';
 import './styles/site/contact.css';
+import './styles/site/home-revamp.css';
 import './styles/site/business-rules.css';
 import './styles/site/brand-voice.css';
 import './styles/site/dispatch-scheduling.css';
