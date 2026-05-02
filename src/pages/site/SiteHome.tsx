@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useState } from 'react';
 import SiteFooter from '../../components/site/SiteFooter';
 import SiteNavigation from '../../components/site/SiteNavigation';
 import useSiteEffects from '../../hooks/useSiteEffects';
@@ -40,8 +41,62 @@ const metrics = [
   { value: '3s', label: 'Average response time', note: 'Faster than any human team' },
 ];
 
+const HERO_FRAME_MS = 740;
+const HERO_FRAME_COUNT = 7;
+
 const SiteHome = () => {
   useSiteEffects({ smoothAnchors: true });
+
+  const [heroFrame, setHeroFrame] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isReducedMotion, setIsReducedMotion] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return;
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const setMotionPreference = () => {
+      setIsReducedMotion(media.matches);
+      if (media.matches) {
+        setIsPlaying(false);
+      }
+    };
+
+    setMotionPreference();
+    media.addEventListener('change', setMotionPreference);
+
+    return () => {
+      media.removeEventListener('change', setMotionPreference);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isPlaying || isReducedMotion) return;
+
+    const timer = window.setInterval(() => {
+      setHeroFrame((prev) => (prev + 1) % HERO_FRAME_COUNT);
+    }, HERO_FRAME_MS);
+
+    return () => {
+      window.clearInterval(timer);
+    };
+  }, [isPlaying, isReducedMotion]);
+
+  const heroState = useMemo(() => {
+    const frame = heroFrame;
+    return {
+      frame,
+      incoming: frame >= 0,
+      answering: frame >= 1,
+      decisionQualify: frame >= 2,
+      decisionPrice: frame >= 2,
+      decisionPayment: frame >= 2,
+      lockVisible: frame >= 3,
+      lockOpen: frame >= 5,
+      dispatch: frame >= 5,
+      techCard: frame >= 5,
+      resetting: frame === 6,
+    };
+  }, [heroFrame]);
 
   return (
     <>
@@ -70,13 +125,42 @@ const SiteHome = () => {
           <p className="homex-trust">Used by HVAC, Plumbing, and Electrical teams running 3 to 25 trucks</p>
         </div>
 
-        <div className="homex-orbital" aria-hidden="true">
-          <div className="homex-core">S</div>
-          <div className="homex-node homex-node-1">Call</div>
-          <div className="homex-node homex-node-2">Deposit</div>
-          <div className="homex-node homex-node-3">Dispatch</div>
-          <div className="homex-node homex-node-4">ETA</div>
-          <div className="homex-ring"></div>
+        <div className={`homex-hero-art ${heroState.resetting ? 'is-resetting' : ''}`} aria-label="Revenue system simulation">
+          <div className="homex-hero-art-glow"></div>
+          <button
+            type="button"
+            className="homex-hero-play-toggle"
+            onClick={() => setIsPlaying((prev) => !prev)}
+            disabled={isReducedMotion}
+            aria-label={isPlaying ? 'Pause simulation' : 'Play simulation'}
+          >
+            {isReducedMotion ? 'Reduced Motion' : isPlaying ? 'Pause' : 'Play'}
+          </button>
+
+          <div className="homex-sim">
+            <div className={`homex-chip ${heroState.incoming ? 'is-on' : ''}`}>
+              Incoming Call: Emergency - No Heat
+            </div>
+            <div className={`homex-chat ${heroState.answering ? 'is-on' : ''}`}>
+              I can get a technician out today. Let me lock this in.
+            </div>
+
+            <div className="homex-decision" role="list" aria-label="Decision engine">
+              <span className={`homex-node ${heroState.decisionQualify ? 'is-on' : ''}`}>Qualify</span>
+              <span className={`homex-node ${heroState.decisionPrice ? 'is-on' : ''}`}>Price &amp; Policy</span>
+              <span className={`homex-node ${heroState.decisionPayment ? 'is-on' : ''}`}>Payment</span>
+              <span className={`homex-node ${heroState.dispatch ? 'is-on' : ''}`}>Dispatch</span>
+            </div>
+
+            <div className={`homex-gate ${heroState.lockVisible ? 'is-on' : ''} ${heroState.lockOpen ? 'is-open' : ''}`}>
+              <span className="homex-lock">{heroState.lockOpen ? 'Unlocked' : 'Locked'}</span>
+              <span>Deposit Required: $89</span>
+            </div>
+
+            <div className={`homex-tech ${heroState.techCard ? 'is-on' : ''}`}>
+              Tech Assigned - Today 9:00 AM to 11:00 AM
+            </div>
+          </div>
         </div>
       </section>
 
