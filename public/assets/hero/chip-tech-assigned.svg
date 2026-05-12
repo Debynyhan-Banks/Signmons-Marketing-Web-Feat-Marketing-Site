@@ -1,0 +1,17 @@
+<svg width="320" height="120" viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="320" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1630"/>
+      <stop offset="1" stop-color="#071225"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(34 60) rotate(90) scale(36 36)">
+      <stop stop-color="#36D7FF" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#36D7FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="1" y="1" width="318" height="118" rx="18" fill="url(#bg)" stroke="#36D7FF" stroke-opacity="0.35"/>
+  <circle cx="34" cy="60" r="18" fill="url(#glow)"/>
+  <circle cx="34" cy="60" r="10" fill="#36D7FF" fill-opacity="0.9"/>
+  <text x="62" y="52" fill="#EAF2FF" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Tech Assigned</text>
+  <text x="62" y="76" fill="#7FA4D4" font-family="Inter, Arial, sans-serif" font-size="14">Arrival window sent</text>
+</svg>

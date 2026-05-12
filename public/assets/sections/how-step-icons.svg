@@ -1,0 +1,10 @@
+<svg width="1920" height="320" viewBox="0 0 1920 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="320" fill="#071225"/>
+  <g font-family="Inter, Arial, sans-serif" font-size="24" fill="#DDEBFF" text-anchor="middle">
+    <g transform="translate(190 160)"><circle r="52" fill="#0E1F3D" stroke="#2CCBFF"/><text y="8">Answer</text></g>
+    <g transform="translate(575 160)"><circle r="52" fill="#0E1F3D" stroke="#4BE4B8"/><text y="8">Qualify</text></g>
+    <g transform="translate(960 160)"><circle r="52" fill="#0E1F3D" stroke="#3B8DFF"/><text y="8">Collect</text></g>
+    <g transform="translate(1345 160)"><circle r="52" fill="#0E1F3D" stroke="#7AA8FF"/><text y="8">Dispatch</text></g>
+    <g transform="translate(1730 160)"><circle r="52" fill="#0E1F3D" stroke="#56D8FF"/><text y="8">Notify</text></g>
+  </g>
+</svg>
