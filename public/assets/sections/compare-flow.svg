@@ -1,0 +1,20 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="28" fill="#071225"/>
+  <text x="210" y="120" fill="#F6FAFF" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800">Typical Flow</text>
+  <text x="980" y="120" fill="#F6FAFF" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800">Signmons Flow</text>
+  <g font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">
+    <rect x="160" y="180" width="520" height="520" rx="24" fill="#101B34" stroke="#FF6B6B" stroke-opacity="0.5"/>
+    <text x="220" y="290" fill="#FF9A9A">1  Call Comes In</text>
+    <text x="220" y="370" fill="#FF9A9A">2  Dispatch First</text>
+    <text x="220" y="450" fill="#FF9A9A">3  Hope They Pay</text>
+    <text x="220" y="530" fill="#FF9A9A">4  Margin Risk</text>
+
+    <rect x="920" y="180" width="520" height="520" rx="24" fill="#101B34" stroke="#35E4B8" stroke-opacity="0.6"/>
+    <text x="980" y="290" fill="#6FF2CD">1  Call + Qualify</text>
+    <text x="980" y="370" fill="#6FF2CD">2  Payment Secured</text>
+    <text x="980" y="450" fill="#6FF2CD">3  Dispatch Triggered</text>
+    <text x="980" y="530" fill="#6FF2CD">4  Revenue Locked</text>
+  </g>
+  <circle cx="800" cy="430" r="62" fill="#162645" stroke="#2E4A78"/>
+  <text x="760" y="443" fill="#EAF2FF" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800">VS</text>
+</svg>
