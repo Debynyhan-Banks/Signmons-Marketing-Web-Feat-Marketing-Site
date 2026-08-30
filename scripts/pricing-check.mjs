@@ -150,6 +150,27 @@ const growthBlock = extractPlanBlock(pricingText, 'growth', 'pro');
 const proBlock = extractPlanBlock(pricingText, 'pro', 'enterprise');
 const enterpriseBlock = extractPlanBlock(pricingText, 'enterprise');
 
+requirePattern(
+  'src/data/pricingContent.ts',
+  /const STARTER_OVERAGE_POLICY = '\$1\.50 per qualifying AI-handled call';/,
+  'starter per-call overage value',
+);
+requirePattern(
+  'src/data/pricingContent.ts',
+  /const GROWTH_OVERAGE_POLICY = '\$1\.00 per qualifying AI-handled call';/,
+  'growth per-call overage value',
+);
+requirePattern(
+  'src/data/pricingContent.ts',
+  /const PRO_OVERAGE_POLICY = '\$0\.75 per qualifying AI-handled call';/,
+  'pro per-call overage value',
+);
+requirePattern(
+  'src/data/pricingContent.ts',
+  /saveBadge:\s*'SAVE 15–20%'/,
+  'annual discount range disclosure',
+);
+
 // Phase 2 schema contract checks
 requirePattern(
   'src/types/site.ts',
@@ -163,13 +184,14 @@ requirePattern(
 );
 
 // Starter checks
-requireContains(starterBlock, "monthlyPrice: 199", 'starter monthly price');
-requireContains(starterBlock, "annualMonthlyPrice: 159", 'starter annual monthly price');
+requireContains(starterBlock, "monthlyPrice: 299", 'starter monthly price');
+requireContains(starterBlock, "annualMonthlyPrice: 249", 'starter annual monthly price');
 requireContains(starterBlock, "includedCallVolume: 100", 'starter included call volume');
-requireContains(starterBlock, "setupFeeAmount: 299", 'starter setup fee amount');
+requireContains(starterBlock, "setupFeeAmount: 499", 'starter setup fee amount');
 requireContains(starterBlock, "vehicleRange: 'Single vehicle or owner-operator'", 'starter vehicle range');
-requireContains(starterBlock, "overagePolicy: STANDARD_OVERAGE_POLICY", 'starter overage policy');
+requireContains(starterBlock, "overagePolicy: STARTER_OVERAGE_POLICY", 'starter overage policy');
 requireContains(starterBlock, "label: 'Payment link handoff'", 'starter payment handoff');
+requireContains(starterBlock, 'Planned Signmons Money: branded estimates', 'starter planned invoice baseline');
 requireContains(
   starterBlock,
   "label: 'Booking-ready job summaries with customer, issue, urgency, and preferred window'",
@@ -181,12 +203,12 @@ forbidContains(starterBlock, 'After-hours call capture and emergency escalation'
 forbidContains(starterBlock, 'Multi-tech routing for up to 5 active vehicles', 'starter multi-tech routing');
 
 // Growth checks
-requireContains(growthBlock, "monthlyPrice: 499", 'growth monthly price');
-requireContains(growthBlock, "annualMonthlyPrice: 399", 'growth annual monthly price');
+requireContains(growthBlock, "monthlyPrice: 799", 'growth monthly price');
+requireContains(growthBlock, "annualMonthlyPrice: 649", 'growth annual monthly price');
 requireContains(growthBlock, "includedCallVolume: 500", 'growth included call volume');
-requireContains(growthBlock, "setupFeeAmount: 750", 'growth setup fee amount');
+requireContains(growthBlock, "setupFeeAmount: 1000", 'growth setup fee amount');
 requireContains(growthBlock, "vehicleRange: '2-5 active vehicles'", 'growth vehicle range');
-requireContains(growthBlock, "overagePolicy: STANDARD_OVERAGE_POLICY", 'growth overage policy');
+requireContains(growthBlock, "overagePolicy: GROWTH_OVERAGE_POLICY", 'growth overage policy');
 requireContains(growthBlock, 'After-hours call capture and emergency escalation', 'growth after-hours capture');
 requireContains(
   growthBlock,
@@ -202,14 +224,15 @@ requireContains(
   'growth trade-specific triage',
 );
 requireContains(growthBlock, 'Human handoff alerts for urgent or unclear calls', 'growth handoff alerts');
+requireContains(growthBlock, 'Planned Signmons Money: deposits, partial payments', 'growth planned invoice workflow');
 
 // Pro checks
-requireContains(proBlock, "monthlyPrice: 999", 'pro monthly price');
-requireContains(proBlock, "annualMonthlyPrice: 799", 'pro annual monthly price');
+requireContains(proBlock, "monthlyPrice: 1499", 'pro monthly price');
+requireContains(proBlock, "annualMonthlyPrice: 1249", 'pro annual monthly price');
 requireContains(proBlock, "includedCallVolume: 1500", 'pro included call volume');
-requireContains(proBlock, "setupFeeAmount: 1500", 'pro setup fee amount');
+requireContains(proBlock, "setupFeeAmount: 2500", 'pro setup fee amount');
 requireContains(proBlock, "vehicleRange: '5-15 active vehicles'", 'pro vehicle range');
-requireContains(proBlock, "overagePolicy: '$79 per additional 250 AI-handled calls'", 'pro overage policy');
+requireContains(proBlock, "overagePolicy: PRO_OVERAGE_POLICY", 'pro overage policy');
 requireContains(
   proBlock,
   'Advanced after-hours dispatch rules by trade, service area, and technician availability',
@@ -217,12 +240,37 @@ requireContains(
 );
 requireContains(proBlock, 'Custom escalation rules and failed-booking fallback', 'pro failed-booking fallback');
 requireContains(proBlock, 'Optional photo intake by SMS (beta)', 'pro optional photo intake');
+requireContains(proBlock, 'Planned QuickBooks Online accounting synchronization', 'pro planned accounting adapter');
 
 // Enterprise checks
-requireContains(enterpriseBlock, "setupFeeAmount: 0", 'enterprise setup fee amount');
-requireContains(enterpriseBlock, "setupFeeLabel: 'Custom implementation scope'", 'enterprise setup fee label');
-requireContains(enterpriseBlock, "customPriceLabel: 'Custom from $2,500/mo'", 'enterprise custom price anchor');
+requireContains(enterpriseBlock, "setupFeeAmount: 5000", 'enterprise setup fee amount');
+requireContains(enterpriseBlock, "setupFeeLabel: 'Custom implementation from $5,000'", 'enterprise setup fee label');
+requireContains(enterpriseBlock, "customPriceLabel: 'Custom from $3,500/mo'", 'enterprise custom price anchor');
 requireContains(enterpriseBlock, 'Multi-location reporting', 'enterprise multi-location reporting');
+
+requirePattern(
+  'src/data/pricingContent.ts',
+  /title:\s*'Founding Partner Program'[\s\S]*?price:\s*'\$199\/mo'[\s\S]*?setup:\s*'\$299 guided setup'[\s\S]*?first 10 approved external businesses/i,
+  'limited Founding Partner offer disclosure',
+);
+
+requirePattern(
+  'src/data/pricingContent.ts',
+  /Performance fees are disabled by default/i,
+  'performance fees disabled-by-default disclosure',
+);
+
+requirePattern(
+  'src/data/pricingContent.ts',
+  /without a basic Signmons per-invoice fee/i,
+  'basic invoice platform-fee disclosure',
+);
+
+requirePattern(
+  'src/data/pricingContent.ts',
+  /Disclosed Pass-Through Provider Fees/,
+  'complete monthly-total formula',
+);
 
 requirePattern(
   'src/data/pricingContent.ts',
@@ -250,8 +298,8 @@ forbidPattern(
 
 requirePattern(
   'src/data/pricingContent.ts',
-  /transparent overage options/i,
-  'updated pricing note with transparent overage options',
+  /per-tier qualifying-call overage/i,
+  'updated pricing note with per-tier qualifying-call overage',
 );
 
 requirePattern(

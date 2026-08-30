@@ -110,6 +110,17 @@ export interface SitePricingFaqItem {
   answer: string;
 }
 
+export interface SitePricingFoundingOffer {
+  eyebrow: string;
+  title: string;
+  price: string;
+  setup: string;
+  description: string;
+  availability: string;
+  ctaLabel: string;
+  ctaHref: string;
+}
+
 export interface SitePricingContent {
   navCtaLabel: string;
   navCtaHref: string;
@@ -125,7 +136,13 @@ export interface SitePricingContent {
     saveBadge: string;
   };
   pricingNote: string;
+  foundingOffer: SitePricingFoundingOffer;
   plans: SitePricingPlan[];
+  commercialTerms: {
+    tag: string;
+    title: string;
+    items: string[];
+  };
   addOns: {
     tag: string;
     title: string;

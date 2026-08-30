@@ -1,6 +1,8 @@
 import type { SitePricingContent, SitePricingPlan } from '../types/site';
 
-const STANDARD_OVERAGE_POLICY = '$99 per additional 250 AI-handled calls';
+const STARTER_OVERAGE_POLICY = '$1.50 per qualifying AI-handled call';
+const GROWTH_OVERAGE_POLICY = '$1.00 per qualifying AI-handled call';
+const PRO_OVERAGE_POLICY = '$0.75 per qualifying AI-handled call';
 
 export const sitePricingPlans: SitePricingPlan[] = [
   {
@@ -9,9 +11,9 @@ export const sitePricingPlans: SitePricingPlan[] = [
     description: 'For owner-operators who need consistent lead capture without full dispatch automation.',
     bestFor: 'Best for: owner-operators',
     includedCallVolume: 100,
-    setupFeeAmount: 299,
+    setupFeeAmount: 499,
     vehicleRange: 'Single vehicle or owner-operator',
-    overagePolicy: STANDARD_OVERAGE_POLICY,
+    overagePolicy: STARTER_OVERAGE_POLICY,
     features: [
       {
         id: 'starter-24-7-answering',
@@ -49,12 +51,18 @@ export const sitePricingPlans: SitePricingPlan[] = [
         category: 'analytics',
         includedInTier: 'starter',
       },
+      {
+        id: 'starter-money-baseline',
+        label: 'Planned Signmons Money: branded estimates, invoices, payment links, and receipts',
+        category: 'payment',
+        includedInTier: 'starter',
+      },
     ],
     ctaLabel: 'Start Early Access →',
     ctaHref: '/contact',
     ctaClassName: 'btn-secondary',
-    monthlyPrice: 199,
-    annualMonthlyPrice: 159,
+    monthlyPrice: 299,
+    annualMonthlyPrice: 249,
   },
   {
     id: 'growth',
@@ -63,9 +71,9 @@ export const sitePricingPlans: SitePricingPlan[] = [
       'For 2-5 truck teams that need after-hours capture, emergency triage, deposit collection, and routing across multiple vehicles.',
     bestFor: 'Best for: 2-5 active vehicles',
     includedCallVolume: 500,
-    setupFeeAmount: 750,
+    setupFeeAmount: 1000,
     vehicleRange: '2-5 active vehicles',
-    overagePolicy: STANDARD_OVERAGE_POLICY,
+    overagePolicy: GROWTH_OVERAGE_POLICY,
     features: [
       {
         id: 'growth-everything-starter',
@@ -133,12 +141,24 @@ export const sitePricingPlans: SitePricingPlan[] = [
         category: 'support',
         includedInTier: 'growth',
       },
+      {
+        id: 'growth-money-advanced',
+        label: 'Planned Signmons Money: deposits, partial payments, reminders, credits, and refunds',
+        category: 'payment',
+        includedInTier: 'growth',
+      },
+      {
+        id: 'growth-review-requests',
+        label: 'Planned automated customer review requests',
+        category: 'recovery',
+        includedInTier: 'growth',
+      },
     ],
     ctaLabel: 'Book Revenue Demo →',
     ctaHref: '/contact',
     ctaClassName: 'btn-primary',
-    monthlyPrice: 499,
-    annualMonthlyPrice: 399,
+    monthlyPrice: 799,
+    annualMonthlyPrice: 649,
     featured: true,
     badge: 'Most Popular',
   },
@@ -149,9 +169,9 @@ export const sitePricingPlans: SitePricingPlan[] = [
       'For 5-15 truck operations that need advanced routing, integrations, transcripts, audit trails, and conversion reporting.',
     bestFor: 'Best for: 5-15 active vehicles',
     includedCallVolume: 1500,
-    setupFeeAmount: 1500,
+    setupFeeAmount: 2500,
     vehicleRange: '5-15 active vehicles',
-    overagePolicy: '$79 per additional 250 AI-handled calls',
+    overagePolicy: PRO_OVERAGE_POLICY,
     features: [
       {
         id: 'pro-everything-growth',
@@ -207,12 +227,24 @@ export const sitePricingPlans: SitePricingPlan[] = [
         category: 'handoff',
         includedInTier: 'pro',
       },
+      {
+        id: 'pro-money-advanced',
+        label: 'Planned advanced estimate options, progress/recurring invoices, and approval workflows',
+        category: 'payment',
+        includedInTier: 'pro',
+      },
+      {
+        id: 'pro-accounting',
+        label: 'Planned QuickBooks Online accounting synchronization',
+        category: 'integration',
+        includedInTier: 'pro',
+      },
     ],
     ctaLabel: 'Build My AI Dispatcher →',
     ctaHref: '/contact',
     ctaClassName: 'btn-secondary',
-    monthlyPrice: 999,
-    annualMonthlyPrice: 799,
+    monthlyPrice: 1499,
+    annualMonthlyPrice: 1249,
   },
   {
     id: 'enterprise',
@@ -221,8 +253,8 @@ export const sitePricingPlans: SitePricingPlan[] = [
       'For multi-location trades brands that need custom AI policies, SLA-backed operations, integrations, and executive reporting.',
     bestFor: 'Best for: multi-location and franchise operations',
     includedUsageLabel: 'Custom volume + SLA-backed response windows',
-    setupFeeAmount: 0,
-    setupFeeLabel: 'Custom implementation scope',
+    setupFeeAmount: 5000,
+    setupFeeLabel: 'Custom implementation from $5,000',
     vehicleRange: 'Custom multi-location fleets',
     overagePolicy: 'Contract-based volume and overage policy',
     features: [
@@ -278,7 +310,7 @@ export const sitePricingPlans: SitePricingPlan[] = [
     ctaLabel: 'Talk to Sales →',
     ctaHref: '/contact',
     ctaClassName: 'btn-secondary',
-    customPriceLabel: 'Custom from $2,500/mo',
+    customPriceLabel: 'Custom from $3,500/mo',
   },
 ];
 
@@ -295,48 +327,89 @@ export const sitePricingContent: SitePricingContent = {
   billingToggle: {
     monthlyLabel: 'Monthly',
     annualLabel: 'Annual',
-    saveBadge: 'SAVE 20%',
+    saveBadge: 'SAVE 15–20%',
   },
   pricingNote:
-    'Every plan includes clear monthly call volume, transparent overage options, and fair-usage protections so your customers keep getting answered without surprise billing.',
+    'Every plan includes clear monthly call volume, per-tier qualifying-call overage, and fair-usage protections. Spam, silent calls, blocked traffic, and approved test calls are excluded.',
+  foundingOffer: {
+    eyebrow: 'Limited Early Access',
+    title: 'Founding Partner Program',
+    price: '$199/mo',
+    setup: '$299 guided setup',
+    description:
+      'For the first 10 approved external businesses: up to 100 AI-handled calls per month, month-to-month service, and a 12-month founding-price lock while the account remains active.',
+    availability:
+      'Capabilities are activated as they pass their release gates. Planned features are labeled and are not billed before activation.',
+    ctaLabel: 'Apply for Founding Access →',
+    ctaHref: '/contact',
+  },
   plans: sitePricingPlans,
+  commercialTerms: {
+    tag: 'Clear Commercial Terms',
+    title: 'What Your Monthly Total Can Include',
+    items: [
+      'Monthly Total = Base Subscription + Overage + Enabled Performance Fees + Add-ons + Disclosed Pass-Through Provider Fees.',
+      'Performance fees are disabled by default and require a tenant contract with auditable attribution, disputes, credits, and voids.',
+      'After the Signmons Money release gate, basic estimates, invoices, payment links, and receipts are included without a basic Signmons per-invoice fee.',
+      'Payment processor, ACH, dispute, financing, carrier, and other provider fees are disclosed separately when applicable.',
+      'Signmons supports field-service financial workflows; it does not replace bookkeeping, payroll, tax filing, or general-ledger accounting.',
+    ],
+  },
   addOns: {
     tag: 'Optional Add-Ons',
     title: 'Expand Capacity Without Replacing Your Plan',
-    subtitle: 'Add usage, escalation, and onboarding modules as your operation scales.',
+    subtitle: 'Add voice, escalation, capacity, locations, and implementation support as your operation scales.',
     note:
       'Growth includes emergency detection plus basic routing/capture. Advanced escalation trees and campaign orchestration are available as add-ons or in higher tiers.',
     items: [
       {
-        id: 'addon-calls',
-        title: 'Extra 250 AI calls',
-        price: '$99/mo',
-        description: 'Extend monthly call volume without changing plans.',
-      },
-      {
         id: 'addon-voice',
         title: 'Premium AI voice',
-        price: '$99/mo',
+        price: '$149/mo',
         description: 'Higher-fidelity voice profile and tone tuning.',
       },
       {
         id: 'addon-emergency',
         title: 'Advanced after-hours emergency escalation',
-        price: '$199/mo',
+        price: '$299/mo',
         description: 'Escalation to owner or on-call tech with custom after-hours escalation trees.',
       },
       {
         id: 'addon-recovery',
         title: 'Advanced missed-call recovery campaigns',
-        price: '$149/mo',
+        price: '$199/mo',
         description:
           'Multi-touch SMS follow-up sequences, abandoned caller reactivation, and weekly recovery reporting.',
       },
       {
-        id: 'addon-onboarding',
-        title: 'Custom onboarding package',
-        price: '$500-$2,500 one-time',
-        description: 'Script tuning, intake QA, and launch optimization support.',
+        id: 'addon-seats',
+        title: 'Additional 5 technician seats',
+        price: '$149/mo',
+        description: 'Expand field access in five-seat blocks.',
+      },
+      {
+        id: 'addon-location',
+        title: 'Extra service area or location',
+        price: '$199/mo',
+        description: 'Add another governed service area or operating location.',
+      },
+      {
+        id: 'addon-brand-voice',
+        title: 'Custom brand voice tuning',
+        price: '$500 one-time',
+        description: 'Configure tone, prohibited phrases, fee language, and closeout messaging.',
+      },
+      {
+        id: 'addon-call-flow',
+        title: 'Custom call-flow buildout',
+        price: '$1,000-$3,000 one-time',
+        description: 'Design and validate specialized intake, escalation, and handoff logic.',
+      },
+      {
+        id: 'addon-integration',
+        title: 'CRM/FSM integration setup',
+        price: '$1,500-$5,000 one-time',
+        description: 'Scope and connect an approved operational-system adapter.',
       },
     ],
   },
@@ -367,6 +440,14 @@ export const sitePricingContent: SitePricingContent = {
         growth: 'yes',
         pro: 'yes',
         enterprise: 'yes',
+      },
+      {
+        id: 'cmp-money-baseline',
+        feature: 'Basic estimates, invoices, payment links, and receipts',
+        starter: 'Planned',
+        growth: 'Planned',
+        pro: 'Planned',
+        enterprise: 'Planned',
       },
       {
         id: 'cmp-deposit-preauth',
@@ -473,6 +554,14 @@ export const sitePricingContent: SitePricingContent = {
         enterprise: 'yes',
       },
       {
+        id: 'cmp-accounting',
+        feature: 'QuickBooks Online synchronization',
+        starter: 'no',
+        growth: 'no',
+        pro: 'Planned',
+        enterprise: 'Planned',
+      },
+      {
         id: 'cmp-audit',
         feature: 'Transcripts + booking audit trail',
         starter: 'no',
@@ -525,6 +614,12 @@ export const sitePricingContent: SitePricingContent = {
         question: 'How are deposits and service fees handled?',
         answer:
           'Payment links are delivered by SMS during intake. Funds settle directly to your connected processor account and are tracked in the booking audit log.',
+      },
+      {
+        id: 'faq-invoices',
+        question: 'Will Signmons include professional estimates and invoices?',
+        answer:
+          'Yes. Signmons Money is planned to add branded estimates, approvals, invoices, payment links, and receipts without a basic Signmons per-invoice fee after its release gate. Processor and other provider fees are disclosed separately. Signmons will integrate with accounting software rather than replace bookkeeping or the general ledger.',
       },
       {
         id: 'faq-contracts',
