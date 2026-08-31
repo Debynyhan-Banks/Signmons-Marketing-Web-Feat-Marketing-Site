@@ -15,7 +15,7 @@ Global pointer: `/Users/debynyhanbanks/Web Projects/signmons-governance/GLOBAL_E
 
 ## Now
 
-- [ ] PAUSED Marketing implementation queue; global program moved to APP-006 CallDesk intake review
+- [ ] PAUSED Marketing implementation queue; global program moved to APP-007 CallDesk urgency and escalation review
 
 ## Next
 
