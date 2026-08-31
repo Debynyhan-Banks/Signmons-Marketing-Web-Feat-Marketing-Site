@@ -1,0 +1,5 @@
+Command: npm run -s pricing:check
+Result: PASS (98 checks)
+
+Command: npm run -s ui:check
+Result: PASS (17 checks)

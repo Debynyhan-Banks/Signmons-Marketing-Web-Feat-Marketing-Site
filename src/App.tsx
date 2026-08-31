@@ -7,6 +7,8 @@ import SiteDispatchScheduling from './pages/site/SiteDispatchScheduling';
 import SiteDoneForYouSetup from './pages/site/SiteDoneForYouSetup';
 import SiteHome from './pages/site/SiteHome';
 import SitePricing from './pages/site/SitePricing';
+import SiteRevenueDashboard from './pages/site/SiteRevenueDashboard';
+import SiteRoiCalculator from './pages/site/SiteRoiCalculator';
 
 const staticTemplateByRoute: Record<string, string> = {
   '/about': 'about.html',
@@ -88,6 +90,22 @@ const App = () => {
     normalizedPath === '/site/dispatch-scheduling.html'
   ) {
     return <SiteDispatchScheduling />;
+  }
+
+  if (
+    normalizedPath === '/revenue-dashboard' ||
+    normalizedPath === '/revenue-dashboard.html' ||
+    normalizedPath === '/site/revenue-dashboard.html'
+  ) {
+    return <SiteRevenueDashboard />;
+  }
+
+  if (
+    normalizedPath === '/roi-calculator' ||
+    normalizedPath === '/roi-calculator.html' ||
+    normalizedPath === '/site/roi-calculator.html'
+  ) {
+    return <SiteRoiCalculator />;
   }
 
   const staticTemplate = staticTemplateByRoute[normalizedPath];

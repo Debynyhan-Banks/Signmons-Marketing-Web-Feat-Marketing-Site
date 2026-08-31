@@ -71,6 +71,77 @@
   max-width: 720px;
 }
 
+.site-pricing-page .founding-offer {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0 auto 1.75rem;
+  padding: 1.35rem;
+  border: 1px solid rgba(0, 229, 160, 0.35);
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(0, 229, 160, 0.1), rgba(139, 44, 245, 0.1));
+}
+
+.site-pricing-page .founding-offer__eyebrow {
+  color: var(--green);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.site-pricing-page .founding-offer h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.35rem;
+  margin-bottom: 0.45rem;
+}
+
+.site-pricing-page .founding-offer p,
+.site-pricing-page .commercial-terms li {
+  color: var(--muted);
+  font-size: 0.83rem;
+  line-height: 1.6;
+}
+
+.site-pricing-page .founding-offer__availability {
+  margin-top: 0.45rem;
+}
+
+.site-pricing-page .founding-offer__action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
+.site-pricing-page .founding-offer__action strong {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+}
+
+.site-pricing-page .founding-offer__action span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.site-pricing-page .founding-offer__action a {
+  margin-top: 0.35rem;
+}
+
+.site-pricing-page .commercial-terms {
+  padding: 1.4rem;
+  border: 1px solid var(--card-border);
+  border-radius: 22px;
+  background: var(--card-bg);
+}
+
+.site-pricing-page .commercial-terms ul {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding-left: 1.1rem;
+}
+
 .site-pricing-page .plans {
   display: grid;
   grid-template-columns: 1fr;
@@ -343,6 +414,15 @@
 }
 
 @media (min-width: 900px) {
+  .site-pricing-page .founding-offer {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .site-pricing-page .founding-offer__action {
+    min-width: 210px;
+  }
+
   .site-pricing-page .plans {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

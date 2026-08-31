@@ -58,7 +58,7 @@ const SitePricing = () => {
     const monthlyValue = hasAnnualPrice ? plan.annualMonthlyPrice : plan.monthlyPrice;
     const originalLabel =
       hasAnnualPrice && typeof plan.monthlyPrice === 'number'
-        ? `$${plan.monthlyPrice}/mo billed annually`
+        ? `$${plan.monthlyPrice}/mo month-to-month`
         : '\u00A0';
 
     return {
@@ -111,6 +111,22 @@ const SitePricing = () => {
 
         <p className="pricing-note fade-in">{sitePricingContent.pricingNote}</p>
 
+        <aside className="founding-offer fade-in" aria-labelledby="founding-offer-title">
+          <div>
+            <p className="founding-offer__eyebrow">{sitePricingContent.foundingOffer.eyebrow}</p>
+            <h2 id="founding-offer-title">{sitePricingContent.foundingOffer.title}</h2>
+            <p>{sitePricingContent.foundingOffer.description}</p>
+            <p className="founding-offer__availability">{sitePricingContent.foundingOffer.availability}</p>
+          </div>
+          <div className="founding-offer__action">
+            <strong>{sitePricingContent.foundingOffer.price}</strong>
+            <span>{sitePricingContent.foundingOffer.setup}</span>
+            <a className="btn-secondary" href={sitePricingContent.foundingOffer.ctaHref}>
+              {sitePricingContent.foundingOffer.ctaLabel}
+            </a>
+          </div>
+        </aside>
+
         <div className="plans fade-in">
           {sitePricingContent.plans.map((plan) => {
             const displayedPrice = getDisplayedPrice(plan);
@@ -153,6 +169,18 @@ const SitePricing = () => {
             );
           })}
         </div>
+
+        <section className="commercial-terms fade-in" aria-labelledby="commercial-terms-title">
+          <p className="section-tag">{sitePricingContent.commercialTerms.tag}</p>
+          <h2 id="commercial-terms-title" className="section-title">
+            {sitePricingContent.commercialTerms.title}
+          </h2>
+          <ul>
+            {sitePricingContent.commercialTerms.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </section>
 
         <section className="compare-section fade-in">
           <p className="section-tag">{sitePricingContent.compare.tag}</p>

@@ -10,7 +10,12 @@ describe('SitePricing', () => {
     expect(screen.getByText('Growth', { selector: '.plan-name' })).toBeInTheDocument();
     expect(screen.getByText('Pro', { selector: '.plan-name' })).toBeInTheDocument();
     expect(screen.getByText('Enterprise', { selector: '.plan-name' })).toBeInTheDocument();
-    expect(screen.getByText(/custom from \$2,500\/mo/i)).toBeInTheDocument();
+    expect(screen.getByText(/custom from \$3,500\/mo/i)).toBeInTheDocument();
+
+    expect(screen.getByRole('heading', { level: 2, name: /founding partner program/i })).toBeInTheDocument();
+    expect(screen.getByText(/first 10 approved external businesses/i)).toBeInTheDocument();
+    expect(screen.getByText(/performance fees are disabled by default/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/without a basic Signmons per-invoice fee/i).length).toBeGreaterThan(0);
 
     expect(screen.getByText(/advanced after-hours emergency escalation/i)).toBeInTheDocument();
     expect(screen.getAllByText(/advanced missed-call recovery campaigns/i).length).toBeGreaterThan(0);
@@ -32,6 +37,7 @@ describe('SitePricing', () => {
     const growth = within(growthCard as HTMLElement);
 
     expect(starter.getByText(/payment link handoff/i)).toBeInTheDocument();
+    expect(starter.getByText(/planned Signmons Money: branded estimates/i)).toBeInTheDocument();
     expect(starter.queryByText(/deposit collection and service-fee preauthorization/i)).not.toBeInTheDocument();
 
     expect(growth.getByText(/after-hours call capture and emergency escalation/i)).toBeInTheDocument();
@@ -46,11 +52,11 @@ describe('SitePricing', () => {
     const toggle = screen.getByRole('button', { name: /toggle annual billing/i });
 
     expect(starterCard).not.toBeNull();
-    expect(starterCard?.querySelector('.plan-price')).toHaveTextContent('$199/mo');
+    expect(starterCard?.querySelector('.plan-price')).toHaveTextContent('$299/mo');
 
     fireEvent.click(toggle);
 
-    expect(starterCard?.querySelector('.plan-price')).toHaveTextContent('$159/mo');
-    expect(starterCard?.querySelector('.plan-original')).toHaveTextContent('$199/mo billed annually');
+    expect(starterCard?.querySelector('.plan-price')).toHaveTextContent('$249/mo');
+    expect(starterCard?.querySelector('.plan-original')).toHaveTextContent('$299/mo month-to-month');
   });
 });
