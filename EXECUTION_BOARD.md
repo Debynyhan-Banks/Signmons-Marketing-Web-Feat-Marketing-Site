@@ -15,11 +15,11 @@ Global pointer: `/Users/debynyhanbanks/Web Projects/signmons-governance/GLOBAL_E
 
 ## Now
 
-- [ ] FE-014 Competitive comparison pages (`SCR-PUB-017`, `SCR-PUB-018`)
+- [ ] PAUSED Marketing implementation queue; global program moved to APP-006 CallDesk intake review
 
 ## Next
 
-- [ ] APP-006 Intake review and booking readiness (`SCR-APP-012`) - unlocks after marketing DoD exit criteria
+- [ ] FE-014 Competitive comparison pages (`SCR-PUB-017`, `SCR-PUB-018`) - resume after owner returns the global pointer to marketing
 
 ## Done
 
