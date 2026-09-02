@@ -1,9 +1,5 @@
 import type { SitePricingContent, SitePricingPlan } from '../types/site';
 
-const STARTER_OVERAGE_POLICY = '$1.50 per qualifying AI-handled call';
-const GROWTH_OVERAGE_POLICY = '$1.00 per qualifying AI-handled call';
-const PRO_OVERAGE_POLICY = '$0.75 per qualifying AI-handled call';
-
 export const sitePricingPlans: SitePricingPlan[] = [
   {
     id: 'starter',
@@ -11,11 +7,7 @@ export const sitePricingPlans: SitePricingPlan[] = [
     description: 'For owner-operators who need consistent lead capture without full dispatch automation.',
     bestFor: 'Best for: owner-operators',
     includedCallVolume: 100,
-    overageBlockSizeCalls: 1,
-    overageBlockPrice: 1.5,
-    setupFeeAmount: 499,
-    vehicleRange: 'Single vehicle or owner-operator',
-    overagePolicy: STARTER_OVERAGE_POLICY,
+    capacityLabel: '1 location • 1 phone number • Up to 2 technicians',
     features: [
       {
         id: 'starter-24-7-answering',
@@ -31,14 +23,20 @@ export const sitePricingPlans: SitePricingPlan[] = [
       },
       {
         id: 'starter-appointments',
-        label: 'Appointment requests and confirmations',
+        label: 'Calendar booking, confirmations, and appointment management',
         category: 'operations',
         includedInTier: 'starter',
       },
       {
         id: 'starter-payment-handoff',
-        label: 'Payment link handoff',
+        label: 'Applicable Stripe booking-payment workflow',
         category: 'payment',
+        includedInTier: 'starter',
+      },
+      {
+        id: 'starter-missed-call-text-back',
+        label: 'Missed-call text-back',
+        category: 'recovery',
         includedInTier: 'starter',
       },
       {
@@ -49,7 +47,7 @@ export const sitePricingPlans: SitePricingPlan[] = [
       },
       {
         id: 'starter-lead-history',
-        label: 'Basic lead history',
+        label: 'Customer, job, and communication history',
         category: 'analytics',
         includedInTier: 'starter',
       },
@@ -73,11 +71,7 @@ export const sitePricingPlans: SitePricingPlan[] = [
       'For 2-5 truck teams that need after-hours capture, emergency triage, deposit collection, and routing across multiple vehicles.',
     bestFor: 'Best for: 2-5 active vehicles',
     includedCallVolume: 500,
-    overageBlockSizeCalls: 1,
-    overageBlockPrice: 1,
-    setupFeeAmount: 1000,
-    vehicleRange: '2-5 active vehicles',
-    overagePolicy: GROWTH_OVERAGE_POLICY,
+    capacityLabel: '1 location • Up to 5 technicians',
     features: [
       {
         id: 'growth-everything-starter',
@@ -87,7 +81,7 @@ export const sitePricingPlans: SitePricingPlan[] = [
       },
       {
         id: 'growth-basic-recovery',
-        label: 'Basic missed-call SMS recovery',
+        label: 'Missed-call recovery reporting and follow-up visibility',
         category: 'recovery',
         includedInTier: 'growth',
       },
@@ -173,11 +167,7 @@ export const sitePricingPlans: SitePricingPlan[] = [
       'For 5-15 truck operations that need advanced routing, integrations, transcripts, audit trails, and conversion reporting.',
     bestFor: 'Best for: 5-15 active vehicles',
     includedCallVolume: 1500,
-    overageBlockSizeCalls: 1,
-    overageBlockPrice: 0.75,
-    setupFeeAmount: 2500,
-    vehicleRange: '5-15 active vehicles',
-    overagePolicy: PRO_OVERAGE_POLICY,
+    capacityLabel: 'Up to 3 locations • Up to 15 technicians',
     features: [
       {
         id: 'pro-everything-growth',
@@ -259,10 +249,7 @@ export const sitePricingPlans: SitePricingPlan[] = [
       'For multi-location trades brands that need custom AI policies, SLA-backed operations, integrations, and executive reporting.',
     bestFor: 'Best for: multi-location and franchise operations',
     includedUsageLabel: 'Custom volume + SLA-backed response windows',
-    setupFeeAmount: 5000,
-    setupFeeLabel: 'Custom implementation from $5,000',
-    vehicleRange: 'Custom multi-location fleets',
-    overagePolicy: 'Contract-based volume and overage policy',
+    capacityLabel: 'Contracted locations, technicians, and communication volume',
     features: [
       {
         id: 'enterprise-everything-pro',
@@ -316,7 +303,7 @@ export const sitePricingPlans: SitePricingPlan[] = [
     ctaLabel: 'Talk to Sales →',
     ctaHref: '/contact',
     ctaClassName: 'btn-secondary',
-    customPriceLabel: 'Custom from $3,500/mo',
+    customPriceLabel: 'Custom fixed subscription',
   },
 ];
 
@@ -336,12 +323,12 @@ export const sitePricingContent: SitePricingContent = {
     saveBadge: 'SAVE 15–20%',
   },
   pricingNote:
-    'Every plan includes clear monthly call volume, per-tier qualifying-call overage, and fair-usage protections. Spam, silent calls, blocked traffic, and approved test calls are excluded.',
+    'Every plan is a predictable fixed subscription. Call capacity is a fair-use suitability guide—not a metered charge—and normal Twilio and AI usage is included.',
   foundingOffer: {
     eyebrow: 'Limited Early Access',
     title: 'Founding Partner Program',
     price: '$199/mo',
-    setup: '$299 guided setup',
+    terms: 'Guided setup included',
     description:
       'For the first 10 approved external businesses: up to 100 AI-handled calls per month, month-to-month service, and a 12-month founding-price lock while the account remains active.',
     availability:
@@ -352,71 +339,14 @@ export const sitePricingContent: SitePricingContent = {
   plans: sitePricingPlans,
   commercialTerms: {
     tag: 'Clear Commercial Terms',
-    title: 'What Your Monthly Total Can Include',
+    title: 'One Predictable Subscription',
     items: [
-      'Monthly Total = Base Subscription + Overage + Enabled Performance Fees + Add-ons + Disclosed Pass-Through Provider Fees.',
-      'Performance fees are disabled by default and require a tenant contract with auditable attribution, disputes, credits, and voids.',
+      'Signmons subscription total = the fixed selected-plan subscription, plus applicable taxes only.',
+      'No setup, per-call overage, booked-job, emergency-capture, revenue-share, or required MVP add-on fees.',
+      'Approaching or sustained excess usage starts a plan review and agreed fixed-price upgrade—not an automatic metered charge.',
       'After the Signmons Money release gate, basic estimates, invoices, payment links, and receipts are included without a basic Signmons per-invoice fee.',
-      'Payment processor, ACH, dispute, financing, carrier, and other provider fees are disclosed separately when applicable.',
+      'Stripe processor costs belong to contractor-to-customer payments and are separate from Signmons subscription billing.',
       'Signmons supports field-service financial workflows; it does not replace bookkeeping, payroll, tax filing, or general-ledger accounting.',
-    ],
-  },
-  addOns: {
-    tag: 'Optional Add-Ons',
-    title: 'Expand Capacity Without Replacing Your Plan',
-    subtitle: 'Add voice, escalation, capacity, locations, and implementation support as your operation scales.',
-    note:
-      'Growth includes emergency detection plus basic routing/capture. Advanced escalation trees and campaign orchestration are available as add-ons or in higher tiers.',
-    items: [
-      {
-        id: 'addon-voice',
-        title: 'Premium AI voice',
-        price: '$149/mo',
-        description: 'Higher-fidelity voice profile and tone tuning.',
-      },
-      {
-        id: 'addon-emergency',
-        title: 'Advanced after-hours emergency escalation',
-        price: '$299/mo',
-        description: 'Escalation to owner or on-call tech with custom after-hours escalation trees.',
-      },
-      {
-        id: 'addon-recovery',
-        title: 'Advanced missed-call recovery campaigns',
-        price: '$199/mo',
-        description:
-          'Multi-touch SMS follow-up sequences, abandoned caller reactivation, and weekly recovery reporting.',
-      },
-      {
-        id: 'addon-seats',
-        title: 'Additional 5 technician seats',
-        price: '$149/mo',
-        description: 'Expand field access in five-seat blocks.',
-      },
-      {
-        id: 'addon-location',
-        title: 'Extra service area or location',
-        price: '$199/mo',
-        description: 'Add another governed service area or operating location.',
-      },
-      {
-        id: 'addon-brand-voice',
-        title: 'Custom brand voice tuning',
-        price: '$500 one-time',
-        description: 'Configure tone, prohibited phrases, fee language, and closeout messaging.',
-      },
-      {
-        id: 'addon-call-flow',
-        title: 'Custom call-flow buildout',
-        price: '$1,000-$3,000 one-time',
-        description: 'Design and validate specialized intake, escalation, and handoff logic.',
-      },
-      {
-        id: 'addon-integration',
-        title: 'CRM/FSM integration setup',
-        price: '$1,500-$5,000 one-time',
-        description: 'Scope and connect an approved operational-system adapter.',
-      },
     ],
   },
   compare: {
@@ -483,14 +413,14 @@ export const sitePricingContent: SitePricingContent = {
         id: 'cmp-after-hours-advanced',
         feature: 'Advanced after-hours escalation trees',
         starter: 'no',
-        growth: 'Add-on',
+        growth: 'no',
         pro: 'yes',
         enterprise: 'yes',
       },
       {
         id: 'cmp-recovery-basic',
-        feature: 'Basic missed-call SMS recovery',
-        starter: 'no',
+        feature: 'Missed-call text-back',
+        starter: 'yes',
         growth: 'yes',
         pro: 'yes',
         enterprise: 'yes',
@@ -499,7 +429,7 @@ export const sitePricingContent: SitePricingContent = {
         id: 'cmp-recovery-advanced',
         feature: 'Advanced missed-call recovery campaigns',
         starter: 'no',
-        growth: 'Add-on',
+        growth: 'no',
         pro: 'yes',
         enterprise: 'yes',
       },
@@ -605,9 +535,9 @@ export const sitePricingContent: SitePricingContent = {
       },
       {
         id: 'faq-overage',
-        question: 'What happens if we exceed included call volume?',
+        question: 'What happens if we exceed our plan capacity?',
         answer:
-          'Signmons keeps answering calls. We notify your team in advance and apply your selected overage or plan-upgrade policy with transparent usage reporting.',
+          'Signmons keeps answering calls and notifies your team. Sustained excess usage leads to an agreed fixed-price plan upgrade or Enterprise review—never an automatic per-call charge.',
       },
       {
         id: 'faq-number',

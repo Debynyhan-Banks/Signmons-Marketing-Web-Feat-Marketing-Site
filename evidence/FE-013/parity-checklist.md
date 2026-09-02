@@ -5,9 +5,11 @@
 - [x] Revenue dashboard labels all displayed values as illustrative sample data.
 - [x] Revenue dashboard distinguishes estimated values from realized, tenant-scoped events.
 - [x] ROI inputs map to governed `PricingPlan` values from `sitePricingPlans`.
-- [x] Performance fees are disabled by default and require explicit user enablement.
+- [x] ROI plan cost remains the fixed selected-plan subscription regardless of modeled call or booking outcomes.
 - [x] Deposits are not counted as incremental revenue.
-- [x] Both pages include plain-language assumptions and “What counts as billable” summaries.
+- [x] Both pages include plain-language assumptions and subscription-inclusion summaries.
+- [x] Neither page models setup, per-call, booked-job, emergency-capture, revenue-share, or required add-on fees.
+- [x] Normal Twilio and AI usage is described as included within non-metered plan-capacity guidance.
 - [x] Revenue CTAs “Get My Revenue Audit” and “Book Revenue Demo” resolve to `/contact`.
 - [x] ROI CTA “Book a Revenue Recovery Demo” resolves to `/contact`.
 - [x] Footer exposes both revenue routes without placeholder links.

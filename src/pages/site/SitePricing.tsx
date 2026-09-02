@@ -33,14 +33,6 @@ const SitePricing = () => {
     return plan.includedUsageLabel ?? 'Custom volume';
   };
 
-  const formatSetupFee = (plan: SitePricingPlan) => {
-    if (plan.setupFeeLabel) {
-      return plan.setupFeeLabel;
-    }
-
-    return `$${plan.setupFeeAmount.toLocaleString()} one-time setup`;
-  };
-
   const getDisplayedPrice = (plan: SitePricingPlan) => {
     if (plan.customPriceLabel) {
       return {
@@ -120,7 +112,7 @@ const SitePricing = () => {
           </div>
           <div className="founding-offer__action">
             <strong>{sitePricingContent.foundingOffer.price}</strong>
-            <span>{sitePricingContent.foundingOffer.setup}</span>
+            <span>{sitePricingContent.foundingOffer.terms}</span>
             <a className="btn-secondary" href={sitePricingContent.foundingOffer.ctaHref}>
               {sitePricingContent.foundingOffer.ctaLabel}
             </a>
@@ -150,9 +142,8 @@ const SitePricing = () => {
 
                 <div className="plan-original">{displayedPrice.originalLabel}</div>
                 <div className="plan-usage">{formatIncludedUsage(plan)}</div>
-                <div className="plan-vehicle">{plan.vehicleRange}</div>
-                <div className="plan-overage">Overage: {plan.overagePolicy}</div>
-                <div className="plan-setup">{formatSetupFee(plan)}</div>
+                <div className="plan-vehicle">{plan.capacityLabel}</div>
+                <div className="plan-setup">Fixed subscription • Guided setup included</div>
 
                 <ul className="plan-features">
                   {plan.features.map((feature) => (
@@ -207,22 +198,6 @@ const SitePricing = () => {
               ))}
             </tbody>
           </table>
-        </section>
-
-        <section className="addons-section fade-in">
-          <p className="section-tag">{sitePricingContent.addOns.tag}</p>
-          <h2 className="section-title">{sitePricingContent.addOns.title}</h2>
-          <p className="section-sub">{sitePricingContent.addOns.subtitle}</p>
-          <div className="addons-grid">
-            {sitePricingContent.addOns.items.map((item) => (
-              <article key={item.id} className="addon-card">
-                <h3>{item.title}</h3>
-                <p className="addon-price">{item.price}</p>
-                <p>{item.description}</p>
-              </article>
-            ))}
-          </div>
-          {sitePricingContent.addOns.note ? <p className="addons-note">{sitePricingContent.addOns.note}</p> : null}
         </section>
 
         <section className="faq-section fade-in">

@@ -70,13 +70,8 @@ export interface SitePricingPlan {
   description: string;
   bestFor: string;
   includedCallVolume?: number;
-  overageBlockSizeCalls?: number;
-  overageBlockPrice?: number;
   includedUsageLabel?: string;
-  setupFeeAmount: number;
-  setupFeeLabel?: string;
-  vehicleRange: string;
-  overagePolicy: string;
+  capacityLabel: string;
   features: SitePricingFeature[];
   ctaLabel: string;
   ctaHref: string;
@@ -86,13 +81,6 @@ export interface SitePricingPlan {
   customPriceLabel?: string;
   featured?: boolean;
   badge?: string;
-}
-
-export interface SitePricingAddOn {
-  id: string;
-  title: string;
-  price: string;
-  description: string;
 }
 
 export type SitePricingCompareValue = 'yes' | 'no' | string;
@@ -116,7 +104,7 @@ export interface SitePricingFoundingOffer {
   eyebrow: string;
   title: string;
   price: string;
-  setup: string;
+  terms: string;
   description: string;
   availability: string;
   ctaLabel: string;
@@ -144,13 +132,6 @@ export interface SitePricingContent {
     tag: string;
     title: string;
     items: string[];
-  };
-  addOns: {
-    tag: string;
-    title: string;
-    subtitle: string;
-    note?: string;
-    items: SitePricingAddOn[];
   };
   compare: {
     tag: string;
@@ -626,7 +607,7 @@ export interface SiteRevenueDashboardContent {
     title: string;
     points: string[];
   };
-  billable: {
+  subscription: {
     tag: string;
     title: string;
     points: string[];
@@ -649,11 +630,7 @@ export interface SiteRoiInputPreset {
   bookingRatePercent: number;
   completionRatePercent: number;
   averageCompletedJobValue: number;
-  emergencySharePercent: number;
   monthlyCallVolume: number;
-  performanceFeesEnabled: boolean;
-  qualifiedBookedJobFee: number;
-  emergencyCapturedJobFee: number;
 }
 
 export interface SiteRoiCalculatorContent {
@@ -677,11 +654,7 @@ export interface SiteRoiCalculatorContent {
       bookingRatePercentLabel: string;
       completionRatePercentLabel: string;
       averageCompletedJobValueLabel: string;
-      emergencySharePercentLabel: string;
       monthlyCallVolumeLabel: string;
-      performanceFeesEnabledLabel: string;
-      qualifiedBookedJobFeeLabel: string;
-      emergencyCapturedJobFeeLabel: string;
     };
   };
   assumptions: {
@@ -689,7 +662,7 @@ export interface SiteRoiCalculatorContent {
     title: string;
     points: string[];
   };
-  billable: {
+  subscription: {
     tag: string;
     title: string;
     points: string[];

@@ -82,10 +82,10 @@ const SiteRevenueDashboard = () => {
           </section>
 
           <section className="revenue-billable fade-in">
-            <p className="section-tag">{siteRevenueDashboardContent.billable.tag}</p>
-            <h2 className="section-title">{siteRevenueDashboardContent.billable.title}</h2>
+            <p className="section-tag">{siteRevenueDashboardContent.subscription.tag}</p>
+            <h2 className="section-title">{siteRevenueDashboardContent.subscription.title}</h2>
             <ul>
-              {siteRevenueDashboardContent.billable.points.map((point) => (
+              {siteRevenueDashboardContent.subscription.points.map((point) => (
                 <li key={point}>
                   <span className="ck">✓</span>
                   {point}
