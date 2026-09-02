@@ -29,7 +29,7 @@ This repository contains a **static marketing experience** and a **live demo tri
 - Vite + React
 - MUI with shared design tokens
 - Framer Motion (subtle motion only)
-- Netlify hosting
+- Google Firebase Hosting (`signmons` site)
 
 ---
 
@@ -58,7 +58,10 @@ This repository contains a **static marketing experience** and a **live demo tri
 
 ## Deployment
 
-- Static hosting
+- Firebase project: `signmons`
+- Marketing Hosting site: `signmons` (`https://signmons.web.app` and `https://signmons.com`)
+- CallDesk is deployed separately to the `signmons-calldesk` Hosting site
+- Production command: `npm run build && firebase deploy --only hosting:signmons`
 - CSP (Report-Only → Enforced)
 - No runtime secrets in repo
 
