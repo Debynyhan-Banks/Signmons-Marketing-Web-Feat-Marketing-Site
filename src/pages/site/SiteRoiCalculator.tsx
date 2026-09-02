@@ -28,11 +28,7 @@ const SiteRoiCalculator = () => {
   const [bookingRatePercent, setBookingRatePercent] = useState(preset.bookingRatePercent);
   const [completionRatePercent, setCompletionRatePercent] = useState(preset.completionRatePercent);
   const [averageCompletedJobValue, setAverageCompletedJobValue] = useState(preset.averageCompletedJobValue);
-  const [emergencySharePercent, setEmergencySharePercent] = useState(preset.emergencySharePercent);
   const [monthlyCallVolume, setMonthlyCallVolume] = useState(preset.monthlyCallVolume);
-  const [performanceFeesEnabled, setPerformanceFeesEnabled] = useState(preset.performanceFeesEnabled);
-  const [qualifiedBookedJobFee, setQualifiedBookedJobFee] = useState(preset.qualifiedBookedJobFee);
-  const [emergencyCapturedJobFee, setEmergencyCapturedJobFee] = useState(preset.emergencyCapturedJobFee);
 
   const model = useMemo(() => {
     const plan = calculatorPlans.find((item) => item.id === planId) ?? calculatorPlans[0];
@@ -40,17 +36,10 @@ const SiteRoiCalculator = () => {
     const bookedJobsPerMonth = recoveredLeadsPerMonth * (bookingRatePercent / 100);
     const completedJobsPerMonth = bookedJobsPerMonth * (completionRatePercent / 100);
     const grossRevenueOpportunity = completedJobsPerMonth * averageCompletedJobValue;
-    const emergencyCapturedJobs = bookedJobsPerMonth * (emergencySharePercent / 100);
 
     const includedCalls = plan?.includedCallVolume ?? 0;
-    const overageCalls = Math.max(0, monthlyCallVolume - includedCalls);
-    const overageBlockSize = plan?.overageBlockSizeCalls ?? 1;
-    const overageBlocks = Math.ceil(overageCalls / overageBlockSize);
-    const overageCost = overageBlocks * (plan?.overageBlockPrice ?? 0);
-    const performanceFeeCost = performanceFeesEnabled
-      ? bookedJobsPerMonth * qualifiedBookedJobFee + emergencyCapturedJobs * emergencyCapturedJobFee
-      : 0;
-    const monthlyPlanCost = (plan?.monthlyPrice ?? 0) + overageCost + performanceFeeCost;
+    const callsAboveGuidance = Math.max(0, monthlyCallVolume - includedCalls);
+    const monthlyPlanCost = plan?.monthlyPrice ?? 0;
 
     return {
       plan,
@@ -58,9 +47,8 @@ const SiteRoiCalculator = () => {
       bookedJobsPerMonth,
       completedJobsPerMonth,
       grossRevenueOpportunity,
-      overageCalls,
-      overageCost,
-      performanceFeeCost,
+      includedCalls,
+      callsAboveGuidance,
       monthlyPlanCost,
       netRevenueOpportunity: Math.max(0, grossRevenueOpportunity - monthlyPlanCost),
     };
@@ -71,11 +59,7 @@ const SiteRoiCalculator = () => {
     bookingRatePercent,
     completionRatePercent,
     averageCompletedJobValue,
-    emergencySharePercent,
     monthlyCallVolume,
-    performanceFeesEnabled,
-    qualifiedBookedJobFee,
-    emergencyCapturedJobFee,
   ]);
 
   return (
@@ -174,53 +158,7 @@ const SiteRoiCalculator = () => {
               />
             </label>
 
-            <label>
-              <span>{siteRoiCalculatorContent.calculator.fields.emergencySharePercentLabel}</span>
-              <input
-                type="number"
-                min={0}
-                max={100}
-                value={emergencySharePercent}
-                onChange={(event) => setEmergencySharePercent(clampPercent(Number(event.target.value) || 0))}
-              />
-            </label>
           </div>
-
-          <fieldset className="roi-performance-policy">
-            <label className="roi-policy-toggle">
-              <input
-                type="checkbox"
-                checked={performanceFeesEnabled}
-                onChange={(event) => setPerformanceFeesEnabled(event.target.checked)}
-              />
-              <span>{siteRoiCalculatorContent.calculator.fields.performanceFeesEnabledLabel}</span>
-            </label>
-
-            {performanceFeesEnabled ? (
-              <div className="roi-grid roi-grid--policy">
-                <label>
-                  <span>{siteRoiCalculatorContent.calculator.fields.qualifiedBookedJobFeeLabel}</span>
-                  <input
-                    type="number"
-                    min={0}
-                    value={qualifiedBookedJobFee}
-                    onChange={(event) => setQualifiedBookedJobFee(Math.max(0, Number(event.target.value) || 0))}
-                  />
-                </label>
-                <label>
-                  <span>{siteRoiCalculatorContent.calculator.fields.emergencyCapturedJobFeeLabel}</span>
-                  <input
-                    type="number"
-                    min={0}
-                    value={emergencyCapturedJobFee}
-                    onChange={(event) => setEmergencyCapturedJobFee(Math.max(0, Number(event.target.value) || 0))}
-                  />
-                </label>
-              </div>
-            ) : (
-              <p>Disabled by default. No booked-job or emergency-capture fees are included in this estimate.</p>
-            )}
-          </fieldset>
         </section>
 
         <section className="roi-results fade-in" aria-live="polite" aria-describedby="roi-estimate-disclosure">
@@ -248,17 +186,16 @@ const SiteRoiCalculator = () => {
               <p className="roi-result-label">Estimated monthly plan cost</p>
               <p className="roi-result-value">${roundCurrency(model.monthlyPlanCost).toLocaleString()}</p>
               <p className="roi-result-detail">
-                ${roundCurrency(model.overageCost).toLocaleString()} overage for {model.overageCalls.toLocaleString()} calls
-                {performanceFeesEnabled
-                  ? ` + $${roundCurrency(model.performanceFeeCost).toLocaleString()} estimated performance fees`
-                  : ' · performance fees excluded'}
+                {model.callsAboveGuidance > 0
+                  ? `${model.callsAboveGuidance.toLocaleString()} calls above plan guidance; fixed price unchanged and a plan review is recommended.`
+                  : `Within the plan's approximately ${model.includedCalls.toLocaleString()}-call monthly guidance.`}
               </p>
             </article>
             <article className="roi-result-card roi-result-card--total">
               <p className="roi-result-label">Net revenue opportunity</p>
               <p className="roi-result-value">${roundCurrency(model.netRevenueOpportunity).toLocaleString()}</p>
               <p className="roi-result-detail">
-                Before the one-time ${roundCurrency(model.plan?.setupFeeAmount ?? 0).toLocaleString()} setup fee, add-ons, and provider fees.
+                No setup, metered overage, booked-job, emergency-capture, or revenue-share fees.
               </p>
             </article>
           </div>
@@ -283,10 +220,10 @@ const SiteRoiCalculator = () => {
           </section>
 
           <section className="roi-billable fade-in">
-            <p className="section-tag">{siteRoiCalculatorContent.billable.tag}</p>
-            <h2 className="section-title">{siteRoiCalculatorContent.billable.title}</h2>
+            <p className="section-tag">{siteRoiCalculatorContent.subscription.tag}</p>
+            <h2 className="section-title">{siteRoiCalculatorContent.subscription.title}</h2>
             <ul>
-              {siteRoiCalculatorContent.billable.points.map((point) => (
+              {siteRoiCalculatorContent.subscription.points.map((point) => (
                 <li key={point}>
                   <span className="ck">✓</span>
                   {point}

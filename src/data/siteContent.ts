@@ -869,18 +869,18 @@ export const siteRevenueDashboardContent: SiteRevenueDashboardContent = {
     tag: 'Reporting Boundaries',
     title: 'What the Production Dashboard Uses',
     points: [
-      'Realized values come from tenant-scoped RevenueEvent and finalized BillableEvent records, not the sample values above.',
+      'Realized values come from tenant-scoped RevenueEvent and nonfinancial UsageMetricEvent records, not the sample values above.',
       'Estimated revenue uses the tenant\'s configured ticket assumptions and is labeled separately from completed, collected revenue.',
       'Status, policy version, source channel, and event timing remain available so differences can be explained and audited.',
     ],
   },
-  billable: {
-    tag: 'Billing Clarity',
-    title: 'What Counts as Billable',
+  subscription: {
+    tag: 'Subscription Clarity',
+    title: 'What the Subscription Includes',
     points: [
-      'Qualifying-call overage begins only after the selected plan\'s included monthly volume; spam, silent, blocked, duplicate, and approved test calls are excluded.',
-      'Booked-job and emergency-capture fees apply only when a tenant has explicitly enabled a performance-fee policy and the governed event requirements are met.',
-      'Finalized billable events are immutable. Corrections use auditable credits or voids rather than silent edits.',
+      'Signmons charges a fixed monthly or annual subscription with normal Twilio and AI usage included within plan guidance.',
+      'Bookings, emergency escalations, calls, and recovered revenue are operational outcomes—not Signmons invoice charges.',
+      'Usage metrics support capacity planning and fixed-price upgrade recommendations without creating metered invoice items.',
     ],
   },
   cta: {
@@ -916,11 +916,7 @@ export const siteRoiCalculatorContent: SiteRoiCalculatorContent = {
       bookingRatePercent: 42,
       completionRatePercent: 85,
       averageCompletedJobValue: 650,
-      emergencySharePercent: 18,
       monthlyCallVolume: 420,
-      performanceFeesEnabled: false,
-      qualifiedBookedJobFee: 10,
-      emergencyCapturedJobFee: 50,
     },
     fields: {
       planLabel: 'Plan used for cost estimate',
@@ -929,11 +925,7 @@ export const siteRoiCalculatorContent: SiteRoiCalculatorContent = {
       bookingRatePercentLabel: 'Booking rate on recovered leads (%)',
       completionRatePercentLabel: 'Completed share of booked jobs (%)',
       averageCompletedJobValueLabel: 'Average completed job value ($)',
-      emergencySharePercentLabel: 'Emergency share of recovered jobs (%)',
-      monthlyCallVolumeLabel: 'Qualifying AI-handled calls per month',
-      performanceFeesEnabledLabel: 'Include an enabled performance-fee policy',
-      qualifiedBookedJobFeeLabel: 'Qualified booked-job fee ($)',
-      emergencyCapturedJobFeeLabel: 'Emergency captured-job fee ($)',
+      monthlyCallVolumeLabel: 'Expected AI-handled calls per month',
     },
   },
   assumptions: {
@@ -943,21 +935,21 @@ export const siteRoiCalculatorContent: SiteRoiCalculatorContent = {
       'Recovered leads = missed calls per week x 4.33 x re-engagement rate.',
       'Booked jobs = recovered leads x booking rate; completed jobs = booked jobs x completion rate.',
       'Gross revenue opportunity = completed jobs x average completed-job value. Deposits are not counted as extra revenue.',
-      'Estimated plan cost uses the selected PricingPlan base price, included call volume, and qualifying-call overage policy.',
-      'Performance fees are disabled by default and appear only when you explicitly enable and price that policy in this estimate.',
+      'Estimated plan cost is the selected plan\'s fixed monthly subscription. Usage does not create an automatic overage charge.',
+      'Plan capacity is nonfinancial guidance used to recommend a fixed-price upgrade when needs consistently exceed the selected tier.',
     ],
   },
-  billable: {
-    tag: 'Billing Clarity',
-    title: 'What Counts as Billable',
+  subscription: {
+    tag: 'Subscription Clarity',
+    title: 'What Your Subscription Includes',
     points: [
-      'Only qualifying AI-handled calls above the plan allowance create overage; spam, silent hang-ups, blocked traffic, duplicates, and approved tests are excluded.',
-      'A booked-job fee requires complete customer and booking fields, a confirmed window, and any required payment gate or approved override.',
-      'An emergency-capture fee requires emergency classification, a reason code, dispatch or escalation, and an enabled tenant policy.',
+      'Normal Twilio phone/SMS and AI usage is included within the selected plan\'s capacity guidance.',
+      'There are no setup, metered call, booked-job, emergency-capture, revenue-share, or required MVP add-on fees.',
+      'Stripe booking payments belong to the contractor-to-customer transaction and are separate from Signmons subscription billing.',
     ],
   },
   disclosure:
-    'Planning estimate only. This is not a quote, invoice, guarantee, or realized customer result. Actual billing uses accepted contract terms and finalized tenant-scoped events; add-ons and disclosed provider fees are not included here.',
+    'Planning estimate only. This is not a quote, invoice, guarantee, or realized customer result. Signmons pricing uses the accepted fixed subscription; operational usage metrics do not create additional invoice charges.',
   cta: {
     title: 'Ready to Validate This With Real Intake Data?',
     subtitle: 'Book a revenue demo and we will compare this model against your live call flow.',

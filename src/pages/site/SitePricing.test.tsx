@@ -2,7 +2,7 @@ import { fireEvent, render, screen, within } from '@testing-library/react';
 import SitePricing from './SitePricing';
 
 describe('SitePricing', () => {
-  it('renders the revised premium pricing ladder and add-on naming', () => {
+  it('renders the fixed-subscription pricing ladder and commercial terms', () => {
     render(<SitePricing />);
 
     expect(screen.getByRole('heading', { level: 1, name: /capture more calls\./i })).toBeInTheDocument();
@@ -10,18 +10,18 @@ describe('SitePricing', () => {
     expect(screen.getByText('Growth', { selector: '.plan-name' })).toBeInTheDocument();
     expect(screen.getByText('Pro', { selector: '.plan-name' })).toBeInTheDocument();
     expect(screen.getByText('Enterprise', { selector: '.plan-name' })).toBeInTheDocument();
-    expect(screen.getByText(/custom from \$3,500\/mo/i)).toBeInTheDocument();
+    expect(screen.getByText(/custom fixed subscription/i)).toBeInTheDocument();
 
     expect(screen.getByRole('heading', { level: 2, name: /founding partner program/i })).toBeInTheDocument();
     expect(screen.getByText(/first 10 approved external businesses/i)).toBeInTheDocument();
-    expect(screen.getByText(/performance fees are disabled by default/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: /one predictable subscription/i })).toBeInTheDocument();
+    expect(screen.getByText(/no setup, per-call overage, booked-job, emergency-capture, revenue-share/i)).toBeInTheDocument();
+    expect(screen.getByText(/normal Twilio and AI usage is included/i)).toBeInTheDocument();
     expect(screen.getAllByText(/without a basic Signmons per-invoice fee/i).length).toBeGreaterThan(0);
 
-    expect(screen.getByText(/advanced after-hours emergency escalation/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/advanced missed-call recovery campaigns/i).length).toBeGreaterThan(0);
     expect(screen.queryByText(/unlimited calls/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/no per-call fees/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/^missed-call sms recovery$/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/performance fees/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/custom from \$3,500\/mo/i)).not.toBeInTheDocument();
   });
 
   it('enforces Starter payment handoff boundary and Growth upgrade features', () => {
@@ -36,7 +36,8 @@ describe('SitePricing', () => {
     const starter = within(starterCard as HTMLElement);
     const growth = within(growthCard as HTMLElement);
 
-    expect(starter.getByText(/payment link handoff/i)).toBeInTheDocument();
+    expect(starter.getByText(/applicable Stripe booking-payment workflow/i)).toBeInTheDocument();
+    expect(starter.getByText(/missed-call text-back/i)).toBeInTheDocument();
     expect(starter.getByText(/planned Signmons Money: branded estimates/i)).toBeInTheDocument();
     expect(starter.queryByText(/deposit collection and service-fee preauthorization/i)).not.toBeInTheDocument();
 

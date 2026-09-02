@@ -14,7 +14,7 @@ describe('SiteRevenueDashboard', () => {
 
     expect(screen.getByText(/sample data — for product preview only/i)).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2, name: /what the production dashboard uses/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 2, name: /what counts as billable/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: /what the subscription includes/i })).toBeInTheDocument();
 
     expect(
       screen
