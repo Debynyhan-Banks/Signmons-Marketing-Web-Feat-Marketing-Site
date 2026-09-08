@@ -41,6 +41,21 @@ const metrics = [
   { value: '3s', label: 'Average response time', note: 'Faster than any human team' },
 ];
 
+const heroChipAssets = [
+  { src: '/assets/hero/chip-incoming-call.svg', alt: 'Incoming call chip', position: 'chip-pos-a' },
+  { src: '/assets/hero/chip-payment-secured.svg', alt: 'Payment secured chip', position: 'chip-pos-b' },
+  { src: '/assets/hero/chip-tech-assigned.svg', alt: 'Tech assigned chip', position: 'chip-pos-c' },
+  { src: '/assets/hero/chip-client-notified.svg', alt: 'Client notified chip', position: 'chip-pos-d' },
+];
+
+const integrationAssets = [
+  { src: '/assets/integrations/jobber.svg', alt: 'Jobber integration' },
+  { src: '/assets/integrations/housecall-pro.svg', alt: 'Housecall Pro integration' },
+  { src: '/assets/integrations/servicetitan.svg', alt: 'ServiceTitan integration' },
+  { src: '/assets/integrations/quickbooks.svg', alt: 'QuickBooks integration' },
+  { src: '/assets/integrations/slack.svg', alt: 'Slack integration' },
+];
+
 const HERO_FRAME_MS = 740;
 const HERO_FRAME_COUNT = 7;
 
@@ -127,6 +142,23 @@ const SiteHome = () => {
 
         <div className={`homex-hero-art ${heroState.resetting ? 'is-resetting' : ''}`} aria-label="Revenue system simulation">
           <div className="homex-hero-art-glow"></div>
+          <picture className="homex-hero-picture">
+            <source media="(max-width: 760px)" srcSet="/assets/hero/hero-mobile.png" />
+            <source media="(max-width: 1080px)" srcSet="/assets/hero/hero-tablet.png" />
+            <img
+              className="homex-hero-illustration"
+              src="/assets/hero/hero-desktop.png"
+              alt="Signmons dispatch and payment hero visual"
+              loading="eager"
+            />
+          </picture>
+
+          <div className="homex-floating-chips" aria-hidden="true">
+            {heroChipAssets.map((chip) => (
+              <img key={chip.src} src={chip.src} alt={chip.alt} className={`homex-floating-chip ${chip.position}`} />
+            ))}
+          </div>
+
           <button
             type="button"
             className="homex-hero-play-toggle"
@@ -167,12 +199,17 @@ const SiteHome = () => {
       <section className="homex-pain fade-in">
         <p className="section-tag">Reality Check</p>
         <h2 className="section-title">You&apos;re Not Short on Calls. You&apos;re Losing Money on Them.</h2>
-        <div className="homex-pain-grid">
-          {painItems.map((item) => (
-            <article key={item} className="homex-pain-card">
-              <p>{item}</p>
-            </article>
-          ))}
+        <div className="homex-pain-layout">
+          <figure className="homex-pain-visual">
+            <img src="/assets/sections/pain-revenue-leak.png" alt="Revenue leak visual metaphor" loading="lazy" />
+          </figure>
+          <div className="homex-pain-grid">
+            {painItems.map((item) => (
+              <article key={item} className="homex-pain-card">
+                <p>{item}</p>
+              </article>
+            ))}
+          </div>
         </div>
         <p className="homex-close">Every one of these is preventable.</p>
       </section>
@@ -187,6 +224,9 @@ const SiteHome = () => {
       <section className="homex-flow fade-in" id="how-it-works">
         <p className="section-tag">How It Works</p>
         <h2 className="section-title">From Incoming Call to Paid Job in Seconds</h2>
+        <figure className="homex-step-strip">
+          <img src="/assets/sections/how-step-icons.svg" alt="Answer qualify collect dispatch notify strip" loading="lazy" />
+        </figure>
         <div className="homex-flow-grid">
           {flowSteps.map((step, index) => (
             <article key={step.title} className="homex-step">
@@ -217,17 +257,19 @@ const SiteHome = () => {
       <section className="homex-compare fade-in">
         <p className="section-tag">Revenue Gate</p>
         <h2 className="section-title">This Is Where Most Companies Lose Money</h2>
-        <div className="homex-compare-grid">
-          <article>
-            <h3>Typical Flow</h3>
-            <p>Call -&gt; Estimate -&gt; Dispatch -&gt; Hope they pay</p>
-          </article>
-          <article>
-            <h3>Signmons Flow</h3>
-            <p>Call -&gt; Payment -&gt; Dispatch -&gt; Guaranteed revenue</p>
-          </article>
-        </div>
+        <figure className="homex-compare-visual">
+          <img src="/assets/sections/compare-flow.svg" alt="Typical flow versus Signmons flow comparison" loading="lazy" />
+        </figure>
         <p className="homex-rule">We make sure every job is worth running.</p>
+      </section>
+
+      <section className="homex-integrations fade-in" aria-label="Integrations">
+        <p className="section-tag">Works With Your Existing Stack</p>
+        <div className="homex-integrations-grid">
+          {integrationAssets.map((integration) => (
+            <img key={integration.src} src={integration.src} alt={integration.alt} loading="lazy" />
+          ))}
+        </div>
       </section>
 
       <section className="homex-cta-final fade-in">
